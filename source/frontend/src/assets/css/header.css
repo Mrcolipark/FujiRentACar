@@ -13,12 +13,15 @@
   right: 0;
   z-index: var(--lz-z-fixed);
 
-  /* 完全透明背景 */
-  background: transparent !important;
+  /* 毛玻璃效果背景 */
+  background: rgba(0, 0, 0, 0.3) !important;
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
 
-  /* 无边框 */
+  /* 微妙边框 */
   border: none !important;
-  box-shadow: none !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
 
   /* 平滑过渡 */
   transition: all var(--lz-duration-normal) var(--lz-ease-in-out);
@@ -27,12 +30,12 @@
   transform: translate3d(0, 0, 0);
 }
 
-/* 滚动时添加深色背景 */
+/* 滚动时增强毛玻璃效果 */
 .header.scrolled {
-  background: rgba(0, 0, 0, 0.95) !important;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.6) !important;
+  backdrop-filter: blur(25px) saturate(200%);
+  -webkit-backdrop-filter: blur(25px) saturate(200%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 /* Toolbar */
@@ -68,12 +71,14 @@
   transform: skewX(-5deg);
 
   /* 悬停效果 */
-  transition: all var(--lz-duration-fast) var(--lz-ease-in-out);
+  transition: all var(--lz-duration-normal) var(--lz-ease-in-out);
 }
 
 .header .logo:hover {
-  opacity: 0.8;
   background: transparent !important;
+  color: #FFFFFF !important;
+  text-shadow: 0 0 30px rgba(220, 38, 38, 1), 0 0 40px rgba(220, 38, 38, 0.8), 0 2px 12px rgba(0, 0, 0, 0.6);
+  filter: drop-shadow(0 0 20px rgba(220, 38, 38, 0.8)) drop-shadow(0 0 30px rgba(220, 38, 38, 0.6));
 }
 
 /* ==================== 导航菜单 ==================== */
@@ -102,12 +107,14 @@
   min-width: auto !important;
 
   /* 悬停效果 */
-  transition: color var(--lz-duration-fast) var(--lz-ease-in-out);
+  transition: all var(--lz-duration-normal) var(--lz-ease-in-out);
 }
 
 .header-desktop .nav-link:hover {
   background-color: transparent !important;
-  color: rgba(255, 255, 255, 0.7) !important;
+  color: #FFFFFF !important;
+  text-shadow: 0 0 25px rgba(220, 38, 38, 1), 0 0 35px rgba(220, 38, 38, 0.8);
+  filter: drop-shadow(0 0 15px rgba(220, 38, 38, 0.8)) drop-shadow(0 0 25px rgba(220, 38, 38, 0.5));
 }
 
 /* 移除下划线效果 */
@@ -120,37 +127,32 @@
 .header .btn-language {
   display: inline-flex !important;
   background-color: transparent !important;
-  color: transparent !important;
-  border: none !important;
+  color: #FFFFFF !important;
+  border: 1.5px solid #FFFFFF !important;
+  border-radius: 24px !important;
   box-shadow: none !important;
-  padding: 0 !important;
-  font-size: 14px !important;
+  padding: 10px 24px !important;
+  font-size: 15px !important;
   font-weight: 400 !important;
   text-transform: none !important;
   min-width: auto !important;
   margin-right: 12px;
   cursor: pointer;
+  letter-spacing: 0.02em;
 
   /* 悬停效果 */
-  transition: opacity var(--lz-duration-fast) var(--lz-ease-in-out);
+  transition: all var(--lz-duration-normal) var(--lz-ease-in-out);
 }
 
 .header .btn-language:hover {
-  background-color: transparent !important;
-  opacity: 0.8;
+  background-color: rgba(220, 38, 38, 0.15) !important;
+  border-color: #DC2626 !important;
+  box-shadow: 0 0 20px rgba(220, 38, 38, 0.5) !important;
 }
 
-.header .btn-language .language {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.header .btn-language .flag {
-  margin: 0;
-  cursor: pointer;
-  /* 添加微妙阴影让国旗更突出 */
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+.header .btn-language .language-text {
+  color: #FFFFFF;
+  white-space: nowrap;
 }
 
 /* 隐藏货币按钮 */
@@ -178,8 +180,10 @@
 }
 
 .header .btn-book-now:hover {
-  background-color: #FFFFFF !important;
-  color: #000000 !important;
+  background-color: rgba(220, 38, 38, 0.15) !important;
+  border-color: #DC2626 !important;
+  box-shadow: 0 0 20px rgba(220, 38, 38, 0.5) !important;
+  color: #FFFFFF !important;
 }
 
 .header .btn-book-now span {
@@ -209,6 +213,11 @@
 /* 汉堡菜单按钮 - 桌面端隐藏 */
 .header .toolbar .MuiIconButton-root:first-child {
   display: none !important;
+  transition: all var(--lz-duration-normal) var(--lz-ease-in-out);
+}
+
+.header .toolbar .MuiIconButton-root:first-child:hover {
+  filter: drop-shadow(0 0 15px rgba(220, 38, 38, 1)) drop-shadow(0 0 25px rgba(220, 38, 38, 0.7));
 }
 
 /* 侧边栏 */
@@ -327,6 +336,11 @@
   .header .toolbar .MuiIconButton-root:first-child {
     display: inline-flex !important;
     color: #FFFFFF !important;
+    transition: all var(--lz-duration-normal) var(--lz-ease-in-out);
+  }
+
+  .header .toolbar .MuiIconButton-root:first-child:hover {
+    filter: drop-shadow(0 0 15px rgba(220, 38, 38, 1)) drop-shadow(0 0 25px rgba(220, 38, 38, 0.7));
   }
 
   /* 移动端保留语言切换和 Book Now 按钮 */
@@ -336,12 +350,13 @@
   }
 
   .header .btn-language {
-    padding: 0 !important;
+    padding: 8px 16px !important;
     margin-right: 8px;
+    font-size: 14px !important;
   }
 
   .header .btn-book-now {
-    padding: 8px 20px !important;
+    padding: 8px 24px !important;
     font-size: 14px !important;
   }
 
@@ -374,8 +389,9 @@
   }
 
   .header .btn-language {
-    padding: 0 !important;
+    padding: 6px 12px !important;
     margin-right: 6px;
+    font-size: 13px !important;
   }
 
   .header .btn-book-now {

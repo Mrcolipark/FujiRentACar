@@ -29,6 +29,34 @@ const Faq = () => {
           <AccordionSummary expandIcon={<ExpandMore />}><Typography component="span" className="accordion-title">{strings.FAQ_CANCEL_TITLE}</Typography></AccordionSummary>
           <AccordionDetails className="accordion-details">{strings.FAQ_CANCEL_TEXT}</AccordionDetails>
         </Accordion>
+        <Accordion>
+          <AccordionSummary expandIcon={<ExpandMore />}><Typography component="span" className="accordion-title">{strings.FAQ_INSURANCE_TITLE}</Typography></AccordionSummary>
+          <AccordionDetails className="accordion-details">{strings.FAQ_INSURANCE_TEXT}</AccordionDetails>
+        </Accordion>
+        <Accordion>
+          <AccordionSummary expandIcon={<ExpandMore />}><Typography component="span" className="accordion-title">{strings.FAQ_PAYMENT_TITLE}</Typography></AccordionSummary>
+          <AccordionDetails className="accordion-details">{strings.FAQ_PAYMENT_TEXT}</AccordionDetails>
+        </Accordion>
+        <Accordion>
+          <AccordionSummary expandIcon={<ExpandMore />}><Typography component="span" className="accordion-title">{strings.FAQ_FUEL_TITLE}</Typography></AccordionSummary>
+          <AccordionDetails className="accordion-details">{strings.FAQ_FUEL_TEXT}</AccordionDetails>
+        </Accordion>
+        <Accordion>
+          <AccordionSummary expandIcon={<ExpandMore />}><Typography component="span" className="accordion-title">{strings.FAQ_MILEAGE_TITLE}</Typography></AccordionSummary>
+          <AccordionDetails className="accordion-details">{strings.FAQ_MILEAGE_TEXT}</AccordionDetails>
+        </Accordion>
+        <Accordion>
+          <AccordionSummary expandIcon={<ExpandMore />}><Typography component="span" className="accordion-title">{strings.FAQ_ADDITIONAL_DRIVER_TITLE}</Typography></AccordionSummary>
+          <AccordionDetails className="accordion-details">{strings.FAQ_ADDITIONAL_DRIVER_TEXT}</AccordionDetails>
+        </Accordion>
+        <Accordion>
+          <AccordionSummary expandIcon={<ExpandMore />}><Typography component="span" className="accordion-title">{strings.FAQ_MODIFICATION_TITLE}</Typography></AccordionSummary>
+          <AccordionDetails className="accordion-details">{strings.FAQ_MODIFICATION_TEXT}</AccordionDetails>
+        </Accordion>
+        <Accordion>
+          <AccordionSummary expandIcon={<ExpandMore />}><Typography component="span" className="accordion-title">{strings.FAQ_ROADSIDE_TITLE}</Typography></AccordionSummary>
+          <AccordionDetails className="accordion-details">{strings.FAQ_ROADSIDE_TEXT}</AccordionDetails>
+        </Accordion>
       </div>
       <Button
         variant="contained"

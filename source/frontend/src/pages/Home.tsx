@@ -29,7 +29,6 @@ import Map from '@/components/Map'
 import Footer from '@/components/Footer'
 import FaqList from '@/components/FaqList'
 import StatsSection from '@/components/StatsSection'
-import ReputationSection from '@/components/ReputationSection'
 import ServicesSection from '@/components/ServicesSection'
 import PartnersSection from '@/components/PartnersSection'
 import VehicleGridSection from '@/components/VehicleGridSection'
@@ -113,7 +112,7 @@ const Home = () => {
             <Button
               variant="contained"
               className="hero-cta"
-              onClick={() => navigate('/search')}
+              onClick={() => navigate('/vehicles')}
             >
               {strings.HERO_CTA}
             </Button>
@@ -123,9 +122,6 @@ const Home = () => {
 
         {/* LUZURIO: 统计数据区 */}
         <StatsSection />
-
-        {/* LUZURIO: 品牌声誉区 */}
-        <ReputationSection />
 
         {/* LUZURIO: 服务特色区 */}
         <ServicesSection />

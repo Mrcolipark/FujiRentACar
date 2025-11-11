@@ -49,8 +49,8 @@
         "en": "4-23-6 Kamezawa, Sumida-ku, Tokyo 130-0014",
         "zh": "〒130-0014 东京都墨田区龟泽4丁目-23-6"
       },
-      "latitude": 35.698,
-      "longitude": 139.794,
+      "latitude": 35.6990451,
+      "longitude": 139.8061118,
       "image": "/images/locations/sumida.jpg",
       "hours": "09:00-18:00",
       "phone": "04-7676-9965",
@@ -59,8 +59,8 @@
       "parkingSpots": [
         {
           "name": "店舗前駐車場",
-          "latitude": 35.698,
-          "longitude": 139.794
+          "latitude": 35.6990451,
+          "longitude": 139.8061118
         }
       ],
       "instructions": {

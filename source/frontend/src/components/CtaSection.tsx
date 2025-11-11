@@ -34,7 +34,7 @@ const CtaSection: React.FC = () => {
             variant="contained"
             className="cta-button"
             endIcon={<ArrowForward />}
-            onClick={() => navigate('/search')}
+            onClick={() => navigate('/vehicles')}
           >
             {strings.CTA_BUTTON}
           </Button>

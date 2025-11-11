@@ -13,7 +13,7 @@ const LANGUAGES: Language[] = [
   {
     code: 'ja',
     countryCode: 'jp',
-    label: '日本語',
+    label: 'Japanese（日本語）',
   },
   {
     code: 'en',
@@ -23,7 +23,7 @@ const LANGUAGES: Language[] = [
   {
     code: 'zh',
     countryCode: 'cn',
-    label: '中文',
+    label: 'Chinese（繁體中文）',
   },
 ]
 

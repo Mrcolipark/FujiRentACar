@@ -347,9 +347,9 @@ const strings = new LocalizedStrings({
     LOCATION_NARITA: '成田機場',
 
     // LUZURIO Quality Section
-    QUALITY_TITLE: '無可挑剔的品保證',
+    QUALITY_TITLE: '無可挑剔的品質保證',
     QUALITY_SUBTITLE: '卓越體現於每个細節',
-    QUALITY_BADGE: '品保證',
+    QUALITY_BADGE: '品質保證',
     QUALITY_FEATURE_1: '全車深度清洁消毒',
     QUALITY_FEATURE_2: '定期保养確保最佳性能',
     QUALITY_FEATURE_3: '24/7道路救援服務',

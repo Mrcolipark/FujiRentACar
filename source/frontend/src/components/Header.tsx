@@ -302,10 +302,7 @@ const Header = ({
       {
         env._LANGUAGES.map((language) => (
           <MenuItem onClick={handleLangMenuClose} data-code={language.code} key={language.code}>
-            <div className="language">
-              <CircleFlag countryCode={language.countryCode as string} height={flagHeight} className="flag" title={language.label} />
-              <span>{language.label}</span>
-            </div>
+            <span>{language.label}</span>
           </MenuItem>
         ))
       }
@@ -486,9 +483,7 @@ const Header = ({
               {/* 语言切换按钮 */}
               {isLoaded && (
                 <Button variant="contained" onClick={handleLangMenuOpen} disableElevation className="btn-language">
-                  <div className="language">
-                    <CircleFlag countryCode={lang?.countryCode as string} height={flagHeight} className="flag" title={lang?.label} />
-                  </div>
+                  <span className="language-text">{lang?.label}</span>
                 </Button>
               )}
 
@@ -496,7 +491,7 @@ const Header = ({
               <Button
                 variant="outlined"
                 className="btn-book-now"
-                onClick={() => navigate('/search')}
+                onClick={() => navigate('/contact')}
               >
                 {strings.BOOK_NOW || 'Book Now'}
               </Button>

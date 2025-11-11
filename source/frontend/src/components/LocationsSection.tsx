@@ -22,6 +22,8 @@ interface Location {
   address: string
   mapUrl: string
   embedUrl: string
+  latitude: number
+  longitude: number
 }
 
 const LocationsSection: React.FC = () => {
@@ -33,14 +35,18 @@ const LocationsSection: React.FC = () => {
       name: strings.MAIN_OFFICE,
       address: '〒130-0014 東京都 墨田区 亀沢４丁目-２３-6',
       mapUrl: 'https://maps.app.goo.gl/MsntSiHKXXkD9pHFA',
-      embedUrl: 'https://www.google.com/maps?q=東京都墨田区亀沢4-23-6&output=embed'
+      latitude: 35.6990451,
+      longitude: 139.8061118,
+      embedUrl: 'https://www.google.com/maps?q=35.6990451,139.8061118&output=embed&z=17'
     },
     {
       id: 'narita',
       name: strings.NARITA_OFFICE,
       address: '〒286-0106 千葉県成田市取香564-1',
       mapUrl: 'https://maps.app.goo.gl/Go3MMFhRsDsuPEug9',
-      embedUrl: 'https://www.google.com/maps?q=千葉県成田市取香564-1&output=embed'
+      latitude: 35.764,
+      longitude: 140.386,
+      embedUrl: 'https://www.google.com/maps?q=35.764,140.386&output=embed&z=16'
     }
   ]
 
