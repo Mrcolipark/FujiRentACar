@@ -1,6 +1,6 @@
 /**
- * LUZURIO Header Styles
- * 深色透明Header，带黄绿色Logo和白色CTA按钮
+ * FUJI RENT A CAR Header Styles
+ * 极简透明Header，中央导航菜单，右侧Book Now按钮
  */
 
 /* ==================== Header主体 ==================== */
@@ -13,13 +13,12 @@
   right: 0;
   z-index: var(--lz-z-fixed);
 
-  /* 半透明黑色背景 */
-  background: rgba(0, 0, 0, 0.85) !important;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  /* 完全透明背景 */
+  background: transparent !important;
 
-  /* 底部边框 */
-  border-bottom: 1px solid var(--lz-border);
+  /* 无边框 */
+  border: none !important;
+  box-shadow: none !important;
 
   /* 平滑过渡 */
   transition: all var(--lz-duration-normal) var(--lz-ease-in-out);
@@ -28,47 +27,53 @@
   transform: translate3d(0, 0, 0);
 }
 
-/* 滚动时完全不透明 */
+/* 滚动时添加深色背景 */
 .header.scrolled {
-  background: var(--lz-bg-primary) !important;
-  box-shadow: var(--lz-shadow-md);
+  background: rgba(0, 0, 0, 0.95) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 /* Toolbar */
 .header .toolbar {
-  min-height: 72px !important;
-  padding: 0 var(--lz-container-padding) !important;
-  max-width: var(--lz-container-max-width);
+  min-height: 80px !important;
+  padding: 0 60px !important;
+  max-width: 100%;
   margin: 0 auto;
   width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* ==================== Logo ==================== */
 
 .header .logo {
   text-decoration: none;
-  text-transform: none;
-  background: transparent;
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  background: transparent !important;
+  padding: 8px 0 !important;
+  min-width: auto !important;
 
-  /* 使用品牌黄绿色 */
-  color: var(--lz-accent-primary) !important;
+  /* 文字样式 - 粗体运动风格 */
+  color: #FFFFFF !important;
+  font-size: 22px !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.08em !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif !important;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+  white-space: nowrap;
+  font-style: italic;
+  transform: skewX(-5deg);
 
   /* 悬停效果 */
-  transition: opacity var(--lz-duration-fast) var(--lz-ease-in-out);
+  transition: all var(--lz-duration-fast) var(--lz-ease-in-out);
 }
 
 .header .logo:hover {
   opacity: 0.8;
-}
-
-/* Logo图标（如果有） */
-.header .logo-icon {
-  width: 32px;
-  height: 32px;
-  margin-right: 12px;
+  background: transparent !important;
 }
 
 /* ==================== 导航菜单 ==================== */
@@ -76,21 +81,25 @@
 .header-desktop {
   display: flex;
   flex-direction: row;
-  flex-grow: 0;
-  justify-content: flex-end;
+  flex-grow: 1;
+  justify-content: center;
   align-items: center;
-  gap: 12px;
-  margin-left: auto;
+  gap: 48px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .header-desktop .nav-link {
   background-color: transparent !important;
-  color: var(--lz-text-primary) !important;
+  color: #FFFFFF !important;
   text-transform: none !important;
   font-size: 15px;
-  font-weight: 500;
-  padding: 8px 0;
+  font-weight: 400;
+  padding: 8px 0 !important;
   position: relative;
+  letter-spacing: 0.02em;
+  min-width: auto !important;
 
   /* 悬停效果 */
   transition: color var(--lz-duration-fast) var(--lz-ease-in-out);
@@ -98,77 +107,96 @@
 
 .header-desktop .nav-link:hover {
   background-color: transparent !important;
-  color: var(--lz-accent-primary) !important;
+  color: rgba(255, 255, 255, 0.7) !important;
 }
 
-/* 导航链接下划线效果 */
+/* 移除下划线效果 */
 .header-desktop .nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--lz-accent-primary);
-  transition: width var(--lz-duration-normal) var(--lz-ease-out);
+  display: none;
 }
 
-.header-desktop .nav-link:hover::after,
-.header-desktop .nav-link.active::after {
-  width: 100%;
-}
+/* ==================== 语言切换按钮 ==================== */
 
-/* ==================== 语言/货币切换按钮 ==================== */
-
-.header .btn {
-  background-color: rgba(255, 255, 255, 0.05) !important;
-  color: var(--lz-text-primary) !important;
+.header .btn-language {
+  display: inline-flex !important;
+  background-color: transparent !important;
+  color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
   text-transform: none !important;
-  font-size: 14px;
-  font-weight: 500;
-  padding: 8px 16px;
-  border-radius: var(--lz-radius-md);
-  min-width: 56px;
+  min-width: auto !important;
+  margin-right: 12px;
+  cursor: pointer;
 
   /* 悬停效果 */
-  transition: all var(--lz-duration-fast) var(--lz-ease-in-out);
+  transition: opacity var(--lz-duration-fast) var(--lz-ease-in-out);
 }
 
-.header .btn:hover {
-  background-color: rgba(255, 255, 255, 0.1) !important;
-  color: var(--lz-text-primary) !important;
-  transform: translateY(-1px);
-}
-
-.header .btn.bold {
-  font-weight: 600;
-}
-
-/* ==================== CTA按钮（Create Account / Sign In）==================== */
-
-.header .btn-auth {
+.header .btn-language:hover {
   background-color: transparent !important;
-  color: var(--lz-text-primary) !important;
-  border: 2px solid var(--lz-text-primary) !important;
-  border-radius: var(--lz-radius-md) !important;
-  padding: 10px 28px !important;
+  opacity: 0.8;
+}
+
+.header .btn-language .language {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header .btn-language .flag {
+  margin: 0;
+  cursor: pointer;
+  /* 添加微妙阴影让国旗更突出 */
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+}
+
+/* 隐藏货币按钮 */
+.header .btn.bold {
+  display: none !important;
+}
+
+/* ==================== Book Now 按钮 ==================== */
+
+.header .btn-book-now {
+  display: inline-flex !important;
+  background-color: transparent !important;
+  color: #FFFFFF !important;
+  border: 1.5px solid #FFFFFF !important;
+  border-radius: 24px !important;
+  padding: 10px 32px !important;
   font-size: 15px !important;
-  font-weight: 600 !important;
+  font-weight: 400 !important;
   text-transform: none !important;
-  margin-left: 16px;
+  min-width: auto !important;
+  letter-spacing: 0.02em;
 
   /* 悬停效果 */
   transition: all var(--lz-duration-normal) var(--lz-ease-in-out);
 }
 
-.header .btn-auth:hover {
-  background-color: var(--lz-text-primary) !important;
-  color: var(--lz-bg-primary) !important;
-  transform: translateY(-2px);
+.header .btn-book-now:hover {
+  background-color: #FFFFFF !important;
+  color: #000000 !important;
 }
 
-.header .btn-auth span.btn-auth-txt {
+.header .btn-book-now span {
   white-space: nowrap;
+}
+
+/* 隐藏旧的 auth 按钮 */
+.header .btn-auth {
+  display: none !important;
+}
+
+/* Header 右侧按钮容器 */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
 }
 
 /* ==================== 移动端菜单 ==================== */
@@ -178,23 +206,23 @@
   margin-left: auto;
 }
 
-/* 汉堡菜单按钮 */
-.header-mobile .menu-button {
-  color: var(--lz-text-primary) !important;
+/* 汉堡菜单按钮 - 桌面端隐藏 */
+.header .toolbar .MuiIconButton-root:first-child {
+  display: none !important;
 }
 
 /* 侧边栏 */
 .side-menu {
-  background-color: var(--lz-bg-primary) !important;
-  color: var(--lz-text-primary) !important;
+  background-color: #000000 !important;
+  color: #FFFFFF !important;
   width: 280px !important;
 }
 
 .side-menu li {
   cursor: pointer;
-  color: var(--lz-text-primary) !important;
+  color: #FFFFFF !important;
   padding: 16px 24px !important;
-  border-bottom: 1px solid var(--lz-border);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 
   /* 悬停效果 */
   transition: background-color var(--lz-duration-fast) var(--lz-ease-in-out);
@@ -205,12 +233,12 @@
 }
 
 .side-menu .MuiListItemIcon-root {
-  color: var(--lz-accent-primary) !important;
+  color: #FFFFFF !important;
   min-width: 40px !important;
 }
 
 .side-menu .MuiListItemText-root {
-  color: var(--lz-text-primary) !important;
+  color: #FFFFFF !important;
 }
 
 /* ==================== 下拉菜单（语言/货币）==================== */
@@ -249,8 +277,8 @@
 }
 
 .menu div.language .flag {
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
 }
 
@@ -270,70 +298,89 @@
 /* Desktop (>= 960px) */
 @media only screen and (min-width: 960px) {
   .header {
-    min-height: 72px;
+    min-height: 80px;
+  }
+
+  /* 桌面端隐藏汉堡菜单 */
+  .header .toolbar .MuiIconButton-root:first-child {
+    display: none !important;
   }
 }
 
 /* Tablet & Mobile (<= 960px) */
 @media only screen and (max-width: 960px) {
   .header {
-    min-height: 64px;
+    min-height: 70px;
   }
 
   .header .toolbar {
-    min-height: 64px !important;
+    min-height: 70px !important;
     padding: 0 24px !important;
   }
 
+  /* 移动端隐藏桌面导航 */
   .header-desktop {
     display: none !important;
   }
 
-  .header-mobile {
-    display: flex;
-    gap: 8px;
+  /* 移动端显示汉堡菜单 */
+  .header .toolbar .MuiIconButton-root:first-child {
+    display: inline-flex !important;
+    color: #FFFFFF !important;
   }
 
-  .header .btn-auth {
+  /* 移动端保留语言切换和 Book Now 按钮 */
+  .header-actions {
+    display: flex;
+    gap: 6px;
+  }
+
+  .header .btn-language {
+    padding: 0 !important;
+    margin-right: 8px;
+  }
+
+  .header .btn-book-now {
     padding: 8px 20px !important;
     font-size: 14px !important;
-    margin-left: 12px;
+  }
+
+  .header-mobile {
+    display: none;
   }
 
   .header .logo {
-    font-size: 18px;
+    font-size: 20px !important;
   }
 }
 
 /* Mobile (<= 600px) */
 @media only screen and (max-width: 600px) {
   .header {
-    min-height: 56px;
+    min-height: 64px;
   }
 
   .header .toolbar {
-    min-height: 56px !important;
+    min-height: 64px !important;
     padding: 0 16px !important;
   }
 
   .header .logo {
-    font-size: 15px;
+    font-size: 16px !important;
   }
 
-  .header .btn-auth {
+  .header-actions {
+    gap: 4px;
+  }
+
+  .header .btn-language {
+    padding: 0 !important;
+    margin-right: 6px;
+  }
+
+  .header .btn-book-now {
     padding: 6px 16px !important;
     font-size: 13px !important;
-    margin-left: 8px;
-  }
-
-  .header-mobile {
-    gap: 6px;
-  }
-
-  .header .btn {
-    padding: 6px 12px;
-    font-size: 13px;
-    min-width: 48px;
   }
 }
 
@@ -371,19 +418,7 @@
 
 /* ==================== 补偿页面顶部空间 ==================== */
 
-/* 由于Header是fixed，需要给body添加padding-top */
+/* Header 是透明的，覆盖在内容之上，不需要 body padding */
 body {
-  padding-top: 72px;
-}
-
-@media only screen and (max-width: 960px) {
-  body {
-    padding-top: 64px;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  body {
-    padding-top: 56px;
-  }
+  padding-top: 0;
 }

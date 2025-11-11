@@ -33,6 +33,19 @@ const Footer = () => {
     <footer className="lz-footer">
       <div className="lz-footer-container">
 
+        {/* Newsletter 订阅区 - 独立顶部区块 */}
+        <div className="lz-footer-newsletter-section">
+          <div className="lz-newsletter-content">
+            <div className="lz-newsletter-text">
+              <h3 className="lz-newsletter-title">{strings.NEWSLETTER_TITLE}</h3>
+              <p className="lz-newsletter-description">{strings.NEWSLETTER_DESCRIPTION}</p>
+            </div>
+            <div className="lz-newsletter-form-wrapper">
+              <NewsletterForm />
+            </div>
+          </div>
+        </div>
+
         {/* 主要内容区 - 4列布局 */}
         <div className="lz-footer-main">
 
@@ -105,11 +118,6 @@ const Footer = () => {
                   <Instagram />
                 </IconButton>
               </div>
-            </div>
-
-            {/* Newsletter */}
-            <div className="lz-footer-newsletter">
-              <NewsletterForm />
             </div>
           </div>
 

@@ -15,7 +15,7 @@ const strings = new LocalizedStrings({
     MORE_THAN_FIVE_SEATS: '5+ seats',
   },
   zh: {
-    CAR_SPECS: '车辆规格',
+    CAR_SPECS: '車輛规格',
     AIRCON: '空调',
     MORE_THAN_FOOR_DOORS: '4门及以上',
     MORE_THAN_FIVE_SEATS: '5座及以上',

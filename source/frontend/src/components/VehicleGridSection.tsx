@@ -1,82 +1,71 @@
 /**
  * LUZURIO Vehicle Grid Section Component
  * 车辆网格展示区：2x3大卡片，带SUPERIOR标签
+ * 从实际车辆清单中选择最高级的6辆车展示（支持多语言）
  */
 
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Button } from '@mui/material'
 import { ArrowForward } from '@mui/icons-material'
 import { strings } from '@/lang/home'
+import * as UserService from '@/services/UserService'
 import '@/assets/css/vehicle-grid-section.css'
+
+interface MultiLangText {
+  ja: string
+  zh: string
+  en: string
+}
 
 interface Vehicle {
   id: string
-  name: string
-  category: string
+  name: MultiLangText
+  brand: string
+  model: MultiLangText
+  category: MultiLangText
   image: string
   isSuperior: boolean
-  passengers: number
+  seats: number
+  price: number
   transmission: string
 }
 
 const VehicleGridSection: React.FC = () => {
-  // 6辆展示车辆（占位符数据）
-  const vehicles: Vehicle[] = [
-    {
-      id: '1',
-      name: 'Mercedes-Benz S-Class',
-      category: 'Luxury Sedan',
-      image: 'https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=800&h=600&fit=crop',
-      isSuperior: true,
-      passengers: 5,
-      transmission: 'Automatic',
-    },
-    {
-      id: '2',
-      name: 'BMW 7 Series',
-      category: 'Executive Sedan',
-      image: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&h=600&fit=crop',
-      isSuperior: true,
-      passengers: 5,
-      transmission: 'Automatic',
-    },
-    {
-      id: '3',
-      name: 'Porsche Panamera',
-      category: 'Sports Sedan',
-      image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&h=600&fit=crop',
-      isSuperior: true,
-      passengers: 4,
-      transmission: 'Automatic',
-    },
-    {
-      id: '4',
-      name: 'Range Rover Sport',
-      category: 'Luxury SUV',
-      image: 'https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=800&h=600&fit=crop',
-      isSuperior: false,
-      passengers: 7,
-      transmission: 'Automatic',
-    },
-    {
-      id: '5',
-      name: 'Audi A8',
-      category: 'Premium Sedan',
-      image: 'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&h=600&fit=crop',
-      isSuperior: false,
-      passengers: 5,
-      transmission: 'Automatic',
-    },
-    {
-      id: '6',
-      name: 'Lexus LS',
-      category: 'Luxury Sedan',
-      image: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=800&h=600&fit=crop',
-      isSuperior: false,
-      passengers: 5,
-      transmission: 'Automatic',
-    },
-  ]
+  const navigate = useNavigate()
+  const [vehicles, setVehicles] = useState<Vehicle[]>([])
+  const language = UserService.getLanguage()
+
+  useEffect(() => {
+    // 从JSON文件加载车辆数据
+    fetch('/data/vehicles.json')
+      .then(response => response.json())
+      .then((data: Vehicle[]) => {
+        // 按价格排序，取前6辆
+        const topVehicles = data
+          .filter(v => v.price && typeof v.price === 'number')
+          .sort((a, b) => b.price - a.price)
+          .slice(0, 6)
+        setVehicles(topVehicles)
+      })
+      .catch(error => {
+        console.error('加载车辆数据失败:', error)
+      })
+  }, [])
+
+  // 根据当前语言获取文本
+  const getText = (text: MultiLangText | string): string => {
+    if (typeof text === 'string') return text
+    return text[language as keyof MultiLangText] || text.en
+  }
+
+  const handleViewDetails = (vehicleId: string) => {
+    navigate(`/vehicles/${vehicleId}`)
+  }
+
+  const handleViewAllVehicles = () => {
+    navigate('/vehicles')
+  }
 
   return (
     <section className="vehicle-grid-section">
@@ -97,7 +86,7 @@ const VehicleGridSection: React.FC = () => {
               <div className="vehicle-image-wrapper">
                 <img
                   src={vehicle.image}
-                  alt={vehicle.name}
+                  alt={getText(vehicle.name)}
                   className="vehicle-image"
                 />
 
@@ -114,6 +103,7 @@ const VehicleGridSection: React.FC = () => {
                     variant="contained"
                     className="view-details-btn"
                     endIcon={<ArrowForward />}
+                    onClick={() => handleViewDetails(vehicle.id)}
                   >
                     {strings.VIEW_DETAILS}
                   </Button>
@@ -122,11 +112,11 @@ const VehicleGridSection: React.FC = () => {
 
               {/* 车辆信息 */}
               <div className="vehicle-info">
-                <div className="vehicle-category">{vehicle.category}</div>
-                <h3 className="vehicle-name">{vehicle.name}</h3>
+                <div className="vehicle-category">{getText(vehicle.category)}</div>
+                <h3 className="vehicle-name">{getText(vehicle.name)}</h3>
                 <div className="vehicle-specs">
                   <span className="vehicle-spec">
-                    {vehicle.passengers} {strings.PASSENGERS}
+                    {vehicle.seats} {strings.PASSENGERS}
                   </span>
                   <span className="vehicle-spec-divider">•</span>
                   <span className="vehicle-spec">{vehicle.transmission}</span>
@@ -143,6 +133,7 @@ const VehicleGridSection: React.FC = () => {
             variant="outlined"
             className="view-all-btn"
             endIcon={<ArrowForward />}
+            onClick={handleViewAllVehicles}
           >
             {strings.VIEW_ALL_VEHICLES}
           </Button>

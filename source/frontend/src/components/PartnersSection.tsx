@@ -50,30 +50,35 @@ const PartnersSection: React.FC = () => {
     },
   ]
 
+  // 复制两次logo数组以实现无缝循环
+  const duplicatedPartners = [...partners, ...partners]
+
   return (
     <section className="partners-section">
       <div className="partners-container">
         <h2 className="partners-title">{strings.PARTNERS_TITLE}</h2>
 
         <div className="partners-grid">
-          {partners.map((partner, index) => (
-            <div key={index} className="partner-item">
-              <img
-                src={partner.logo}
-                alt={partner.name}
-                className="partner-logo"
-                onError={(e) => {
-                  // 如果Logo加载失败，显示品牌名称
-                  const target = e.target as HTMLImageElement
-                  target.style.display = 'none'
-                  const parent = target.parentElement
-                  if (parent) {
-                    parent.innerHTML = `<span class="partner-fallback">${partner.name}</span>`
-                  }
-                }}
-              />
-            </div>
-          ))}
+          <div className="partners-scroll-track">
+            {duplicatedPartners.map((partner, index) => (
+              <div key={index} className="partner-item">
+                <img
+                  src={partner.logo}
+                  alt={partner.name}
+                  className="partner-logo"
+                  onError={(e) => {
+                    // 如果Logo加载失败，显示品牌名称
+                    const target = e.target as HTMLImageElement
+                    target.style.display = 'none'
+                    const parent = target.parentElement
+                    if (parent) {
+                      parent.innerHTML = `<span class="partner-fallback">${partner.name}</span>`
+                    }
+                  }}
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

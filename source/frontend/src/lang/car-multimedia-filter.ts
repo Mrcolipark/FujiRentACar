@@ -17,7 +17,7 @@ const strings = new LocalizedStrings({
     APPLE_CAR_PLAY: 'Apple Car Play',
   },
   zh: {
-    MULTIMEDIA: '多媒体',
+    MULTIMEDIA: '多媒體',
     TOUCHSCREEN: '触摸屏',
     BLUETOOTH: 'Bluetooth',
     ANDROID_AUTO: 'Android Auto',

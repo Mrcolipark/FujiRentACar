@@ -21,7 +21,7 @@ const strings = new LocalizedStrings({
     MINI: '迷你',
     MIDI: '中型',
     MAXI: '大型',
-    SCOOTER: '踏板车',
+    SCOOTER: '踏板車',
   },
 })
 

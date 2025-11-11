@@ -1,13 +1,14 @@
 /**
  * LUZURIO Footer Styles
- * 完全重构的4列布局 + 社交图标
+ * 高级现代化布局 + 优雅排版
  */
 
 .lz-footer {
   width: 100%;
-  background-color: var(--lz-bg-primary);
+  background: var(--lz-bg-primary);
   border-top: 1px solid var(--lz-border);
   padding: var(--lz-spacing-xxl) 0 0 0;
+  position: relative;
 }
 
 .lz-footer-container {
@@ -24,12 +25,31 @@
   gap: var(--lz-spacing-xxl);
   padding-bottom: var(--lz-spacing-xxl);
   border-bottom: 1px solid var(--lz-border);
+  position: relative;
 }
 
 .lz-footer-column {
   display: flex;
   flex-direction: column;
   gap: var(--lz-spacing-md);
+  animation: fadeInUp 0.6s ease-out;
+  animation-fill-mode: both;
+}
+
+.lz-footer-column:nth-child(1) { animation-delay: 0.1s; }
+.lz-footer-column:nth-child(2) { animation-delay: 0.2s; }
+.lz-footer-column:nth-child(3) { animation-delay: 0.3s; }
+.lz-footer-column:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ==================== 第1列：品牌信息 ==================== */
@@ -42,8 +62,9 @@
   font-size: var(--lz-font-size-h4);
   font-weight: var(--lz-font-weight-black);
   color: var(--lz-accent-primary);
-  margin: 0 0 var(--lz-spacing-sm) 0;
+  margin: 0 0 var(--lz-spacing-md) 0;
   letter-spacing: var(--lz-letter-spacing-wide);
+  text-transform: uppercase;
 }
 
 .lz-footer-description {
@@ -90,9 +111,21 @@
   font-size: var(--lz-font-size-body);
   font-weight: var(--lz-font-weight-bold);
   color: var(--lz-text-primary);
-  margin: 0 0 var(--lz-spacing-md) 0;
+  margin: 0 0 var(--lz-spacing-lg) 0;
   text-transform: uppercase;
-  letter-spacing: var(--lz-letter-spacing-wide);
+  letter-spacing: var(--lz-letter-spacing-widest);
+  position: relative;
+  padding-bottom: var(--lz-spacing-sm);
+}
+
+.lz-footer-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--lz-accent-primary) 0%, transparent 100%);
 }
 
 /* ==================== 链接列表 ==================== */
@@ -137,24 +170,29 @@
 /* ==================== 社交媒体 ==================== */
 
 .lz-footer-social {
-  margin-top: var(--lz-spacing-md);
+  margin-top: var(--lz-spacing-lg);
+  padding-top: var(--lz-spacing-lg);
+  border-top: 1px solid var(--lz-border);
 }
 
 .lz-footer-social-title {
   font-size: var(--lz-font-size-small);
   font-weight: var(--lz-font-weight-semibold);
   color: var(--lz-text-primary);
-  margin: 0 0 var(--lz-spacing-sm) 0;
+  margin: 0 0 var(--lz-spacing-md) 0;
+  text-transform: uppercase;
+  letter-spacing: var(--lz-letter-spacing-wide);
 }
 
 .lz-social-icons {
   display: flex;
   gap: var(--lz-spacing-sm);
+  flex-wrap: wrap;
 }
 
 .lz-social-icon {
   color: var(--lz-text-secondary) !important;
-  border: 2px solid var(--lz-border) !important;
+  border: 1px solid var(--lz-border) !important;
   border-radius: 50% !important;
   padding: 8px !important;
   transition: var(--lz-transition-all) !important;
@@ -163,26 +201,63 @@
 .lz-social-icon:hover {
   color: var(--lz-accent-primary) !important;
   border-color: var(--lz-accent-primary) !important;
-  background-color: rgba(255, 71, 87, 0.1) !important;
-  transform: translateY(-3px);
+  background: rgba(255, 71, 87, 0.05) !important;
+  transform: translateY(-2px);
 }
 
-/* ==================== Newsletter ==================== */
+/* ==================== Newsletter 订阅区 ==================== */
 
-.lz-footer-newsletter {
-  margin-top: var(--lz-spacing-md);
+.lz-footer-newsletter-section {
+  padding-bottom: var(--lz-spacing-xxl);
+  margin-bottom: var(--lz-spacing-xxl);
+  border-bottom: 1px solid var(--lz-border);
+}
+
+.lz-newsletter-content {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: var(--lz-spacing-xxl);
+  align-items: center;
+}
+
+.lz-newsletter-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lz-spacing-sm);
+}
+
+.lz-newsletter-title {
+  font-size: var(--lz-font-size-h3);
+  font-weight: var(--lz-font-weight-bold);
+  color: var(--lz-text-primary);
+  margin: 0;
+  line-height: var(--lz-line-height-snug);
+}
+
+.lz-newsletter-description {
+  font-size: var(--lz-font-size-body);
+  color: var(--lz-text-secondary);
+  margin: 0;
+  line-height: var(--lz-line-height-relaxed);
+}
+
+.lz-newsletter-form-wrapper {
+  width: 100%;
 }
 
 /* ==================== 底部栏 ==================== */
 
 .lz-footer-bottom {
-  padding: var(--lz-spacing-lg) 0;
+  padding: var(--lz-spacing-xl) 0;
+  margin-top: var(--lz-spacing-lg);
+  background: var(--lz-bg-primary);
 }
 
 .lz-footer-bottom-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: var(--lz-spacing-lg);
 }
 
 .lz-footer-copyright {
@@ -190,6 +265,7 @@
   color: var(--lz-text-tertiary);
   display: flex;
   gap: 8px;
+  font-weight: var(--lz-font-weight-medium);
 }
 
 .lz-footer-payment {
@@ -200,18 +276,36 @@
 
 .lz-payment-text {
   font-size: var(--lz-font-size-caption);
-  color: var(--lz-text-secondary);
+  color: var(--lz-text-tertiary);
+  font-weight: var(--lz-font-weight-medium);
 }
 
 .lz-payment-logo {
-  max-height: 40px;
+  max-height: 28px;
   width: auto;
+  opacity: 0.8;
+  transition: var(--lz-transition-all);
+}
+
+.lz-payment-logo:hover {
+  opacity: 1;
 }
 
 /* ==================== 响应式 ==================== */
 
 /* 平板 */
 @media only screen and (max-width: 992px) {
+  .lz-newsletter-content {
+    grid-template-columns: 1fr;
+    gap: var(--lz-spacing-lg);
+    text-align: left;
+  }
+
+  .lz-footer-newsletter-section {
+    padding-bottom: var(--lz-spacing-xl);
+    margin-bottom: var(--lz-spacing-xl);
+  }
+
   .lz-footer-main {
     grid-template-columns: repeat(2, 1fr);
     gap: var(--lz-spacing-xl);
@@ -232,6 +326,23 @@
     padding: 0 var(--lz-spacing-md);
   }
 
+  .lz-newsletter-content {
+    gap: var(--lz-spacing-md);
+  }
+
+  .lz-newsletter-title {
+    font-size: var(--lz-font-size-h4);
+  }
+
+  .lz-newsletter-description {
+    font-size: var(--lz-font-size-small);
+  }
+
+  .lz-footer-newsletter-section {
+    padding-bottom: var(--lz-spacing-lg);
+    margin-bottom: var(--lz-spacing-lg);
+  }
+
   .lz-footer-main {
     grid-template-columns: 1fr;
     gap: var(--lz-spacing-lg);
@@ -250,9 +361,7 @@
   }
 
   .lz-footer-payment {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--lz-spacing-sm);
+    padding: var(--lz-spacing-sm) var(--lz-spacing-md);
   }
 
   .lz-social-icons {

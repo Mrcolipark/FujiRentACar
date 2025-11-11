@@ -34,8 +34,9 @@ import ServicesSection from '@/components/ServicesSection'
 import PartnersSection from '@/components/PartnersSection'
 import VehicleGridSection from '@/components/VehicleGridSection'
 import QualitySection from '@/components/QualitySection'
-import ReviewsSection from '@/components/ReviewsSection'
-import NewsletterSection from '@/components/NewsletterSection'
+import LocationsSection from '@/components/LocationsSection'
+// import ReviewsSection from '@/components/ReviewsSection'
+// import NewsletterSection from '@/components/NewsletterSection'
 
 import '@/assets/css/home.css'
 import '@/assets/css/luzurio-enhancements.css'
@@ -94,20 +95,13 @@ const Home = () => {
         <div className="home-content">
 
           <div className="video">
-            <video
-              id="cover"
-              muted={!env.isSafari}
-              autoPlay={!env.isSafari}
-              loop
-              playsInline
-              disablePictureInPicture
-              onLoadedData={async () => {
+            <img
+              src="/images/hero-car.jpg"
+              alt="Luxury Car"
+              onLoad={() => {
                 setVideoLoaded(true)
               }}
-            >
-              <source src="cover.mp4" type="video/mp4" />
-              <track kind="captions" />
-            </video>
+            />
           </div>
 
           <div className="home-cover">
@@ -145,8 +139,8 @@ const Home = () => {
         {/* LUZURIO: 品质保证区 */}
         <QualitySection />
 
-        {/* LUZURIO: 客户评价区 */}
-        <ReviewsSection />
+        {/* LUZURIO: 客户评价区 - 已移除 */}
+        {/* <ReviewsSection /> */}
 
         {countries.length > 0 && (
           <div className="destinations">
@@ -191,31 +185,11 @@ const Home = () => {
           <FaqList />
         </div>
 
-        <div className="home-map">
-          <Map
-            title={strings.MAP_TITLE}
-            position={new L.LatLng(env.MAP_LATITUDE, env.MAP_LONGITUDE)}
-            initialZoom={env.MAP_ZOOM}
-            locations={locations}
-            onSelelectPickUpLocation={async (locationId) => {
-              setPickupLocation(locationId)
-              if (sameLocation) {
-                setDropOffLocation(locationId)
-              } else {
-                setSameLocation(dropOffLocation === locationId)
-              }
-              setOpenLocationSearchFormDialog(true)
-            }}
-          // onSelelectDropOffLocation={async (locationId) => {
-          //   setDropOffLocation(locationId)
-          //   setSameLocation(pickupLocation === locationId)
-          //   helper.info(strings.MAP_DROP_OFF_SELECTED)
-          // }}
-          />
-        </div>
+        {/* LUZURIO: 营业所地图展示区 - 新设计 */}
+        <LocationsSection />
 
-        {/* Newsletter 订阅区 */}
-        <NewsletterSection />
+        {/* Newsletter 订阅区 - 已移除，订阅功能保留在Footer */}
+        {/* <NewsletterSection /> */}
 
       </div>
 

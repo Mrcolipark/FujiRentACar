@@ -17,11 +17,11 @@ const strings = new LocalizedStrings({
     MESSAGE_SENT: 'Message sent'
   },
   zh: {
-    CONTACT_HEADING: '联系我们',
+    CONTACT_HEADING: '聯絡我們',
     SUBJECT: '主题',
     MESSAGE: '消息',
-    SEND: '发送',
-    MESSAGE_SENT: '消息已发送',
+    SEND: '發送',
+    MESSAGE_SENT: '消息已發送',
   },
 })
 

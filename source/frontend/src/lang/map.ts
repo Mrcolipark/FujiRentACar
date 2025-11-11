@@ -11,8 +11,8 @@ const strings = new LocalizedStrings({
     SELECT_DROP_OFF_LOCATION: 'Set as Drop-off Location',
   },
   zh: {
-    SELECT_PICK_UP_LOCATION: '选择取车地点',
-    SELECT_DROP_OFF_LOCATION: '设为还车地点',
+    SELECT_PICK_UP_LOCATION: '選擇取車地点',
+    SELECT_DROP_OFF_LOCATION: '设為还車地点',
   },
 })
 

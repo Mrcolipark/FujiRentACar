@@ -17,6 +17,8 @@ if (env.GOOGLE_ANALYTICS_ENABLED) {
 const Header = lazy(() => import('@/components/Header'))
 const Home = lazy(() => import('@/pages/Home'))
 const Search = lazy(() => import('@/pages/Search'))
+const Vehicles = lazy(() => import('@/pages/Vehicles'))
+const VehicleDetail = lazy(() => import('@/pages/VehicleDetail'))
 const ToS = lazy(() => import('@/pages/ToS'))
 const Privacy = lazy(() => import('@/pages/Privacy'))
 const About = lazy(() => import('@/pages/About'))
@@ -58,6 +60,8 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Home /> },
       { path: 'search', element: <Search /> },
+      { path: 'vehicles', element: <Vehicles /> },
+      { path: 'vehicles/:id', element: <VehicleDetail /> },
       { path: 'about', element: <About /> },
       { path: 'tos', element: <ToS /> },
       { path: 'privacy', element: <Privacy /> },

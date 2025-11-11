@@ -1,0 +1,460 @@
+/**
+ * FUJI RENT A CAR - Vehicle Detail Page Styles
+ * 車両詳細ページのスタイル
+ */
+
+.vehicle-detail-page {
+  padding: var(--lz-spacing-xxl) 0;
+  min-height: 70vh;
+}
+
+/* ============================================
+   Loading & Not Found States
+   ============================================ */
+.vehicle-detail-loading,
+.vehicle-detail-not-found {
+  padding: var(--lz-spacing-xxxl) 0;
+  text-align: center;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-message,
+.not-found-message {
+  font-size: var(--lz-font-size-xl);
+  color: var(--lz-color-text-secondary);
+  margin-bottom: var(--lz-spacing-xl);
+}
+
+/* ============================================
+   Back Button
+   ============================================ */
+.back-btn-top {
+  margin-bottom: var(--lz-spacing-xl) !important;
+  color: var(--lz-color-text-secondary) !important;
+  font-weight: var(--lz-font-weight-medium) !important;
+  text-transform: none !important;
+}
+
+.back-btn-top:hover {
+  color: var(--lz-color-accent-primary) !important;
+  background: transparent !important;
+}
+
+.back-btn {
+  background: var(--lz-color-accent-primary) !important;
+  color: var(--lz-color-text-on-accent) !important;
+  padding: var(--lz-spacing-sm) var(--lz-spacing-xl) !important;
+  font-weight: var(--lz-font-weight-bold) !important;
+  border-radius: var(--lz-border-radius-md) !important;
+  text-transform: none !important;
+}
+
+/* ============================================
+   Main Content
+   ============================================ */
+.vehicle-detail-content {
+  margin-bottom: var(--lz-spacing-xxxl);
+}
+
+/* ============================================
+   Image Section
+   ============================================ */
+.vehicle-image-section {
+  position: sticky;
+  top: var(--lz-spacing-xl);
+}
+
+.vehicle-main-image {
+  position: relative;
+  width: 100%;
+  border-radius: var(--lz-border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--lz-shadow-lg);
+  aspect-ratio: 4 / 3;
+  background: var(--lz-color-bg-subtle);
+}
+
+.detail-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s var(--lz-easing-standard);
+}
+
+.vehicle-main-image:hover .detail-image {
+  transform: scale(1.05);
+}
+
+.vehicle-main-image .superior-badge {
+  position: absolute;
+  top: var(--lz-spacing-lg);
+  right: var(--lz-spacing-lg);
+  background: var(--lz-color-accent-primary);
+  color: var(--lz-color-text-on-accent);
+  padding: var(--lz-spacing-sm) var(--lz-spacing-lg);
+  border-radius: var(--lz-border-radius-full);
+  font-size: var(--lz-font-size-sm);
+  font-weight: var(--lz-font-weight-bold);
+  letter-spacing: 0.05em;
+  box-shadow: var(--lz-shadow-md);
+  z-index: 2;
+}
+
+/* ============================================
+   Info Section
+   ============================================ */
+.vehicle-info-section {
+  padding: var(--lz-spacing-lg) 0;
+}
+
+.vehicle-brand-tag {
+  display: inline-block;
+  background: var(--lz-color-bg-subtle);
+  color: var(--lz-color-text-secondary);
+  padding: var(--lz-spacing-xs) var(--lz-spacing-md);
+  border-radius: var(--lz-border-radius-full);
+  font-size: var(--lz-font-size-xs);
+  font-weight: var(--lz-font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--lz-spacing-md);
+}
+
+.vehicle-title {
+  font-size: var(--lz-font-size-h1);
+  font-weight: var(--lz-font-weight-bold);
+  color: var(--lz-color-text-primary);
+  margin: 0 0 var(--lz-spacing-sm);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.vehicle-subtitle {
+  font-size: var(--lz-font-size-lg);
+  color: var(--lz-color-text-secondary);
+  margin-bottom: var(--lz-spacing-xl);
+}
+
+/* ============================================
+   Price Section
+   ============================================ */
+.vehicle-price-section {
+  margin-bottom: var(--lz-spacing-xl);
+  padding: var(--lz-spacing-lg);
+  background: linear-gradient(135deg, var(--lz-color-accent-primary) 0%, var(--lz-color-accent-hover) 100%);
+  border-radius: var(--lz-border-radius-lg);
+  box-shadow: var(--lz-shadow-md);
+}
+
+.price-amount {
+  font-size: var(--lz-font-size-xxxl);
+  font-weight: var(--lz-font-weight-bold);
+  color: var(--lz-color-text-on-accent);
+  display: flex;
+  align-items: baseline;
+  gap: var(--lz-spacing-sm);
+}
+
+.price-unit {
+  font-size: var(--lz-font-size-lg);
+  font-weight: var(--lz-font-weight-regular);
+  opacity: 0.9;
+}
+
+/* ============================================
+   Specifications Card
+   ============================================ */
+.specs-card {
+  margin-bottom: var(--lz-spacing-xl) !important;
+  box-shadow: var(--lz-shadow-sm) !important;
+  border-radius: var(--lz-border-radius-lg) !important;
+}
+
+.specs-title {
+  font-size: var(--lz-font-size-lg);
+  font-weight: var(--lz-font-weight-bold);
+  color: var(--lz-color-text-primary);
+  margin: 0 0 var(--lz-spacing-lg);
+}
+
+.specs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--lz-spacing-md);
+}
+
+.spec-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lz-spacing-xs);
+  padding: var(--lz-spacing-md);
+  background: var(--lz-color-bg-subtle);
+  border-radius: var(--lz-border-radius-md);
+}
+
+.spec-label {
+  font-size: var(--lz-font-size-xs);
+  color: var(--lz-color-text-secondary);
+  font-weight: var(--lz-font-weight-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.spec-value {
+  font-size: var(--lz-font-size-md);
+  color: var(--lz-color-text-primary);
+  font-weight: var(--lz-font-weight-semibold);
+}
+
+/* ============================================
+   Contact Actions
+   ============================================ */
+.contact-actions {
+  padding: var(--lz-spacing-lg);
+  background: var(--lz-color-bg-subtle);
+  border-radius: var(--lz-border-radius-lg);
+}
+
+.contact-title {
+  font-size: var(--lz-font-size-lg);
+  font-weight: var(--lz-font-weight-bold);
+  color: var(--lz-color-text-primary);
+  margin: 0 0 var(--lz-spacing-lg);
+}
+
+.contact-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lz-spacing-md);
+}
+
+.whatsapp-btn {
+  background: #25D366 !important;
+  color: white !important;
+  padding: var(--lz-spacing-md) !important;
+  font-weight: var(--lz-font-weight-bold) !important;
+  text-transform: none !important;
+  border-radius: var(--lz-border-radius-md) !important;
+}
+
+.whatsapp-btn:hover {
+  background: #20BA5A !important;
+}
+
+.line-btn {
+  background: #00B900 !important;
+  color: white !important;
+  padding: var(--lz-spacing-md) !important;
+  font-weight: var(--lz-font-weight-bold) !important;
+  text-transform: none !important;
+  border-radius: var(--lz-border-radius-md) !important;
+}
+
+.line-btn:hover {
+  background: #009E00 !important;
+}
+
+.email-btn {
+  border-color: var(--lz-color-accent-primary) !important;
+  color: var(--lz-color-accent-primary) !important;
+  padding: var(--lz-spacing-md) !important;
+  font-weight: var(--lz-font-weight-bold) !important;
+  text-transform: none !important;
+  border-radius: var(--lz-border-radius-md) !important;
+}
+
+.email-btn:hover {
+  background: var(--lz-color-accent-primary) !important;
+  color: var(--lz-color-text-on-accent) !important;
+}
+
+/* ============================================
+   Similar Vehicles Section
+   ============================================ */
+.similar-vehicles-section {
+  padding: var(--lz-spacing-xxl) 0;
+  border-top: 1px solid var(--lz-color-border-subtle);
+}
+
+.similar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--lz-spacing-xl);
+}
+
+.similar-title {
+  font-size: var(--lz-font-size-h2);
+  font-weight: var(--lz-font-weight-bold);
+  color: var(--lz-color-text-primary);
+  margin: 0;
+}
+
+.view-all-link {
+  color: var(--lz-color-accent-primary) !important;
+  font-weight: var(--lz-font-weight-medium) !important;
+  text-transform: none !important;
+}
+
+.similar-vehicles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--lz-spacing-lg);
+}
+
+.similar-vehicle-card {
+  background: var(--lz-color-bg-primary);
+  border-radius: var(--lz-border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--lz-shadow-sm);
+  transition: all 0.3s var(--lz-easing-standard);
+  cursor: pointer;
+}
+
+.similar-vehicle-card:hover {
+  box-shadow: var(--lz-shadow-lg);
+  transform: translateY(-4px);
+}
+
+.similar-image-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 66.67%;
+  overflow: hidden;
+  background: var(--lz-color-bg-subtle);
+}
+
+.similar-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s var(--lz-easing-standard);
+}
+
+.similar-vehicle-card:hover .similar-image {
+  transform: scale(1.05);
+}
+
+.similar-info {
+  padding: var(--lz-spacing-md);
+}
+
+.similar-brand {
+  font-size: var(--lz-font-size-xs);
+  color: var(--lz-color-text-secondary);
+  font-weight: var(--lz-font-weight-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--lz-spacing-xs);
+}
+
+.similar-name {
+  font-size: var(--lz-font-size-md);
+  font-weight: var(--lz-font-weight-bold);
+  color: var(--lz-color-text-primary);
+  margin: 0 0 var(--lz-spacing-sm);
+  line-height: 1.3;
+}
+
+.similar-price {
+  font-size: var(--lz-font-size-lg);
+  font-weight: var(--lz-font-weight-bold);
+  color: var(--lz-color-accent-primary);
+  display: flex;
+  align-items: baseline;
+  gap: var(--lz-spacing-xs);
+}
+
+.similar-price-unit {
+  font-size: var(--lz-font-size-sm);
+  font-weight: var(--lz-font-weight-regular);
+  color: var(--lz-color-text-secondary);
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .vehicle-image-section {
+    position: static;
+  }
+
+  .specs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .similar-vehicles-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .vehicle-detail-page {
+    padding: var(--lz-spacing-lg) 0;
+  }
+
+  .vehicle-title {
+    font-size: var(--lz-font-size-h2);
+  }
+
+  .vehicle-subtitle {
+    font-size: var(--lz-font-size-md);
+  }
+
+  .price-amount {
+    font-size: var(--lz-font-size-xxl);
+  }
+
+  .similar-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--lz-spacing-md);
+  }
+
+  .similar-title {
+    font-size: var(--lz-font-size-h3);
+  }
+
+  .similar-vehicles-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .vehicle-info-section {
+    padding: 0;
+  }
+
+  .contact-actions {
+    padding: var(--lz-spacing-md);
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .vehicle-main-image .superior-badge {
+    top: var(--lz-spacing-sm);
+    right: var(--lz-spacing-sm);
+    padding: var(--lz-spacing-xs) var(--lz-spacing-sm);
+    font-size: var(--lz-font-size-xs);
+  }
+
+  .price-amount {
+    font-size: var(--lz-font-size-xl);
+  }
+
+  .spec-item {
+    padding: var(--lz-spacing-sm);
+  }
+
+  .contact-buttons button {
+    font-size: var(--lz-font-size-sm) !important;
+  }
+}

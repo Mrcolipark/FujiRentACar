@@ -16,7 +16,7 @@ const strings = new LocalizedStrings({
   },
   zh: {
     TITLE: '订阅',
-    SUB_TITLE: '订阅我们的邮件列表以获取最新更新！',
+    SUB_TITLE: '订阅我們的郵件列表以获取最新更新！',
     SUBSCRIBE: '订阅',
     SUCCESS: '订阅成功！',
   },

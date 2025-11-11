@@ -4,30 +4,30 @@
  */
 
 :root {
-  /* ==================== 色彩系统 ==================== */
+  /* ==================== 色彩系统（豪华汽车摄影风格）==================== */
 
-  /* 主色 - 背景 */
-  --lz-bg-primary: #000000;
-  --lz-bg-secondary: #1A1A1A;
-  --lz-bg-tertiary: #2A2A2A;
-  --lz-bg-card: #1A1A1A;
+  /* 主色 - 纯黑背景（如高端汽车摄影）*/
+  --lz-bg-primary: #000000;          /* 纯黑 - 主背景 */
+  --lz-bg-secondary: #0A0A0A;        /* 微妙层次 - 卡片 */
+  --lz-bg-tertiary: #1A1A1A;         /* 深灰 - 悬停 */
+  --lz-bg-card: #0A0A0A;             /* 卡片背景 */
 
-  /* 强调色 */
-  --lz-accent-primary: #FF4757;      /* 红色（CTA、Logo、高亮）*/
-  --lz-accent-secondary: #FFD700;
-  --lz-accent-hover: #E63946;        /* 悬停红色 */
-  --lz-accent-pressed: #C62828;      /* 按下红色 */
+  /* 强调色 - 精致红色（仅用于关键CTA）*/
+  --lz-accent-primary: #DC2626;      /* 品牌红 - 更精致 */
+  --lz-accent-secondary: #E5E5E5;    /* 银白色 - 次要强调 */
+  --lz-accent-hover: #B91C1C;        /* 悬停深红 */
+  --lz-accent-pressed: #991B1B;      /* 按下更深红 */
 
-  /* 文字色 */
-  --lz-text-primary: #FFFFFF;
-  --lz-text-secondary: #B0B0B0;
-  --lz-text-tertiary: #808080;
-  --lz-text-disabled: #5A5A5A;
+  /* 文字色 - 高对比度（如车身高光）*/
+  --lz-text-primary: #FFFFFF;        /* 纯白 - 主要文字 */
+  --lz-text-secondary: #E5E5E5;      /* 浅银 - 次要文字 */
+  --lz-text-tertiary: #A3A3A3;       /* 中灰 - 辅助文字 */
+  --lz-text-disabled: #737373;       /* 深灰 - 禁用 */
 
-  /* 边框色 */
-  --lz-border: #333333;
-  --lz-border-light: #444444;
-  --lz-border-dark: #222222;
+  /* 边框色 - 微妙光影 */
+  --lz-border: rgba(255, 255, 255, 0.08);      /* 基础边框 */
+  --lz-border-light: rgba(255, 255, 255, 0.12); /* 高亮边框 */
+  --lz-border-dark: rgba(255, 255, 255, 0.05);  /* 暗边框 */
 
   /* 状态色 */
   --lz-error: #FF4757;
@@ -87,9 +87,9 @@
   --lz-spacing-xxl: 96px;
   --lz-spacing-xxxl: 128px;
 
-  /* 容器 */
-  --lz-container-max-width: 1440px;
-  --lz-container-padding: 80px;
+  /* 容器（基于Figma设计）*/
+  --lz-container-max-width: 1440px;     /* 设计稿宽度 */
+  --lz-container-padding: 120px;        /* 奢华宽松边距 */
 
   /* ==================== 圆角系统 ==================== */
 
@@ -108,10 +108,11 @@
   --lz-shadow-xl: 0 12px 40px rgba(0, 0, 0, 0.7);
   --lz-shadow-2xl: 0 20px 60px rgba(0, 0, 0, 0.8);
 
-  /* 发光阴影（用于CTA按钮） */
-  --lz-shadow-accent: 0 4px 12px rgba(255, 71, 87, 0.3);
-  --lz-shadow-accent-hover: 0 6px 20px rgba(255, 71, 87, 0.5);
-  --lz-shadow-accent-active: 0 2px 8px rgba(255, 71, 87, 0.4);
+  /* 发光阴影（用于CTA按钮和高光元素）*/
+  --lz-shadow-accent: 0 4px 12px rgba(220, 38, 38, 0.3);         /* 红色光晕 */
+  --lz-shadow-accent-hover: 0 6px 20px rgba(220, 38, 38, 0.5);   /* 悬停红色光晕 */
+  --lz-shadow-accent-active: 0 2px 8px rgba(220, 38, 38, 0.4);   /* 激活红色光晕 */
+  --lz-glow-white: 0 0 20px rgba(255, 255, 255, 0.15);           /* 白色光晕（如车灯）*/
 
   /* ==================== 动画系统 ==================== */
 

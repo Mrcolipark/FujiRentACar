@@ -24,7 +24,7 @@ const QualitySection: React.FC = () => {
         <div className="quality-image">
           <div className="image-wrapper">
             <img
-              src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&h=1000&fit=crop"
+              src="/images/1.jpg"
               alt="Luxury Car Interior"
               className="interior-image"
             />

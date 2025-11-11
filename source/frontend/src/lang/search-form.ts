@@ -21,13 +21,13 @@ const strings = new LocalizedStrings({
     INVALID_DROP_OFF_TIME: 'Invalid drop-off time',
   },
   zh: {
-    PICK_UP_DATE: '取车日期',
-    DROP_OFF_DATE: '还车日期',
-    DROP_OFF: '在同一地点还车',
-    MIN_PICK_UP_HOURS_ERROR: '取车时间必须至少提前几个小时预订',
+    PICK_UP_DATE: '取車日期',
+    DROP_OFF_DATE: '还車日期',
+    DROP_OFF: '在同一地点还車',
+    MIN_PICK_UP_HOURS_ERROR: '取車时间必须至少提前几个小时預訂',
     MIN_RENTAL_HOURS_ERROR: '租赁时长过短',
-    INVALID_PICK_UP_TIME: '无效的取车时间',
-    INVALID_DROP_OFF_TIME: '无效的还车时间',
+    INVALID_PICK_UP_TIME: '无效的取車时间',
+    INVALID_DROP_OFF_TIME: '无效的还車时间',
   },
 })
 

@@ -13,7 +13,7 @@ const strings = new LocalizedStrings({
     AVALIABLE_LOCATIONS: 'available locations',
   },
   zh: {
-    SELECT_LOCATION: '选择地点',
+    SELECT_LOCATION: '選擇地点',
     AVALIABLE_LOCATION: '可用地点',
     AVALIABLE_LOCATIONS: '可用地点',
   },

@@ -21,14 +21,16 @@ div.home {
 div.home div.home-content {
   position: relative;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
   height: 100vh;
   min-height: 100vh;
   z-index: 1;
-  padding: 0 var(--lz-container-padding);
+  padding: 0 80px;
+  max-width: 1600px;
+  margin: 0 auto;
 }
 
 /* 视频/图片背景 */
@@ -40,6 +42,7 @@ div.home div.home-content .video {
   left: 0;
   z-index: -2;
   overflow: hidden;
+  right: 0;
 }
 
 div.home div.home-content video,
@@ -47,10 +50,11 @@ div.home div.home-content .video img {
   height: 100%;
   width: 100%;
   object-fit: cover;
-  position: relative;
+  position: absolute;
+  object-position: right center;
 }
 
-/* 视频遮罩层 - 更深的渐变 */
+/* 视频遮罩层 - 左侧深色渐变到右侧透明 */
 div.home div.home-content::after {
   content: "";
   position: absolute;
@@ -58,53 +62,55 @@ div.home div.home-content::after {
   width: 100%;
   top: 0;
   left: 0;
-  /* LUZURIO: 深色渐变遮罩，确保文字清晰 */
-  background: linear-gradient(180deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.6) 100%);
+  /* 左侧深黑到右侧透明，让汽车清晰可见 */
+  background: linear-gradient(90deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.3) 100%);
   z-index: -1;
 }
 
-/* Hero内容容器 */
+/* Hero内容容器 - 左对齐 */
 div.home div.home-cover {
   z-index: 2;
   color: var(--lz-text-primary);
-  text-align: center;
-  max-width: 1000px;
+  text-align: left;
+  max-width: 600px;
   width: 100%;
+  flex-shrink: 0;
 }
 
-/* 小标签 - "LUZURIO" 或类似 */
+/* 小标签 - "CAR RENTAL" */
 div.home-title {
-  /* LUZURIO: 红色品牌色 */
-  color: var(--lz-accent-primary);
-  font-size: var(--lz-font-size-small);
-  font-weight: var(--lz-font-weight-semibold);
-  text-align: center;
+  color: #FFFFFF;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: left;
   text-transform: uppercase;
-  letter-spacing: var(--lz-letter-spacing-wider);
+  letter-spacing: 0.15em;
   margin-bottom: 24px;
+  opacity: 0.9;
 }
 
-/* 超大主标题 - "Luxury Cars, First-Class Experience" */
+/* 超大主标题 - "Discover the Joy..." */
 div.home-cover h1,
 div.home-cover .hero-main-title {
-  font-size: var(--lz-font-size-hero);
-  font-weight: var(--lz-font-weight-black);
-  line-height: var(--lz-line-height-tight);
-  letter-spacing: var(--lz-letter-spacing-tighter);
-  color: var(--lz-text-primary);
-  margin: 0 0 24px 0;
-  text-align: center;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+  margin: 0 0 28px 0;
+  text-align: left;
 }
 
 /* 副标题 */
 div.home-subtitle,
 div.home-cover .hero-subtitle {
-  color: var(--lz-text-secondary);
-  font-size: var(--lz-font-size-h5);
-  font-weight: var(--lz-font-weight-regular);
-  line-height: var(--lz-line-height-relaxed);
-  margin: 0 auto 40px;
-  max-width: 600px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 0 0 40px 0;
+  max-width: 480px;
+  text-align: left;
 }
 
 /* Hero CTA按钮 */
@@ -561,22 +567,44 @@ div.home div.customer-care div.customer-care-img img {
 /* Mobile (<=960px) */
 @media only screen and (max-width: 960px) {
   div.home div.home-content {
-    padding: 85px 0;
-    justify-content: flex-start !important;
-    height: 560px;
-    min-height: 560px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 24px;
+    height: 100vh;
+    min-height: 600px;
   }
 
-  div.home div.home-title {
-    font-size: 22px;
-    font-weight: 600;
-    margin-bottom: 20px;
-  }
-
+  /* 移动端居中对齐 */
   div.home div.home-cover {
+    text-align: center;
+    max-width: 100%;
+  }
+
+  div.home-title {
+    text-align: center;
+    font-size: 12px;
+  }
+
+  div.home-cover h1,
+  div.home-cover .hero-main-title {
+    text-align: center;
     font-size: 40px;
-    font-weight: 800;
-    padding: 0 10px;
+  }
+
+  div.home-subtitle,
+  div.home-cover .hero-subtitle {
+    text-align: center;
+    margin: 0 auto 40px;
+  }
+
+  /* 移动端背景渐变改为垂直 */
+  div.home div.home-content::after {
+    background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 100%);
+  }
+
+  div.home div.home-content .video img {
+    object-position: center center;
   }
 
   div.home div.search div.home-search {
@@ -666,11 +694,23 @@ div.home div.customer-care div.customer-care-img img {
   }
 }
 
+/* 平板端Hero调整 */
+@media only screen and (max-width: 1200px) {
+  div.home div.home-content {
+    padding: 0 40px;
+  }
+
+  div.home-cover h1,
+  div.home-cover .hero-main-title {
+    font-size: 48px;
+  }
+}
+
 /* 移动端Hero调整 */
 @media only screen and (max-width: 960px) {
   div.home-cover .hero-main-title,
   div.home-cover h1 {
-    font-size: 48px !important;
+    font-size: 40px !important;
   }
 
   div.home-cover .hero-cta,
@@ -683,13 +723,13 @@ div.home div.customer-care div.customer-care-img img {
 @media only screen and (max-width: 576px) {
   div.home-cover .hero-main-title,
   div.home-cover h1 {
-    font-size: 36px !important;
-    margin-bottom: 16px !important;
+    font-size: 32px !important;
+    margin-bottom: 20px !important;
   }
 
   div.home-subtitle,
   div.home-cover .hero-subtitle {
-    font-size: 14px !important;
+    font-size: 15px !important;
     margin-bottom: 32px !important;
   }
 

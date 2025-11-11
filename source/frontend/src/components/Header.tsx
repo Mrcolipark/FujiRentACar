@@ -28,6 +28,7 @@ import {
   Login as LoginIcon,
   EventSeat as BookingsIcon,
   CarRental as SupplierIcon,
+  DirectionsCar as VehiclesIcon,
   LocationOn as LocationIcon,
   PrivacyTip as PrivacyIcon,
   QuestionAnswer as FaqIcon,
@@ -51,7 +52,7 @@ import { useUserContext, UserContextType } from '@/context/UserContext'
 
 import '@/assets/css/header.css'
 
-const flagHeight = 28
+const flagHeight = 32
 
 interface HeaderProps {
   hidden?: boolean
@@ -336,7 +337,7 @@ const Header = ({
   return (
     (!hidden && (
       <div style={classes.grow} className="header">
-        <AppBar position="relative" sx={{ bgcolor: '#fff', boxShadow: 'none', borderBottom: '1px solid #ddd' }}>
+        <AppBar position="relative" sx={{ bgcolor: 'transparent', boxShadow: 'none', border: 'none' }}>
           <Toolbar className="toolbar">
             {isLoaded && (
               <>
@@ -344,7 +345,9 @@ const Header = ({
                   <MenuIcon />
                 </IconButton>
 
-                <Button onClick={() => navigate('/')} className="logo">{env.WEBSITE_NAME}</Button>
+                <Button onClick={() => navigate('/')} className="logo">
+                  FUJI RENT A CAR
+                </Button>
 
                 {!env.isMobile && headerTitle && <div className="header-title">{headerTitle}</div>}
               </>
@@ -360,6 +363,15 @@ const Header = ({
                 >
                   <ListItemIcon><HomeIcon /></ListItemIcon>
                   <ListItemText primary={strings.HOME} />
+                </ListItem>
+                <ListItem
+                  onClick={() => {
+                    navigate('/vehicles')
+                    handleSideMenuClose()
+                  }}
+                >
+                  <ListItemIcon><VehiclesIcon /></ListItemIcon>
+                  <ListItemText primary={strings.VEHICLES} />
                 </ListItem>
                 {isSignedIn && (
                   <ListItem
@@ -450,56 +462,44 @@ const Header = ({
               </List>
             </Drawer>
 
-            {(env.isMobile || !headerTitle) && <div style={classes.grow} />}
+            {/* 中央导航菜单 */}
             <div className="header-desktop">
+              <Button onClick={() => navigate('/')} className="nav-link">
+                {strings.HOME}
+              </Button>
+              <Button onClick={() => navigate('/vehicles')} className="nav-link">
+                {strings.VEHICLES}
+              </Button>
+              <Button onClick={() => navigate('/about')} className="nav-link">
+                {strings.ABOUT}
+              </Button>
+              <Button onClick={() => navigate('/faq')} className="nav-link">
+                {strings.FAQ}
+              </Button>
+              <Button onClick={() => navigate('/contact')} className="nav-link">
+                {strings.CONTACT}
+              </Button>
+            </div>
+
+            {/* 右侧按钮组 */}
+            <div className="header-actions">
+              {/* 语言切换按钮 */}
               {isLoaded && (
-                <Button variant="contained" onClick={handleCurrencyMenuOpen} disableElevation className="btn bold">
-                  {PaymentService.getCurrency()}
-                </Button>
-              )}
-              {isLoaded && (
-                <Button variant="contained" onClick={handleLangMenuOpen} disableElevation className="btn">
+                <Button variant="contained" onClick={handleLangMenuOpen} disableElevation className="btn-language">
                   <div className="language">
                     <CircleFlag countryCode={lang?.countryCode as string} height={flagHeight} className="flag" title={lang?.label} />
                   </div>
                 </Button>
               )}
-              {/* FUJI: 已删除登录和注册按钮 */}
-              {isSignedIn && (
-                <IconButton aria-label="" onClick={handleNotificationsClick} className="btn">
-                  <Badge badgeContent={notificationCount > 0 ? notificationCount : null} color="error">
-                    <NotificationsIcon />
-                  </Badge>
-                </IconButton>
-              )}
-              {isSignedIn && (
-                <IconButton edge="end" aria-label="account" aria-controls={menuId} aria-haspopup="true" onClick={handleAccountMenuOpen} className="btn">
-                  <AccountCircleIcon />
-                </IconButton>
-              )}
-            </div>
-            <div className="header-mobile">
-              <Button variant="contained" onClick={handleCurrencyMenuOpen} disableElevation fullWidth className="btn bold">
-                {PaymentService.getCurrency()}
+
+              {/* Book Now 按钮 */}
+              <Button
+                variant="outlined"
+                className="btn-book-now"
+                onClick={() => navigate('/search')}
+              >
+                {strings.BOOK_NOW || 'Book Now'}
               </Button>
-              <Button variant="contained" onClick={handleLangMenuOpen} disableElevation fullWidth className="btn">
-                <div className="language">
-                  <CircleFlag countryCode={lang?.countryCode as string} height={flagHeight} className="flag" title={lang?.label} />
-                  {/* <span>{lang?.label}</span> */}
-                </div>
-              </Button>
-              {isSignedIn && (
-                <IconButton onClick={handleNotificationsClick} className="btn">
-                  <Badge badgeContent={notificationCount > 0 ? notificationCount : null} color="error">
-                    <NotificationsIcon />
-                  </Badge>
-                </IconButton>
-              )}
-              {isSignedIn && (
-                <IconButton aria-label="show more" aria-controls={mobileMenuId} aria-haspopup="true" onClick={handleMobileMenuOpen} className="btn">
-                  <MoreIcon />
-                </IconButton>
-              )}
             </div>
           </Toolbar>
         </AppBar>

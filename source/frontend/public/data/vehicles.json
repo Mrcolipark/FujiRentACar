@@ -1,0 +1,650 @@
+[
+  {
+    "id": "mercedesbenz-g-class-400d",
+    "name": {
+      "ja": "メルセデス・ベンツ Gクラス400D",
+      "zh": "賓士 G400D",
+      "en": "Mercedes-Benz G-Class 400D"
+    },
+    "brand": "Mercedes-Benz",
+    "model": {
+      "ja": "Gクラス400D",
+      "zh": "G400D",
+      "en": "G-Class 400D"
+    },
+    "category": {
+      "ja": "高級SUV",
+      "zh": "豪華休旅車",
+      "en": "Luxury SUV"
+    },
+    "price": 86000,
+    "seats": 5,
+    "transmission": "Automatic",
+    "isSuperior": true,
+    "image": "https://images.unsplash.com/photo-1618843479313?w=800&h=600&fit=crop"
+  },
+  {
+    "id": "mercedesbenz-c-class",
+    "name": {
+      "ja": "メルセデス・ベンツ Cクラス",
+      "zh": "賓士 C系列",
+      "en": "Mercedes-Benz C-Class"
+    },
+    "brand": "Mercedes-Benz",
+    "model": {
+      "ja": "Cクラス",
+      "zh": "C系列",
+      "en": "C-Class"
+    },
+    "category": {
+      "ja": "セダン",
+      "zh": "轎車",
+      "en": "Sedan"
+    },
+    "price": 13000,
+    "seats": 5,
+    "transmission": "Automatic",
+    "isSuperior": false,
+    "image": "https://images.unsplash.com/photo-1618843479314?w=800&h=600&fit=crop"
+  },
+  {
+    "id": "mercedesbenz-e-class",
+    "name": {
+      "ja": "メルセデス・ベンツ Eクラス",
+      "zh": "賓士 E系列",
+      "en": "Mercedes-Benz E-Class"
+    },
+    "brand": "Mercedes-Benz",
+    "model": {
+      "ja": "Eクラス",
+      "zh": "E系列",
+      "en": "E-Class"
+    },
+    "category": {
+      "ja": "セダン",
+      "zh": "轎車",
+      "en": "Sedan"
+    },
+    "price": 26000,
+    "seats": 5,
+    "transmission": "Automatic",
+    "isSuperior": false,
+    "image": "https://images.unsplash.com/photo-1618843479315?w=800&h=600&fit=crop"
+  },
+  {
+    "id": "mercedesbenz-s-class",
+    "name": {
+      "ja": "メルセデス・ベンツ Sクラス",
+      "zh": "賓士 S系列",
+      "en": "Mercedes-Benz S-Class"
+    },
+    "brand": "Mercedes-Benz",
+    "model": {
+      "ja": "Sクラス",
+      "zh": "S系列",
+      "en": "S-Class"
+    },
+    "category": {
+      "ja": "高級セダン",
+      "zh": "豪華轎車",
+      "en": "Luxury Sedan"
+    },
+    "price": 27000,
+    "seats": 5,
+    "transmission": "Automatic",
+    "isSuperior": false,
+    "image": "https://images.unsplash.com/photo-1618843479316?w=800&h=600&fit=crop"
+  },
+  {
+    "id": "mercedesbenz-v-class-220d",
+    "name": {
+      "ja": "メルセデス・ベンツ Vクラス220d",
+      "zh": "賓士 V220d",
+      "en": "Mercedes-Benz V-Class 220d"
+    },
+    "brand": "Mercedes-Benz",
+    "model": {
+      "ja": "Vクラス220d",
+      "zh": "V220d",
+      "en": "V-Class 220d"
+    },
+    "category": {
+      "ja": "高級ミニバン",
+      "zh": "豪華多功能車",
+      "en": "Luxury MPV"
+    },
+    "price": 23000,
+    "seats": 7,
+    "transmission": "Automatic",
+    "isSuperior": false,
+    "image": "https://images.unsplash.com/photo-1618843479317?w=800&h=600&fit=crop"
+  },
+  {
+    "id": "maserati-levante",
+    "name": {
+      "ja": "マセラティ レヴァンテ",
+      "zh": "瑪莎拉蒂 萊萬特",
+      "en": "Maserati Levante"
+    },
+    "brand": "Maserati",
+    "model": {
+      "ja": "レヴァンテ",
+      "zh": "萊萬特",
+      "en": "Levante"
+    },
+    "category": {
+      "ja": "高級SUV",
+      "zh": "豪華休旅車",
+      "en": "Luxury SUV"
+    },
+    "price": 37000,
+    "seats": 5,
+    "transmission": "Automatic",
+    "isSuperior": true,
+    "image": "https://images.unsplash.com/photo-1618843479318?w=800&h=600&fit=crop"
+  },
+  {
+    "id": "toyota-land-cruiser-250",
+    "name": {
+      "ja": "トヨタ ランドクルーザー250",
+      "zh": "豐田 酷路澤250",
+      "en": "Toyota Land Cruiser 250"
+    },
+    "brand": "Toyota",
+    "model": {
+      "ja": "ランドクルーザー250",
+      "zh": "酷路澤250",
+      "en": "Land Cruiser 250"
+    },
+    "category": {
+      "ja": "高級SUV",
+      "zh": "豪華休旅車",
+      "en": "Luxury SUV"
+    },
+    "price": 30000,
+    "seats": 7,
+    "transmission": "Automatic",
+    "isSuperior": true,
+    "image": "https://images.unsplash.com/photo-1618843479319?w=800&h=600&fit=crop"
+  },
+  {
+    "id": "toyota-alphard-40",
+    "name": {
+      "ja": "トヨタ アルファード40",
+      "zh": "豐田 Alphard 40",
+      "en": "Toyota Alphard 40"
+    },
+    "brand": "Toyota",
+    "model": {
+      "ja": "アルファード40",
+      "zh": "Alphard 40",
+      "en": "Alphard 40"
+    },
+    "category": {
+      "ja": "高級ミニバン",
+      "zh": "豪華多功能車",
+      "en": "Luxury MPV"
+    },
+    "price": 27000,
+    "seats": 7,
+    "transmission": "Automatic",
+    "isSuperior": false,
+    "image": "https://images.unsplash.com/photo-1618843479320?w=800&h=600&fit=crop"
+  },
+  {
+    "id": "toyota-alphard-30",
+    "name": {
+      "ja": "トヨタ アルファード30",
+      "zh": "豐田 Alphard 30",
+      "en": "Toyota Alphard 30"
+    },
+    "brand": "Toyota",
+    "model": {
+      "ja": "アルファード30",
+      "zh": "Alphard 30",
+      "en": "Alphard 30"
+    },
+    "category": {
+      "ja": "高級ミニバン",
+      "zh": "豪華多功能車",
+      "en": "Luxury MPV"
+    },
+    "price": 16000,
+    "seats": 7,
+    "transmission": "Automatic",
+    "isSuperior": false,
+    "image": "https://images.unsplash.com/photo-1618843479321?w=800&h=600&fit=crop"
+  },
+  {
+    "id": "toyota-alphard-20",
+    "name": {
+      "ja": "トヨタ アルファード20",
+      "zh": "豐田 Alphard 20",
+      "en": "Toyota Alphard 20"
+    },
+    "brand": "Toyota",
+    "model": {
+      "ja": "アルファード20",
+      "zh": "Alphard 20",
+      "en": "Alphard 20"
+    },
+    "category": {
+      "ja": "高級ミニバン",
+      "zh": "豪華多功能車",
+      "en": "Luxury MPV"
+    },
+    "price": 11000,
+    "seats": 8,
+    "transmission": "Automatic",
+    "isSuperior": false,
+    "image": "https://images.unsplash.com/photo-1618843479322?w=800&h=600&fit=crop"
+  },
+  {
+    "id": "toyota-86",
+    "name": {
+      "ja": "トヨタ 86",
+      "zh": "豐田 86",
+      "en": "Toyota 86"
+    },
+    "brand": "Toyota",
+    "model": {
+      "ja": "86",
+      "zh": "86",
+      "en": "86"
+    },
+    "category": {
+      "ja": "スポーツクーペ",
+      "zh": "跑車",
+      "en": "Sports Coupe"
+    },
+    "price": 16000,
+    "seats": 2,
+    "transmission": "Automatic",
+    "isSuperior": false,
+    "image": "https://images.unsplash.com/photo-1618843479323?w=800&h=600&fit=crop"
+  },
+  {
+    "id": "toyota-hiace",
+    "name": {
+      "ja": "トヨタ ハイエース",
+      "zh": "豐田 海獅",
+      "en": "Toyota Hiace"
+    },
+    "brand": "Toyota",
+    "model": {
+      "ja": "ハイエース",
+      "zh": "海獅",
+      "en": "Hiace"
+    },
+    "category": {
+      "ja": "高級ミニバン",
+      "zh": "豪華多功能車",
+      "en": "Luxury MPV"
+    },
+    "price": 16000,
+    "seats": 10,
+    "transmission": "Automatic",
+    "isSuperior": false,
+    "image": "https://images.unsplash.com/photo-1618843479324?w=800&h=600&fit=crop"
+  },
+  {
+    "id": "toyota-supra",
+    "name": {
+      "ja": "トヨタ スープラ",
+      "zh": "豐田 Supra",
+      "en": "Toyota Supra"
+    },
+    "brand": "Toyota",
+    "model": {
+      "ja": "スープラ",
+      "zh": "Supra",
+      "en": "Supra"
+    },
+    "category": {
+      "ja": "スポーツクーペ",
+      "zh": "跑車",
+      "en": "Sports Coupe"
+    },
+    "price": 25000,
+    "seats": 2,
+    "transmission": "Automatic",
+    "isSuperior": false,
+    "image": "https://images.unsplash.com/photo-1618843479325?w=800&h=600&fit=crop"
+  },
+  {
+    "id": "porsche-panamera",
+    "name": {
+      "ja": "ポルシェ パナメーラ",
+      "zh": "保時捷 Panamera",
+      "en": "Porsche Panamera"
+    },
+    "brand": "Porsche",
+    "model": {
+      "ja": "パナメーラ",
+      "zh": "Panamera",
+      "en": "Panamera"
+    },
+    "category": {
+      "ja": "スポーツクーペ",
+      "zh": "跑車",
+      "en": "Sports Coupe"
+    },
+    "price": 30000,
+    "seats": 4,
+    "transmission": "Automatic",
+    "isSuperior": true,
+    "image": "https://images.unsplash.com/photo-1618843479326?w=800&h=600&fit=crop"
+  },
+  {
+    "id": "lexus-c-class",
+    "name": {
+      "ja": "レクサス Cクラス",
+      "zh": "凌志 C系列",
+      "en": "Lexus C-Class"
+    },
+    "brand": "Lexus",
+    "model": {
+      "ja": "Cクラス",
+      "zh": "C系列",
+      "en": "C-Class"
+    },
+    "category": {
+      "ja": "スポーツクーペ",
+      "zh": "跑車",
+      "en": "Sports Coupe"
+    },
+    "price": 66000,
+    "seats": 4,
+    "transmission": "Automatic",
+    "isSuperior": true,
+    "image": "https://images.unsplash.com/photo-1618843479327?w=800&h=600&fit=crop"
+  },
+  {
+    "id": "lexus-lm",
+    "name": {
+      "ja": "レクサス LM",
+      "zh": "凌志 LM",
+      "en": "Lexus LM"
+    },
+    "brand": "Lexus",
+    "model": {
+      "ja": "LM",
+      "zh": "LM",
+      "en": "LM"
+    },
+    "category": {
+      "ja": "高級ミニバン",
+      "zh": "豪華多功能車",
+      "en": "Luxury MPV"
+    },
+    "price": 150000,
+    "seats": 7,
+    "transmission": "Automatic",
+    "isSuperior": true,
+    "image": "https://images.unsplash.com/photo-1618843479328?w=800&h=600&fit=crop"
+  },
+  {
+    "id": "bmw-m4",
+    "name": {
+      "ja": "BMW M4",
+      "zh": "寶馬 M4",
+      "en": "BMW M4"
+    },
+    "brand": "BMW",
+    "model": {
+      "ja": "M4",
+      "zh": "M4",
+      "en": "M4"
+    },
+    "category": {
+      "ja": "スポーツカー",
+      "zh": "跑車",
+      "en": "Sports Car"
+    },
+    "price": 27000,
+    "seats": 5,
+    "transmission": "Automatic",
+    "isSuperior": false,
+    "image": "https://images.unsplash.com/photo-1618843479329?w=800&h=600&fit=crop"
+  },
+  {
+    "id": "bmw-z4",
+    "name": {
+      "ja": "BMW Z4",
+      "zh": "寶馬 Z4",
+      "en": "BMW Z4"
+    },
+    "brand": "BMW",
+    "model": {
+      "ja": "Z4",
+      "zh": "Z4",
+      "en": "Z4"
+    },
+    "category": {
+      "ja": "スポーツカー",
+      "zh": "跑車",
+      "en": "Sports Car"
+    },
+    "price": 30000,
+    "seats": 2,
+    "transmission": "Automatic",
+    "isSuperior": true,
+    "image": "https://images.unsplash.com/photo-1618843479330?w=800&h=600&fit=crop"
+  },
+  {
+    "id": "bmw-x5",
+    "name": {
+      "ja": "BMW X5",
+      "zh": "寶馬 X5",
+      "en": "BMW X5"
+    },
+    "brand": "BMW",
+    "model": {
+      "ja": "X5",
+      "zh": "X5",
+      "en": "X5"
+    },
+    "category": {
+      "ja": "高級SUV",
+      "zh": "豪華休旅車",
+      "en": "Luxury SUV"
+    },
+    "price": 26000,
+    "seats": 5,
+    "transmission": "Automatic",
+    "isSuperior": false,
+    "image": "https://images.unsplash.com/photo-1618843479331?w=800&h=600&fit=crop"
+  },
+  {
+    "id": "mazda-atenza",
+    "name": {
+      "ja": "マツダ アテンザ",
+      "zh": "馬自達 Atenza",
+      "en": "Mazda Atenza"
+    },
+    "brand": "Mazda",
+    "model": {
+      "ja": "アテンザ",
+      "zh": "Atenza",
+      "en": "Atenza"
+    },
+    "category": {
+      "ja": "セダン",
+      "zh": "轎車",
+      "en": "Sedan"
+    },
+    "price": 7000,
+    "seats": 5,
+    "transmission": "Automatic",
+    "isSuperior": false,
+    "image": "https://images.unsplash.com/photo-1618843479332?w=800&h=600&fit=crop"
+  },
+  {
+    "id": "mazda-mx-5-roadster",
+    "name": {
+      "ja": "マツダ ロードスター",
+      "zh": "馬自達 MX-5",
+      "en": "Mazda MX-5 Roadster"
+    },
+    "brand": "Mazda",
+    "model": {
+      "ja": "ロードスター",
+      "zh": "MX-5",
+      "en": "MX-5 Roadster"
+    },
+    "category": {
+      "ja": "スポーツクーペ",
+      "zh": "跑車",
+      "en": "Sports Coupe"
+    },
+    "price": 13000,
+    "seats": 2,
+    "transmission": "Automatic",
+    "isSuperior": false,
+    "image": "https://images.unsplash.com/photo-1618843479333?w=800&h=600&fit=crop"
+  },
+  {
+    "id": "honda-step-wgn",
+    "name": {
+      "ja": "ホンダ ステップワゴン",
+      "zh": "本田 Step WGN",
+      "en": "Honda Step WGN"
+    },
+    "brand": "Honda",
+    "model": {
+      "ja": "ステップワゴン",
+      "zh": "Step WGN",
+      "en": "Step WGN"
+    },
+    "category": {
+      "ja": "高級ミニバン",
+      "zh": "豪華多功能車",
+      "en": "Luxury MPV"
+    },
+    "price": 11000,
+    "seats": 7,
+    "transmission": "Automatic",
+    "isSuperior": false,
+    "image": "https://images.unsplash.com/photo-1618843479334?w=800&h=600&fit=crop"
+  },
+  {
+    "id": "honda-fit",
+    "name": {
+      "ja": "ホンダ フィット",
+      "zh": "本田 Fit",
+      "en": "Honda Fit"
+    },
+    "brand": "Honda",
+    "model": {
+      "ja": "フィット",
+      "zh": "Fit",
+      "en": "Fit"
+    },
+    "category": {
+      "ja": "セダン",
+      "zh": "轎車",
+      "en": "Sedan"
+    },
+    "price": 7000,
+    "seats": 5,
+    "transmission": "Automatic",
+    "isSuperior": false,
+    "image": "https://images.unsplash.com/photo-1618843479335?w=800&h=600&fit=crop"
+  },
+  {
+    "id": "nissan-serena",
+    "name": {
+      "ja": "ニッサン セレナ",
+      "zh": "日產 Serena",
+      "en": "Nissan Serena"
+    },
+    "brand": "Nissan",
+    "model": {
+      "ja": "セレナ",
+      "zh": "Serena",
+      "en": "Serena"
+    },
+    "category": {
+      "ja": "高級ミニバン",
+      "zh": "豪華多功能車",
+      "en": "Luxury MPV"
+    },
+    "price": 10000,
+    "seats": 8,
+    "transmission": "Automatic",
+    "isSuperior": false,
+    "image": "https://images.unsplash.com/photo-1618843479336?w=800&h=600&fit=crop"
+  },
+  {
+    "id": "nissan-gt-r",
+    "name": {
+      "ja": "ニッサン GT-R",
+      "zh": "日產 GT-R",
+      "en": "Nissan GT-R"
+    },
+    "brand": "Nissan",
+    "model": {
+      "ja": "GT-R",
+      "zh": "GT-R",
+      "en": "GT-R"
+    },
+    "category": {
+      "ja": "スポーツカー",
+      "zh": "跑車",
+      "en": "Sports Car"
+    },
+    "price": 62000,
+    "seats": 4,
+    "transmission": "Automatic",
+    "isSuperior": true,
+    "image": "https://images.unsplash.com/photo-1618843479337?w=800&h=600&fit=crop"
+  },
+  {
+    "id": "subaru-xv",
+    "name": {
+      "ja": "スバル XV",
+      "zh": "速霸陸 XV",
+      "en": "Subaru XV"
+    },
+    "brand": "Subaru",
+    "model": {
+      "ja": "XV",
+      "zh": "XV",
+      "en": "XV"
+    },
+    "category": {
+      "ja": "セダン",
+      "zh": "轎車",
+      "en": "Sedan"
+    },
+    "price": 7000,
+    "seats": 5,
+    "transmission": "Automatic",
+    "isSuperior": false,
+    "image": "https://images.unsplash.com/photo-1618843479338?w=800&h=600&fit=crop"
+  },
+  {
+    "id": "subaru-forester",
+    "name": {
+      "ja": "スバル フォレスター",
+      "zh": "速霸陸 Forester",
+      "en": "Subaru Forester"
+    },
+    "brand": "Subaru",
+    "model": {
+      "ja": "フォレスター",
+      "zh": "Forester",
+      "en": "Forester"
+    },
+    "category": {
+      "ja": "セダン",
+      "zh": "轎車",
+      "en": "Sedan"
+    },
+    "price": 7000,
+    "seats": 5,
+    "transmission": "Automatic",
+    "isSuperior": false,
+    "image": "https://images.unsplash.com/photo-1618843479339?w=800&h=600&fit=crop"
+  }
+]

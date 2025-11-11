@@ -21,7 +21,18 @@ div.faq-list div.questions .accordion-title {
 
 
 div.faq-list div.questions .accordion-details {
-  color: #1a1a1a;
+  color: #1a1a1a !important;
+  font-size: 16px;
+  line-height: 1.8;
+  font-weight: 400;
+  padding: 16px 0;
+  background-color: #ffffff !important;
+}
+
+/* 确保AccordionDetails内的文字可见 */
+div.faq-list div.questions .MuiAccordionDetails-root {
+  color: #1a1a1a !important;
+  background-color: #ffffff !important;
 }
 
 @media only screen and (width <=960px) {
