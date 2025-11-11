@@ -1,0 +1,381 @@
+/**
+ * 高级联系表单样式
+ * 商用级别的现代化表单设计
+ */
+
+.advanced-contact-form {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--lz-spacing-md);
+}
+
+/* 联系类型选择器 */
+.contact-type-selector {
+  padding: var(--lz-spacing-xl) 0 !important;
+  margin-bottom: var(--lz-spacing-xl) !important;
+}
+
+.contact-type-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--lz-spacing-lg);
+  margin-top: var(--lz-spacing-lg);
+}
+
+.contact-type-card {
+  background: var(--lz-bg-secondary) !important;
+  border: 2px solid var(--lz-border) !important;
+  border-radius: var(--lz-radius-lg) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-type-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--lz-accent-primary), var(--lz-accent-hover));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.contact-type-card:hover {
+  border-color: var(--lz-accent-primary) !important;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(220, 38, 38, 0.15) !important;
+}
+
+.contact-type-card:hover::before {
+  opacity: 1;
+}
+
+.contact-type-card.selected {
+  border-color: var(--lz-accent-primary) !important;
+  box-shadow: 0 12px 40px rgba(220, 38, 38, 0.25) !important;
+  background: linear-gradient(135deg, rgba(220, 38, 38, 0.05), rgba(220, 38, 38, 0.02)) !important;
+}
+
+.contact-type-card.selected::before {
+  opacity: 1;
+}
+
+.contact-type-content {
+  padding: var(--lz-spacing-xl) var(--lz-spacing-lg) !important;
+  text-align: center;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--lz-spacing-md);
+}
+
+.contact-type-icon {
+  color: var(--lz-accent-primary);
+  margin-bottom: var(--lz-spacing-sm);
+  transition: all 0.3s ease;
+}
+
+.contact-type-card:hover .contact-type-icon {
+  transform: scale(1.1);
+  filter: drop-shadow(0 4px 12px rgba(220, 38, 38, 0.3));
+}
+
+.contact-type-card.selected .contact-type-icon {
+  transform: scale(1.15);
+  filter: drop-shadow(0 4px 16px rgba(220, 38, 38, 0.5));
+}
+
+.contact-type-content h6 {
+  color: var(--lz-text-primary);
+  font-weight: var(--lz-font-weight-semibold);
+  margin-bottom: var(--lz-spacing-xs);
+}
+
+.contact-type-content .MuiTypography-body2 {
+  color: var(--lz-text-secondary);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+/* 表单区块 */
+.form-section {
+  padding: var(--lz-spacing-lg) !important;
+  margin-bottom: var(--lz-spacing-lg) !important;
+  background: var(--lz-bg-secondary) !important;
+  border: 1px solid var(--lz-border) !important;
+}
+
+.form-section h6 {
+  color: var(--lz-text-primary);
+  font-weight: var(--lz-font-weight-semibold);
+  margin-bottom: var(--lz-spacing-md);
+}
+
+/* Checkbox颜色 - 选中时为红色 */
+.form-section .MuiCheckbox-root {
+  color: var(--lz-text-secondary) !important;
+}
+
+.form-section .MuiCheckbox-root.Mui-checked {
+  color: var(--lz-accent-primary) !important;
+}
+
+.form-section .MuiCheckbox-root:hover {
+  background-color: rgba(220, 38, 38, 0.08) !important;
+}
+
+/* 输入字段 */
+.form-section .MuiTextField-root,
+.form-section .MuiFormControl-root {
+  margin-bottom: var(--lz-spacing-md);
+}
+
+.form-section .MuiInputBase-root {
+  background: var(--lz-bg-primary);
+  color: var(--lz-text-primary);
+}
+
+.form-section .MuiInputLabel-root {
+  color: var(--lz-text-secondary);
+}
+
+.form-section .MuiInputLabel-root.Mui-focused {
+  color: var(--lz-accent-primary);
+}
+
+.form-section .MuiOutlinedInput-root {
+  fieldset {
+    border-color: var(--lz-border);
+  }
+
+  &:hover fieldset {
+    border-color: var(--lz-border-light);
+  }
+
+  &.Mui-focused fieldset {
+    border-color: var(--lz-accent-primary);
+  }
+}
+
+.form-section .MuiFormHelperText-root {
+  color: var(--lz-text-tertiary);
+}
+
+.form-section .MuiFormHelperText-root.Mui-error {
+  color: var(--lz-error);
+}
+
+/* 车辆选择卡片 */
+.vehicle-selector {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: var(--lz-spacing-md);
+  margin-top: var(--lz-spacing-md);
+}
+
+.vehicle-card {
+  border: 2px solid var(--lz-border);
+  border-radius: var(--lz-radius-lg);
+  padding: var(--lz-spacing-md);
+  cursor: pointer;
+  transition: var(--lz-transition-all);
+  background: var(--lz-bg-primary);
+}
+
+.vehicle-card:hover {
+  border-color: var(--lz-border-light);
+  transform: translateY(-4px);
+  box-shadow: var(--lz-shadow-lg);
+}
+
+.vehicle-card.selected {
+  border-color: var(--lz-accent-primary);
+  box-shadow: var(--lz-shadow-accent);
+}
+
+.vehicle-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: var(--lz-radius-md);
+  margin-bottom: var(--lz-spacing-sm);
+}
+
+.vehicle-card-info {
+  color: var(--lz-text-primary);
+}
+
+.vehicle-card-name {
+  font-weight: var(--lz-font-weight-semibold);
+  margin-bottom: var(--lz-spacing-xs);
+}
+
+.vehicle-card-price {
+  color: var(--lz-accent-primary);
+  font-size: var(--lz-font-size-h5);
+  font-weight: var(--lz-font-weight-bold);
+}
+
+/* 日期时间选择器 */
+.date-time-picker {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--lz-spacing-md);
+  margin-bottom: var(--lz-spacing-md);
+}
+
+/* 价格预览卡片 */
+.price-summary {
+  position: sticky;
+  top: calc(var(--lz-spacing-xxl) + 80px);
+  padding: var(--lz-spacing-lg) !important;
+  background: var(--lz-bg-secondary) !important;
+  border: 2px solid var(--lz-accent-primary) !important;
+  border-radius: var(--lz-radius-lg) !important;
+  box-shadow: var(--lz-shadow-accent) !important;
+}
+
+.price-summary h6 {
+  color: var(--lz-text-primary);
+  margin-bottom: var(--lz-spacing-md);
+}
+
+.price-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--lz-spacing-sm);
+  color: var(--lz-text-secondary);
+}
+
+.price-item-label {
+  color: var(--lz-text-secondary);
+}
+
+.price-item-value {
+  color: var(--lz-text-primary);
+  font-weight: var(--lz-font-weight-medium);
+}
+
+.price-total {
+  display: flex;
+  justify-content: space-between;
+  padding-top: var(--lz-spacing-md);
+  margin-top: var(--lz-spacing-md);
+  border-top: 2px solid var(--lz-border);
+  font-size: var(--lz-font-size-h4);
+  font-weight: var(--lz-font-weight-bold);
+  color: var(--lz-accent-primary);
+}
+
+/* 提交区域 */
+.submit-section {
+  margin-top: var(--lz-spacing-xl);
+}
+
+.submit-button {
+  background: var(--lz-accent-primary) !important;
+  color: white !important;
+  font-weight: var(--lz-font-weight-semibold) !important;
+  padding: var(--lz-spacing-md) var(--lz-spacing-xl) !important;
+  font-size: var(--lz-font-size-h5) !important;
+  border-radius: var(--lz-radius-lg) !important;
+  transition: var(--lz-transition-all) !important;
+}
+
+.submit-button:hover:not(:disabled) {
+  background: var(--lz-accent-hover) !important;
+  box-shadow: var(--lz-shadow-accent-hover) !important;
+  transform: translateY(-2px);
+}
+
+.submit-button:disabled {
+  opacity: 0.6;
+}
+
+/* 步骤指示器 */
+.form-stepper {
+  margin-bottom: var(--lz-spacing-xl);
+  background: var(--lz-bg-secondary);
+  padding: var(--lz-spacing-lg);
+  border-radius: var(--lz-radius-lg);
+}
+
+.form-stepper .MuiStepLabel-label {
+  color: var(--lz-text-secondary);
+}
+
+.form-stepper .MuiStepLabel-label.Mui-active {
+  color: var(--lz-accent-primary);
+}
+
+.form-stepper .MuiStepLabel-label.Mui-completed {
+  color: var(--lz-text-primary);
+}
+
+.form-stepper .MuiStepIcon-root {
+  color: var(--lz-border);
+}
+
+.form-stepper .MuiStepIcon-root.Mui-active {
+  color: var(--lz-accent-primary);
+}
+
+.form-stepper .MuiStepIcon-root.Mui-completed {
+  color: var(--lz-accent-primary);
+}
+
+/* Alert组件 */
+.MuiAlert-root {
+  background: var(--lz-bg-secondary) !important;
+  color: var(--lz-text-primary) !important;
+  border-radius: var(--lz-radius-md) !important;
+}
+
+.MuiAlert-standardSuccess {
+  border: 1px solid var(--lz-success) !important;
+}
+
+.MuiAlert-standardError {
+  border: 1px solid var(--lz-error) !important;
+}
+
+/* 响应式设计 */
+@media only screen and (max-width: 960px) {
+  .advanced-contact-form {
+    padding: var(--lz-spacing-md);
+  }
+
+  .date-time-picker {
+    grid-template-columns: 1fr;
+  }
+
+  .vehicle-selector {
+    grid-template-columns: 1fr;
+  }
+
+  .price-summary {
+    position: relative;
+    top: auto;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .advanced-contact-form {
+    padding: var(--lz-spacing-sm);
+  }
+
+  .contact-type-selector,
+  .form-section {
+    padding: var(--lz-spacing-md) !important;
+  }
+
+  .submit-button {
+    font-size: var(--lz-font-size-body) !important;
+    padding: var(--lz-spacing-sm) var(--lz-spacing-lg) !important;
+  }
+}

@@ -58,7 +58,7 @@ const Footer = () => {
             <div className="lz-footer-contacts">
               <div className="lz-footer-contact-item">
                 <PhoneOutlined className="lz-contact-icon" />
-                <span>+81-3-1234-5678</span>
+                <a href="tel:+81476769965">04-7676-9965</a>
               </div>
               <div className="lz-footer-contact-item">
                 <MailOutline className="lz-contact-icon" />

@@ -77,6 +77,16 @@ div.home div.home-cover {
   flex-shrink: 0;
 }
 
+/* Hero Logo */
+.hero-logo {
+  height: 300px;
+  width: auto;
+  margin-bottom: -20px;
+  /* 黒いロゴを白に変換 */
+  filter: brightness(0) invert(1);
+  -webkit-filter: brightness(0) invert(1);
+}
+
 /* 小标签 - "CAR RENTAL" */
 div.home-title {
   color: #FFFFFF;
@@ -99,6 +109,7 @@ div.home-cover .hero-main-title {
   color: #FFFFFF;
   margin: 0 0 28px 0;
   text-align: left;
+  white-space: pre-line;
 }
 
 /* 副标题 */
@@ -581,6 +592,11 @@ div.home div.customer-care div.customer-care-img img {
     max-width: 100%;
   }
 
+  .hero-logo {
+    height: 200px;
+    margin: 0 auto -10px;
+  }
+
   div.home-title {
     text-align: center;
     font-size: 12px;
@@ -600,11 +616,12 @@ div.home div.customer-care div.customer-care-img img {
 
   /* 移动端背景渐变改为垂直 */
   div.home div.home-content::after {
-    background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.6) 100%);
+    background: linear-gradient(180deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.7) 100%);
   }
 
   div.home div.home-content .video img {
-    object-position: center center;
+    object-position: 65% center;
+    object-fit: cover;
   }
 
   div.home div.search div.home-search {

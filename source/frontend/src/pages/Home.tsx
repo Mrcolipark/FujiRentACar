@@ -104,7 +104,11 @@ const Home = () => {
           </div>
 
           <div className="home-cover">
-            <div className="home-title">{strings.BRAND_NAME}</div>
+            <img
+              src="/images/fuji-logo.png"
+              alt="FUJI RENT A CAR"
+              className="hero-logo"
+            />
             <h1 className="hero-main-title">{strings.HERO_TITLE}</h1>
             <p className="hero-subtitle">
               {strings.HERO_SUBTITLE}

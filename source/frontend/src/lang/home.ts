@@ -6,7 +6,7 @@ const strings = new LocalizedStrings({
   ja: {
     // LUZURIO Hero Section
     BRAND_NAME: 'FUJI RENT A CAR',
-    HERO_TITLE: '最高級のラグジュアリーカー体験',
+    HERO_TITLE: '最高級の\nレンタカー体験',
     HERO_SUBTITLE: 'プレミアム車両で、最上級の体験を。お客様の旅は、ここから始まります。',
     HERO_CTA: 'お車を探す →',
 
