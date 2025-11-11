@@ -1,0 +1,437 @@
+/**
+ * LUZURIO Footer Styles
+ * 完全重构的4列布局 + 社交图标
+ */
+
+.lz-footer {
+  width: 100%;
+  background-color: var(--lz-bg-primary);
+  border-top: 1px solid var(--lz-border);
+  padding: var(--lz-spacing-xxl) 0 0 0;
+}
+
+.lz-footer-container {
+  max-width: var(--lz-container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--lz-container-padding);
+}
+
+/* ==================== 主要内容区 - 4列布局 ==================== */
+
+.lz-footer-main {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: var(--lz-spacing-xxl);
+  padding-bottom: var(--lz-spacing-xxl);
+  border-bottom: 1px solid var(--lz-border);
+}
+
+.lz-footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lz-spacing-md);
+}
+
+/* ==================== 第1列：品牌信息 ==================== */
+
+.lz-footer-brand {
+  max-width: 350px;
+}
+
+.lz-footer-logo {
+  font-size: var(--lz-font-size-h4);
+  font-weight: var(--lz-font-weight-black);
+  color: var(--lz-accent-primary);
+  margin: 0 0 var(--lz-spacing-sm) 0;
+  letter-spacing: var(--lz-letter-spacing-wide);
+}
+
+.lz-footer-description {
+  font-size: var(--lz-font-size-small);
+  font-weight: var(--lz-font-weight-regular);
+  color: var(--lz-text-secondary);
+  line-height: var(--lz-line-height-relaxed);
+  margin: 0 0 var(--lz-spacing-lg) 0;
+}
+
+.lz-footer-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lz-spacing-sm);
+}
+
+.lz-footer-contact-item {
+  display: flex;
+  align-items: center;
+  gap: var(--lz-spacing-sm);
+  font-size: var(--lz-font-size-small);
+  color: var(--lz-text-secondary);
+}
+
+.lz-contact-icon {
+  color: var(--lz-accent-primary);
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.lz-footer-contact-item a {
+  color: var(--lz-text-secondary);
+  text-decoration: none;
+  transition: var(--lz-transition-color);
+}
+
+.lz-footer-contact-item a:hover {
+  color: var(--lz-accent-primary);
+}
+
+/* ==================== 列标题 ==================== */
+
+.lz-footer-title {
+  font-size: var(--lz-font-size-body);
+  font-weight: var(--lz-font-weight-bold);
+  color: var(--lz-text-primary);
+  margin: 0 0 var(--lz-spacing-md) 0;
+  text-transform: uppercase;
+  letter-spacing: var(--lz-letter-spacing-wide);
+}
+
+/* ==================== 链接列表 ==================== */
+
+.lz-footer-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--lz-spacing-sm);
+}
+
+.lz-footer-links li {
+  font-size: var(--lz-font-size-small);
+  color: var(--lz-text-secondary);
+  cursor: pointer;
+  width: fit-content;
+  transition: var(--lz-transition-color);
+  position: relative;
+}
+
+.lz-footer-links li::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--lz-accent-primary);
+  transition: var(--lz-transition-all);
+}
+
+.lz-footer-links li:hover {
+  color: var(--lz-accent-primary);
+}
+
+.lz-footer-links li:hover::after {
+  width: 100%;
+}
+
+/* ==================== 社交媒体 ==================== */
+
+.lz-footer-social {
+  margin-top: var(--lz-spacing-md);
+}
+
+.lz-footer-social-title {
+  font-size: var(--lz-font-size-small);
+  font-weight: var(--lz-font-weight-semibold);
+  color: var(--lz-text-primary);
+  margin: 0 0 var(--lz-spacing-sm) 0;
+}
+
+.lz-social-icons {
+  display: flex;
+  gap: var(--lz-spacing-sm);
+}
+
+.lz-social-icon {
+  color: var(--lz-text-secondary) !important;
+  border: 2px solid var(--lz-border) !important;
+  border-radius: 50% !important;
+  padding: 8px !important;
+  transition: var(--lz-transition-all) !important;
+}
+
+.lz-social-icon:hover {
+  color: var(--lz-accent-primary) !important;
+  border-color: var(--lz-accent-primary) !important;
+  background-color: rgba(255, 71, 87, 0.1) !important;
+  transform: translateY(-3px);
+}
+
+/* ==================== Newsletter ==================== */
+
+.lz-footer-newsletter {
+  margin-top: var(--lz-spacing-md);
+}
+
+/* ==================== 底部栏 ==================== */
+
+.lz-footer-bottom {
+  padding: var(--lz-spacing-lg) 0;
+}
+
+.lz-footer-bottom-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lz-footer-copyright {
+  font-size: var(--lz-font-size-caption);
+  color: var(--lz-text-tertiary);
+  display: flex;
+  gap: 8px;
+}
+
+.lz-footer-payment {
+  display: flex;
+  align-items: center;
+  gap: var(--lz-spacing-md);
+}
+
+.lz-payment-text {
+  font-size: var(--lz-font-size-caption);
+  color: var(--lz-text-secondary);
+}
+
+.lz-payment-logo {
+  max-height: 40px;
+  width: auto;
+}
+
+/* ==================== 响应式 ==================== */
+
+/* 平板 */
+@media only screen and (max-width: 992px) {
+  .lz-footer-main {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--lz-spacing-xl);
+  }
+
+  .lz-footer-brand {
+    max-width: 100%;
+  }
+}
+
+/* 手机 */
+@media only screen and (max-width: 576px) {
+  .lz-footer {
+    padding: var(--lz-spacing-xl) 0 0 0;
+  }
+
+  .lz-footer-container {
+    padding: 0 var(--lz-spacing-md);
+  }
+
+  .lz-footer-main {
+    grid-template-columns: 1fr;
+    gap: var(--lz-spacing-lg);
+    padding-bottom: var(--lz-spacing-lg);
+  }
+
+  .lz-footer-bottom-content {
+    flex-direction: column;
+    gap: var(--lz-spacing-md);
+    align-items: flex-start;
+  }
+
+  .lz-footer-copyright {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .lz-footer-payment {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--lz-spacing-sm);
+  }
+
+  .lz-social-icons {
+    flex-wrap: wrap;
+  }
+}
+
+/* ==================== 旧类名兼容（避免破坏其他页面）==================== */
+
+div.footer {
+  width: 100%;
+  min-height: 300px;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  background: var(--lz-bg-primary);
+  color: var(--lz-text-secondary);
+  border-top: 1px solid var(--lz-border);
+  font-size: 14px;
+  padding: var(--lz-spacing-lg);
+  transform: translate3d(0, 0, 0);
+}
+
+div.footer div.header {
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--lz-accent-primary);
+  letter-spacing: 0.02em;
+}
+
+div.footer section.main {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: var(--lz-spacing-md);
+  padding: var(--lz-spacing-xxl) 0;
+  gap: var(--lz-spacing-xl);
+}
+
+div.footer div.main-section {
+  flex: 1 1 0%;
+}
+
+div.footer div.main-section div.title {
+  text-align: left;
+  margin-bottom: var(--lz-spacing-md);
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--lz-text-primary);
+}
+
+div.footer ul.links {
+  margin: 0;
+  padding: 0;
+}
+
+div.footer ul.links li {
+  list-style: none;
+  cursor: pointer;
+  margin: 12px 0;
+  width: fit-content;
+  color: var(--lz-text-secondary);
+  transition: color var(--lz-duration-fast) var(--lz-ease-in-out);
+}
+
+div.footer ul.links li:hover {
+  color: var(--lz-accent-primary);
+  text-decoration: none;
+}
+
+div.footer div.footer-contact {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 12px 0;
+}
+
+div.footer div.footer-contact .icon {
+  color: var(--lz-accent-primary);
+  margin-right: 8px;
+}
+
+div.footer div.footer-contact a {
+  text-decoration: none;
+  color: var(--lz-text-secondary);
+  transition: color var(--lz-duration-fast) var(--lz-ease-in-out);
+}
+
+div.footer div.footer-contact a:hover {
+  color: var(--lz-accent-primary);
+  text-decoration: none;
+}
+
+div.footer div.footer-contact .social-icon {
+  color: var(--lz-text-secondary);
+  border: 2px solid var(--lz-border);
+  border-radius: 50%;
+  padding: 8px;
+  margin-right: 12px;
+  transition: all var(--lz-duration-fast) var(--lz-ease-in-out);
+}
+
+div.footer div.footer-contact .social-icon:hover {
+  color: var(--lz-accent-primary);
+  border-color: var(--lz-accent-primary);
+  transform: translateY(-2px);
+}
+
+div.footer div.newsletter {
+  margin-top: var(--lz-spacing-xl);
+}
+
+div.footer section.payment {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  border-top: 1px solid var(--lz-border);
+  padding: var(--lz-spacing-md) 0;
+}
+
+div.footer section.payment div.payment-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--lz-text-secondary);
+  font-size: 13px;
+}
+
+div.footer section.copyright {
+  width: 100%;
+  padding: var(--lz-spacing-md) 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--lz-border);
+  color: var(--lz-text-tertiary);
+  font-size: 13px;
+}
+
+@media only screen and (max-width: 960px) {
+  div.footer section.main {
+    flex-direction: column;
+    gap: var(--lz-spacing-lg);
+  }
+
+  div.footer div.main-section {
+    margin: 10px 0;
+  }
+
+  div.footer section.payment {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  div.footer section.payment div.payment-text {
+    margin: 5px 0;
+    padding-left: 0;
+    align-items: flex-start;
+  }
+
+  div.footer section.payment img {
+    max-width: 100%;
+  }
+
+  div.footer section.copyright {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  div.footer {
+    padding: var(--lz-spacing-xl) var(--lz-container-padding);
+  }
+}

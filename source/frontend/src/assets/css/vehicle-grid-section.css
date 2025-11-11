@@ -1,0 +1,277 @@
+/**
+ * LUZURIO Vehicle Grid Section Styles
+ * 2x3车辆网格，大卡片展示
+ */
+
+.vehicle-grid-section {
+  width: 100%;
+  background-color: var(--lz-bg-primary);
+  padding: var(--lz-spacing-xxl) var(--lz-container-padding);
+  border-bottom: 1px solid var(--lz-border);
+}
+
+.vehicle-grid-container {
+  max-width: var(--lz-container-max-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--lz-spacing-xl);
+}
+
+/* ==================== 标题区域 ==================== */
+
+.vehicle-grid-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lz-spacing-sm);
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.vehicle-grid-title {
+  font-size: var(--lz-font-size-h2);
+  font-weight: var(--lz-font-weight-bold);
+  color: var(--lz-text-primary);
+  line-height: var(--lz-line-height-snug);
+  margin: 0;
+}
+
+.vehicle-grid-subtitle {
+  font-size: var(--lz-font-size-body);
+  font-weight: var(--lz-font-weight-regular);
+  color: var(--lz-text-secondary);
+  line-height: var(--lz-line-height-relaxed);
+  margin: 0;
+}
+
+/* ==================== 车辆网格 ==================== */
+
+.vehicle-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--lz-spacing-xl);
+}
+
+.vehicle-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--lz-bg-secondary);
+  border: 1px solid var(--lz-border);
+  border-radius: var(--lz-radius-xl);
+  overflow: hidden;
+  transition: var(--lz-transition-transform), var(--lz-transition-color);
+  cursor: pointer;
+}
+
+.vehicle-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--lz-accent-primary);
+  box-shadow: var(--lz-shadow-accent-hover);
+}
+
+/* ==================== 车辆图片区域 ==================== */
+
+.vehicle-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+}
+
+.vehicle-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--lz-transition-transform);
+}
+
+.vehicle-card:hover .vehicle-image {
+  transform: scale(1.1);
+}
+
+/* SUPERIOR标签 */
+.superior-badge {
+  position: absolute;
+  top: var(--lz-spacing-md);
+  right: var(--lz-spacing-md);
+  padding: var(--lz-spacing-xs) var(--lz-spacing-md);
+  background: var(--lz-accent-primary);
+  color: var(--lz-text-primary);
+  font-size: var(--lz-font-size-caption);
+  font-weight: var(--lz-font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--lz-letter-spacing-wider);
+  border-radius: var(--lz-radius-full);
+  box-shadow: var(--lz-shadow-accent);
+}
+
+/* 悬停遮罩 */
+.vehicle-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: var(--lz-transition-opacity);
+}
+
+.vehicle-card:hover .vehicle-overlay {
+  opacity: 1;
+}
+
+.view-details-btn {
+  background: var(--lz-accent-primary) !important;
+  color: var(--lz-text-primary) !important;
+  padding: var(--lz-spacing-sm) var(--lz-spacing-lg) !important;
+  font-size: var(--lz-font-size-small) !important;
+  font-weight: var(--lz-font-weight-semibold) !important;
+  text-transform: uppercase !important;
+  letter-spacing: var(--lz-letter-spacing-wide) !important;
+  border-radius: var(--lz-radius-full) !important;
+  box-shadow: var(--lz-shadow-accent) !important;
+}
+
+.view-details-btn:hover {
+  background: var(--lz-accent-hover) !important;
+  transform: translateX(4px);
+}
+
+/* ==================== 车辆信息区域 ==================== */
+
+.vehicle-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lz-spacing-xs);
+  padding: var(--lz-spacing-lg);
+}
+
+.vehicle-category {
+  font-size: var(--lz-font-size-caption);
+  font-weight: var(--lz-font-weight-medium);
+  color: var(--lz-accent-primary);
+  text-transform: uppercase;
+  letter-spacing: var(--lz-letter-spacing-wider);
+}
+
+.vehicle-name {
+  font-size: var(--lz-font-size-h5);
+  font-weight: var(--lz-font-weight-bold);
+  color: var(--lz-text-primary);
+  line-height: var(--lz-line-height-snug);
+  margin: 0;
+}
+
+.vehicle-specs {
+  display: flex;
+  align-items: center;
+  gap: var(--lz-spacing-xs);
+  margin-top: var(--lz-spacing-xs);
+}
+
+.vehicle-spec {
+  font-size: var(--lz-font-size-small);
+  font-weight: var(--lz-font-weight-regular);
+  color: var(--lz-text-secondary);
+}
+
+.vehicle-spec-divider {
+  color: var(--lz-border);
+}
+
+/* ==================== 底部按钮 ==================== */
+
+.vehicle-grid-footer {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--lz-spacing-md);
+}
+
+.view-all-btn {
+  padding: var(--lz-spacing-md) var(--lz-spacing-xl) !important;
+  font-size: var(--lz-font-size-body) !important;
+  font-weight: var(--lz-font-weight-semibold) !important;
+  text-transform: uppercase !important;
+  letter-spacing: var(--lz-letter-spacing-wide) !important;
+  color: var(--lz-text-primary) !important;
+  border: 2px solid var(--lz-text-primary) !important;
+  border-radius: var(--lz-radius-full) !important;
+  transition: var(--lz-transition-all) !important;
+}
+
+.view-all-btn:hover {
+  background: var(--lz-text-primary) !important;
+  color: var(--lz-bg-primary) !important;
+  transform: translateY(-2px);
+}
+
+/* ==================== 响应式 ==================== */
+
+/* 平板 */
+@media only screen and (max-width: 992px) {
+  .vehicle-grid-section {
+    padding: var(--lz-spacing-xl) var(--lz-spacing-lg);
+  }
+
+  .vehicle-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--lz-spacing-lg);
+  }
+
+  .vehicle-grid-title {
+    font-size: var(--lz-font-size-h3);
+  }
+
+  .vehicle-image-wrapper {
+    height: 240px;
+  }
+}
+
+/* 手机 */
+@media only screen and (max-width: 576px) {
+  .vehicle-grid-section {
+    padding: var(--lz-spacing-xl) var(--lz-spacing-md);
+  }
+
+  .vehicle-grid-container {
+    gap: var(--lz-spacing-lg);
+  }
+
+  .vehicle-grid-title {
+    font-size: var(--lz-font-size-h4);
+  }
+
+  .vehicle-grid-subtitle {
+    font-size: var(--lz-font-size-small);
+  }
+
+  .vehicle-grid {
+    grid-template-columns: 1fr;
+    gap: var(--lz-spacing-md);
+  }
+
+  .vehicle-image-wrapper {
+    height: 220px;
+  }
+
+  .vehicle-info {
+    padding: var(--lz-spacing-md);
+  }
+
+  .vehicle-name {
+    font-size: var(--lz-font-size-body);
+  }
+
+  .vehicle-spec {
+    font-size: var(--lz-font-size-caption);
+  }
+
+  .view-all-btn {
+    width: 100%;
+  }
+}

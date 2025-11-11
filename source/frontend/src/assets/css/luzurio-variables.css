@@ -1,0 +1,258 @@
+/**
+ * LUZURIO Design System - CSS Variables
+ * 全局CSS变量定义，可在所有CSS文件中使用
+ */
+
+:root {
+  /* ==================== 色彩系统 ==================== */
+
+  /* 主色 - 背景 */
+  --lz-bg-primary: #000000;
+  --lz-bg-secondary: #1A1A1A;
+  --lz-bg-tertiary: #2A2A2A;
+  --lz-bg-card: #1A1A1A;
+
+  /* 强调色 */
+  --lz-accent-primary: #FF4757;      /* 红色（CTA、Logo、高亮）*/
+  --lz-accent-secondary: #FFD700;
+  --lz-accent-hover: #E63946;        /* 悬停红色 */
+  --lz-accent-pressed: #C62828;      /* 按下红色 */
+
+  /* 文字色 */
+  --lz-text-primary: #FFFFFF;
+  --lz-text-secondary: #B0B0B0;
+  --lz-text-tertiary: #808080;
+  --lz-text-disabled: #5A5A5A;
+
+  /* 边框色 */
+  --lz-border: #333333;
+  --lz-border-light: #444444;
+  --lz-border-dark: #222222;
+
+  /* 状态色 */
+  --lz-error: #FF4757;
+  --lz-warning: #FFA502;
+  --lz-info: #5352ED;
+  --lz-success: #2ED573;
+
+  /* 渐变 */
+  --lz-gradient-dark: linear-gradient(180deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.7) 100%);
+  --lz-gradient-dark-vertical: linear-gradient(0deg, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0) 100%);
+  --lz-gradient-accent: linear-gradient(135deg, #FF4757 0%, #E63946 100%);    /* 红色渐变 */
+  --lz-gradient-overlay: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.8) 100%);
+
+  /* ==================== 字体系统 ==================== */
+
+  --lz-font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+
+  /* 字号 - 根据LUZURIO设计图调整 */
+  --lz-font-size-hero: 80px;      /* 5rem - 超大Hero标题 */
+  --lz-font-size-h1: 56px;        /* 3.5rem - 一级标题 */
+  --lz-font-size-h2: 42px;        /* 2.625rem - 二级标题 */
+  --lz-font-size-h3: 32px;        /* 2rem - 三级标题 */
+  --lz-font-size-h4: 24px;        /* 1.5rem - 四级标题 */
+  --lz-font-size-h5: 18px;        /* 1.125rem - 五级标题 */
+  --lz-font-size-body: 16px;      /* 1rem - 正文 */
+  --lz-font-size-small: 14px;     /* 0.875rem - 小字 */
+  --lz-font-size-caption: 12px;   /* 0.75rem - 说明文字 */
+
+  /* 字重 */
+  --lz-font-weight-black: 800;    /* 超粗 - Hero标题 */
+  --lz-font-weight-bold: 700;     /* 粗 - 标题 */
+  --lz-font-weight-semibold: 600; /* 半粗 - 副标题 */
+  --lz-font-weight-medium: 500;   /* 中等 - 强调文字 */
+  --lz-font-weight-regular: 400;  /* 常规 - 正文 */
+  --lz-font-weight-light: 300;    /* 细 - 次要文字 */
+
+  /* 行高 */
+  --lz-line-height-tight: 1.05;   /* 超紧 - Hero */
+  --lz-line-height-snug: 1.15;    /* 紧 - 大标题 */
+  --lz-line-height-normal: 1.5;   /* 正常 - 正文 */
+  --lz-line-height-relaxed: 1.6;  /* 宽松 - 描述文字 */
+
+  /* 字间距 */
+  --lz-letter-spacing-tighter: -0.03em;  /* 超紧 - Hero */
+  --lz-letter-spacing-tight: -0.02em;    /* 紧 - 大标题 */
+  --lz-letter-spacing-normal: 0;         /* 正常 */
+  --lz-letter-spacing-wide: 0.02em;      /* 宽 - 按钮/标签 */
+  --lz-letter-spacing-wider: 0.05em;     /* 超宽 - 小标签 */
+
+  /* ==================== 间距系统 ==================== */
+
+  --lz-spacing-xs: 8px;
+  --lz-spacing-sm: 16px;
+  --lz-spacing-md: 24px;
+  --lz-spacing-lg: 40px;
+  --lz-spacing-xl: 64px;
+  --lz-spacing-xxl: 96px;
+  --lz-spacing-xxxl: 128px;
+
+  /* 容器 */
+  --lz-container-max-width: 1440px;
+  --lz-container-padding: 80px;
+
+  /* ==================== 圆角系统 ==================== */
+
+  --lz-radius-sm: 4px;
+  --lz-radius-md: 8px;
+  --lz-radius-lg: 12px;
+  --lz-radius-xl: 16px;
+  --lz-radius-full: 9999px;
+
+  /* ==================== 阴影系统 ==================== */
+
+  --lz-shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --lz-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --lz-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.5);
+  --lz-shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.6);
+  --lz-shadow-xl: 0 12px 40px rgba(0, 0, 0, 0.7);
+  --lz-shadow-2xl: 0 20px 60px rgba(0, 0, 0, 0.8);
+
+  /* 发光阴影（用于CTA按钮） */
+  --lz-shadow-accent: 0 4px 12px rgba(255, 71, 87, 0.3);
+  --lz-shadow-accent-hover: 0 6px 20px rgba(255, 71, 87, 0.5);
+  --lz-shadow-accent-active: 0 2px 8px rgba(255, 71, 87, 0.4);
+
+  /* ==================== 动画系统 ==================== */
+
+  /* 持续时间 */
+  --lz-duration-fast: 150ms;
+  --lz-duration-normal: 300ms;
+  --lz-duration-slow: 500ms;
+
+  /* 缓动函数 */
+  --lz-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --lz-ease-out: cubic-bezier(0.0, 0, 0.2, 1);
+  --lz-ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --lz-ease-sharp: cubic-bezier(0.4, 0, 0.6, 1);
+
+  /* 预设过渡 */
+  --lz-transition-all: all var(--lz-duration-normal) var(--lz-ease-in-out);
+  --lz-transition-transform: transform var(--lz-duration-normal) var(--lz-ease-in-out);
+  --lz-transition-opacity: opacity var(--lz-duration-normal) var(--lz-ease-in-out);
+  --lz-transition-color: color var(--lz-duration-normal) var(--lz-ease-in-out);
+
+  /* ==================== Z-Index系统 ==================== */
+
+  --lz-z-base: 0;
+  --lz-z-dropdown: 1000;
+  --lz-z-sticky: 1020;
+  --lz-z-fixed: 1030;
+  --lz-z-modal-backdrop: 1040;
+  --lz-z-modal: 1050;
+  --lz-z-popover: 1060;
+  --lz-z-tooltip: 1070;
+
+  /* ==================== 断点系统（仅供参考）==================== */
+
+  --lz-breakpoint-xs: 0;
+  --lz-breakpoint-sm: 576px;
+  --lz-breakpoint-md: 768px;
+  --lz-breakpoint-lg: 992px;
+  --lz-breakpoint-xl: 1200px;
+  --lz-breakpoint-xxl: 1440px;
+}
+
+/* ==================== 响应式间距 ==================== */
+
+@media (max-width: 1200px) {
+  :root {
+    --lz-container-padding: 40px;
+    --lz-font-size-hero: 56px;
+    --lz-font-size-h1: 40px;
+    --lz-font-size-h2: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --lz-container-padding: 24px;
+    --lz-font-size-hero: 40px;
+    --lz-font-size-h1: 32px;
+    --lz-font-size-h2: 28px;
+    --lz-font-size-h3: 20px;
+    --lz-spacing-lg: 32px;
+    --lz-spacing-xl: 48px;
+    --lz-spacing-xxl: 64px;
+  }
+}
+
+@media (max-width: 576px) {
+  :root {
+    --lz-container-padding: 16px;
+    --lz-font-size-hero: 32px;
+    --lz-font-size-h1: 28px;
+    --lz-font-size-h2: 24px;
+    --lz-font-size-h3: 18px;
+    --lz-spacing-md: 16px;
+    --lz-spacing-lg: 24px;
+    --lz-spacing-xl: 32px;
+    --lz-spacing-xxl: 48px;
+  }
+}
+
+/* ==================== 实用类 ==================== */
+
+.lz-container {
+  max-width: var(--lz-container-max-width);
+  margin: 0 auto;
+  padding-left: var(--lz-container-padding);
+  padding-right: var(--lz-container-padding);
+}
+
+.lz-section {
+  padding-top: var(--lz-spacing-xxl);
+  padding-bottom: var(--lz-spacing-xxl);
+}
+
+.lz-text-gradient {
+  background: var(--lz-gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.lz-shadow-accent {
+  box-shadow: var(--lz-shadow-accent);
+}
+
+.lz-shadow-accent:hover {
+  box-shadow: var(--lz-shadow-accent-hover);
+}
+
+/* ==================== 滚动条样式 ==================== */
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--lz-border) var(--lz-bg-primary);
+}
+
+*::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--lz-bg-primary);
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--lz-border);
+  border-radius: 6px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--lz-border-light);
+}
+
+/* ==================== 选择文本样式 ==================== */
+
+::selection {
+  background-color: var(--lz-accent-primary);
+  color: var(--lz-bg-primary);
+}
+
+::-moz-selection {
+  background-color: var(--lz-accent-primary);
+  color: var(--lz-bg-primary);
+}

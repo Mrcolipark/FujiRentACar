@@ -1,0 +1,78 @@
+{
+  "locations": [
+    {
+      "id": "location-001",
+      "name": {
+        "ja": "成田空港店",
+        "en": "Narita Airport Branch",
+        "zh": "成田机场店"
+      },
+      "address": {
+        "ja": "〒286-0106 千葉県成田市取香564-1",
+        "en": "564-1 Torikoh, Narita-shi, Chiba 286-0106",
+        "zh": "〒286-0106 千叶县成田市取香564-1"
+      },
+      "latitude": 35.764,
+      "longitude": 140.386,
+      "image": "/images/locations/narita.jpg",
+      "hours": "24h",
+      "phone": "04-7676-9965",
+      "email": "rentacarfuji@gmail.com",
+      "mapLink": "https://maps.app.goo.gl/Go3MMFhRsDsuPEug9",
+      "parkingSpots": [
+        {
+          "name": "成田空港駐車場",
+          "latitude": 35.765,
+          "longitude": 140.387
+        }
+      ],
+      "instructions": {
+        "ja": "到着ロビーを出て、レンタカーカウンターへお越しください。スタッフが車までご案内します。事前にお電話いただければスムーズです。",
+        "en": "Exit the arrival lobby and head to our rental car counter. Our staff will guide you to your vehicle. Please call us in advance for a smooth pickup.",
+        "zh": "出到达大厅后，前往租车柜台办理。工作人员将引导您取车。建议提前致电以便顺利取车。"
+      },
+      "features": {
+        "ja": ["24時間対応可能", "空港近く", "日本語・中国語対応", "免許翻訳サポート"],
+        "en": ["24/7 available", "Near airport", "Japanese & Chinese support", "License translation support"],
+        "zh": ["24小时服务", "机场附近", "日语中文服务", "驾照翻译支持"]
+      }
+    },
+    {
+      "id": "location-002",
+      "name": {
+        "ja": "本店（墨田区）",
+        "en": "Main Office (Sumida)",
+        "zh": "总店（墨田区）"
+      },
+      "address": {
+        "ja": "〒130-0014 東京都墨田区亀沢4丁目-23-6",
+        "en": "4-23-6 Kamezawa, Sumida-ku, Tokyo 130-0014",
+        "zh": "〒130-0014 东京都墨田区龟泽4丁目-23-6"
+      },
+      "latitude": 35.698,
+      "longitude": 139.794,
+      "image": "/images/locations/sumida.jpg",
+      "hours": "09:00-18:00",
+      "phone": "04-7676-9965",
+      "email": "rentacarfuji@gmail.com",
+      "mapLink": "https://maps.app.goo.gl/MsntSiHKXXkD9pHFA",
+      "parkingSpots": [
+        {
+          "name": "店舗前駐車場",
+          "latitude": 35.698,
+          "longitude": 139.794
+        }
+      ],
+      "instructions": {
+        "ja": "両国駅から徒歩圏内。お車でお越しの際は店舗前に駐車スペースがございます。ご来店前にお電話いただけますと幸いです。",
+        "en": "Within walking distance from Ryogoku Station. Parking available in front of the store. Please call before visiting.",
+        "zh": "从两国站步行可达。店铺前方有停车位。来店前请致电联系。"
+      },
+      "features": {
+        "ja": ["駅から近い", "駐車場完備", "日本語・中国語対応", "長期レンタル相談可"],
+        "en": ["Near station", "Parking available", "Japanese & Chinese support", "Long-term rental available"],
+        "zh": ["临近车站", "停车场", "日语中文服务", "可商议长租"]
+      }
+    }
+  ]
+}

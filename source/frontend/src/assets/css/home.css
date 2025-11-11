@@ -1,0 +1,701 @@
+/**
+ * LUZURIO Home Page Styles
+ * 深色主题，黑色背景，黄绿色强调
+ */
+
+/* ==================== 主容器 ==================== */
+
+div.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden auto;
+  /* LUZURIO: 黑色背景 */
+  background-color: var(--lz-bg-primary);
+  transform: translate3d(0, 0, 0);
+}
+
+/* ==================== Hero区域 - LUZURIO风格 ==================== */
+
+div.home div.home-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+  z-index: 1;
+  padding: 0 var(--lz-container-padding);
+}
+
+/* 视频/图片背景 */
+div.home div.home-content .video {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  overflow: hidden;
+}
+
+div.home div.home-content video,
+div.home div.home-content .video img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: relative;
+}
+
+/* 视频遮罩层 - 更深的渐变 */
+div.home div.home-content::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  /* LUZURIO: 深色渐变遮罩，确保文字清晰 */
+  background: linear-gradient(180deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.6) 100%);
+  z-index: -1;
+}
+
+/* Hero内容容器 */
+div.home div.home-cover {
+  z-index: 2;
+  color: var(--lz-text-primary);
+  text-align: center;
+  max-width: 1000px;
+  width: 100%;
+}
+
+/* 小标签 - "LUZURIO" 或类似 */
+div.home-title {
+  /* LUZURIO: 红色品牌色 */
+  color: var(--lz-accent-primary);
+  font-size: var(--lz-font-size-small);
+  font-weight: var(--lz-font-weight-semibold);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: var(--lz-letter-spacing-wider);
+  margin-bottom: 24px;
+}
+
+/* 超大主标题 - "Luxury Cars, First-Class Experience" */
+div.home-cover h1,
+div.home-cover .hero-main-title {
+  font-size: var(--lz-font-size-hero);
+  font-weight: var(--lz-font-weight-black);
+  line-height: var(--lz-line-height-tight);
+  letter-spacing: var(--lz-letter-spacing-tighter);
+  color: var(--lz-text-primary);
+  margin: 0 0 24px 0;
+  text-align: center;
+}
+
+/* 副标题 */
+div.home-subtitle,
+div.home-cover .hero-subtitle {
+  color: var(--lz-text-secondary);
+  font-size: var(--lz-font-size-h5);
+  font-weight: var(--lz-font-weight-regular);
+  line-height: var(--lz-line-height-relaxed);
+  margin: 0 auto 40px;
+  max-width: 600px;
+}
+
+/* Hero CTA按钮 */
+div.home-cover .hero-cta,
+button.hero-cta {
+  display: inline-block !important;
+  background: var(--lz-accent-primary) !important;
+  color: #FFFFFF !important;
+  font-size: var(--lz-font-size-body) !important;
+  font-weight: var(--lz-font-weight-semibold) !important;
+  letter-spacing: var(--lz-letter-spacing-wide) !important;
+  padding: 18px 48px !important;
+  border-radius: var(--lz-radius-md) !important;
+  text-transform: none !important;
+  border: none !important;
+  cursor: pointer !important;
+  box-shadow: var(--lz-shadow-accent) !important;
+  transition: all var(--lz-duration-normal) var(--lz-ease-in-out) !important;
+  min-width: auto !important;
+}
+
+div.home-cover .hero-cta:hover,
+button.hero-cta:hover {
+  background: var(--lz-accent-hover) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: var(--lz-shadow-accent-hover) !important;
+}
+
+/* 滚动指示器（可选） */
+div.home-content .scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--lz-text-secondary);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-10px); }
+}
+
+/* ==================== 搜索区域 ==================== */
+
+div.home div.search {
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div.home div.search div.home-search {
+  /* LUZURIO: 深色卡片 */
+  background-color: var(--lz-bg-secondary);
+  border: 1px solid var(--lz-border);
+  box-shadow: var(--lz-shadow-xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: var(--lz-radius-lg);
+  z-index: 2;
+  width: fit-content;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* ==================== Why选择我们区域 ==================== */
+
+div.home div.why {
+  /* LUZURIO: 黑色背景 */
+  background-color: var(--lz-bg-primary);
+  width: 100%;
+  padding: var(--lz-spacing-xxl) 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div.home div.why h1 {
+  /* LUZURIO: 白色标题 */
+  color: var(--lz-text-primary);
+  font-weight: 600;
+  font-size: var(--lz-font-size-h2);
+  padding: 0 10px;
+  text-align: center;
+  margin-bottom: var(--lz-spacing-lg);
+}
+
+div.home div.why div.why-boxes {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 24px;
+}
+
+div.home div.why div.why-boxes div.why-box {
+  display: flex;
+  flex-direction: row;
+  width: 400px;
+  margin: 10px;
+  /* LUZURIO: 深色卡片 */
+  background-color: var(--lz-bg-secondary);
+  padding: 24px;
+  border-radius: var(--lz-radius-lg);
+  border: 1px solid var(--lz-border);
+  transition: var(--lz-transition-all);
+}
+
+div.home div.why div.why-boxes div.why-box:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--lz-shadow-lg);
+  border-color: var(--lz-accent-primary);
+}
+
+div.home div.why div.why-boxes div.why-box div.why-icon-wrapper {
+  padding: 20px;
+}
+
+div.home div.why div.why-boxes div.why-box div.why-icon-wrapper .why-icon {
+  font-size: 48px;
+  /* LUZURIO: 黄绿色图标 */
+  color: var(--lz-accent-primary);
+}
+
+div.home div.why div.why-boxes div.why-box div.why-text-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+div.home div.why div.why-boxes div.why-box div.why-text-wrapper span.why-title {
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: var(--lz-text-primary);
+}
+
+div.home div.why div.why-boxes div.why-box div.why-text-wrapper span {
+  color: var(--lz-text-secondary);
+  line-height: 1.6;
+}
+
+/* ==================== 服务区域 ==================== */
+
+div.home div.services {
+  /* LUZURIO: 稍浅的深色背景 */
+  background-color: var(--lz-bg-secondary);
+  width: 100%;
+  padding: var(--lz-spacing-xxl) 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div.home div.services h1 {
+  color: var(--lz-text-primary);
+  font-weight: 600;
+  font-size: var(--lz-font-size-h2);
+  padding: 0 10px;
+  text-align: center;
+  margin-bottom: var(--lz-spacing-lg);
+}
+
+div.home div.services div.services-boxes {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 24px;
+}
+
+div.home div.services div.services-boxes div.services-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  margin: 20px;
+  /* LUZURIO: 深色卡片 */
+  background-color: var(--lz-bg-tertiary);
+  padding: 32px 25px;
+  text-align: center;
+  border-radius: var(--lz-radius-lg);
+  border: 1px solid var(--lz-border);
+  transition: var(--lz-transition-all);
+}
+
+div.home div.services div.services-boxes div.services-box:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--lz-shadow-lg);
+  border-color: var(--lz-accent-primary);
+}
+
+div.home div.services div.services-boxes div.services-box div.services-icon-wrapper {
+  padding: 20px;
+}
+
+div.home div.services div.services-boxes div.services-box div.services-icon-wrapper .services-icon {
+  font-size: 48px;
+  color: var(--lz-accent-primary);
+}
+
+div.home div.services div.services-boxes div.services-box div.services-text-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+div.home div.services div.services-boxes div.services-box div.services-text-wrapper span.services-title {
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: var(--lz-text-primary);
+}
+
+div.home div.services div.services-boxes div.services-box div.services-text-wrapper span {
+  color: var(--lz-text-secondary);
+  line-height: 1.6;
+}
+
+/* ==================== 供应商轮播区域 ==================== */
+
+div.home div.home-suppliers {
+  width: 80%;
+  margin: var(--lz-spacing-xxl) 0;
+  background-color: var(--lz-bg-primary);
+}
+
+div.home div.home-suppliers h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: 600;
+  font-size: var(--lz-font-size-h2);
+  color: var(--lz-text-primary);
+}
+
+/* ==================== 目的地区域 ==================== */
+
+div.home div.destinations {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* LUZURIO: 深色背景 */
+  background-color: var(--lz-bg-primary);
+  padding: var(--lz-spacing-xxl) 0;
+}
+
+div.home div.destinations h1 {
+  width: fit-content;
+  font-weight: 600;
+  font-size: var(--lz-font-size-h2);
+  color: var(--lz-text-primary);
+  margin-bottom: var(--lz-spacing-lg);
+}
+
+div.home div.destinations div.tabs {
+  width: 100%;
+}
+
+/* ==================== 车辆尺寸区域 ==================== */
+
+div.home div.car-size {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* LUZURIO: 深色背景 */
+  background-color: var(--lz-bg-secondary);
+  padding: var(--lz-spacing-xxl) 0;
+}
+
+div.home div.car-size h1 {
+  font-weight: 600;
+  font-size: var(--lz-font-size-h2);
+  padding: 0 10px;
+  text-align: center;
+  color: var(--lz-text-primary);
+  margin-bottom: 16px;
+}
+
+div.home div.car-size p {
+  max-width: 614px;
+  text-align: center;
+  line-height: 30px;
+  /* LUZURIO: 次要文字颜色 */
+  color: var(--lz-text-secondary);
+  margin: 0;
+  padding: 0 20px;
+  margin-bottom: var(--lz-spacing-lg);
+}
+
+div.home div.car-size div.boxes {
+  margin: 30px 0;
+}
+
+div.home div.car-size div.boxes div.box {
+  width: 326px;
+  height: 278px;
+  /* LUZURIO: 深色卡片 */
+  background-color: var(--lz-bg-tertiary);
+  border: 1px solid var(--lz-border);
+  border-radius: var(--lz-radius-lg);
+  transition: var(--lz-transition-all);
+}
+
+div.home div.car-size div.boxes div.box:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--lz-shadow-lg);
+  border-color: var(--lz-accent-primary);
+}
+
+div.home div.car-size div.boxes div.box div.box-img {
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.02);
+  border-radius: var(--lz-radius-lg) var(--lz-radius-lg) 0 0;
+}
+
+div.home div.car-size div.boxes div.box img {
+  max-width: 100%;
+  max-height: 140px;
+}
+
+div.home div.car-size div.boxes div.box div.box-content {
+  padding: 0 15px;
+  user-select: none;
+  color: var(--lz-text-primary);
+}
+
+div.home div.car-size div.boxes div.box div.box-content ul {
+  list-style: none;
+  padding: 0 0 0 27px;
+  margin: 10px 0;
+  color: var(--lz-text-secondary);
+}
+
+div.home div.car-size div.boxes div.box div.box-content span.price {
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--lz-accent-primary);
+}
+
+div.home div.car-size div.boxes div.box div.box-content span.unit {
+  font-size: 14px;
+  color: var(--lz-text-secondary);
+}
+
+div.home div.car-size div.boxes div.box div.car-size-action {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+div.home div.car-size div.boxes div.box div.car-size-action .btn-car-size {
+  margin: 0 10px;
+  width: 100%;
+}
+
+/* ==================== 地图区域 ==================== */
+
+div.home div.home-map {
+  width: 80%;
+  margin: var(--lz-spacing-xl) 0;
+}
+
+/* ==================== FAQ区域 ==================== */
+
+div.home div.faq {
+  width: 100%;
+  /* LUZURIO: 深色背景 */
+  background-color: var(--lz-bg-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--lz-spacing-xxl) 0;
+}
+
+/* ==================== 客户服务区域 ==================== */
+
+div.home div.customer-care {
+  /* LUZURIO: 深色背景 */
+  background-color: var(--lz-bg-secondary);
+  width: 100%;
+  padding: var(--lz-spacing-xxxl) 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div.home div.customer-care div.customer-care-wrapper {
+  width: 1200px;
+  display: flex;
+  flex-direction: row;
+}
+
+div.home div.customer-care div.customer-care-text {
+  padding: 0 160px;
+  width: 900px;
+  color: var(--lz-text-primary);
+}
+
+div.home div.customer-care div.customer-care-text h1 {
+  color: var(--lz-text-primary);
+  font-weight: 600;
+  margin-bottom: var(--lz-spacing-lg);
+}
+
+div.home div.customer-care div.customer-care-text div.customer-care-content {
+  margin-bottom: 30px;
+  color: var(--lz-text-secondary);
+  line-height: 1.6;
+}
+
+div.home div.customer-care div.customer-care-text div.customer-care-boxes {
+  display: grid;
+  grid-template-columns: auto auto;
+  margin-bottom: 40px;
+  gap: 16px;
+}
+
+div.home div.customer-care div.customer-care-text div.customer-care-boxes div.customer-care-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 5px 0;
+  color: var(--lz-text-primary);
+}
+
+div.home div.customer-care div.customer-care-text div.customer-care-boxes .customer-care-icon {
+  margin-right: 10px;
+  color: var(--lz-accent-primary);
+}
+
+div.home div.customer-care div.customer-care-img {
+  padding: 40px;
+  flex: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div.home div.customer-care div.customer-care-img img {
+  height: 160px;
+  margin-left: -80px;
+  display: none;
+}
+
+/* ==================== 响应式设计 ==================== */
+
+/* Mobile (<=960px) */
+@media only screen and (max-width: 960px) {
+  div.home div.home-content {
+    padding: 85px 0;
+    justify-content: flex-start !important;
+    height: 560px;
+    min-height: 560px;
+  }
+
+  div.home div.home-title {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  div.home div.home-cover {
+    font-size: 40px;
+    font-weight: 800;
+    padding: 0 10px;
+  }
+
+  div.home div.search div.home-search {
+    padding: 20px 10px;
+    margin: -187px 20px 0 20px;
+    width: calc(100% - 20px);
+    max-width: 480px;
+  }
+
+  div.home div.why div.why-boxes,
+  div.home div.services div.services-boxes {
+    display: flex;
+    flex-direction: column;
+  }
+
+  div.home div.why div.why-boxes div.why-box {
+    width: 90%;
+    max-width: 500px;
+  }
+
+  div.home div.services div.services-boxes div.services-box {
+    width: 90%;
+    max-width: 500px;
+  }
+
+  div.home div.car-size div.boxes {
+    display: flex;
+    flex-direction: column;
+  }
+
+  div.home div.car-size div.boxes div.box {
+    margin-bottom: 30px;
+  }
+
+  div.home div.home-map {
+    width: 100%;
+    padding: 5px;
+  }
+
+  div.home div.home-map .map {
+    min-height: 0;
+    height: 340px;
+  }
+
+  div.home div.customer-care {
+    padding: var(--lz-spacing-xl) 0;
+  }
+
+  div.home div.customer-care div.customer-care-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  div.home div.customer-care div.customer-care-text {
+    padding: 0 20px;
+    width: 100%;
+  }
+
+  div.home div.customer-care div.customer-care-img img {
+    height: 160px;
+    margin-left: 0;
+  }
+}
+
+/* Desktop (>=960px) */
+@media only screen and (min-width: 960px) {
+  div.home div.home-content {
+    height: 100vh;
+    min-height: 100vh;
+  }
+
+  div.home div.search div.home-search {
+    padding: 24px;
+    margin-top: -90px;
+  }
+
+  div.home div.car-size div.boxes {
+    display: grid;
+    grid-auto-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+  }
+
+  div.home div.car-size div.boxes div.box {
+    margin-right: 0;
+  }
+}
+
+/* 移动端Hero调整 */
+@media only screen and (max-width: 960px) {
+  div.home-cover .hero-main-title,
+  div.home-cover h1 {
+    font-size: 48px !important;
+  }
+
+  div.home-cover .hero-cta,
+  button.hero-cta {
+    padding: 14px 36px !important;
+    font-size: 15px !important;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  div.home-cover .hero-main-title,
+  div.home-cover h1 {
+    font-size: 36px !important;
+    margin-bottom: 16px !important;
+  }
+
+  div.home-subtitle,
+  div.home-cover .hero-subtitle {
+    font-size: 14px !important;
+    margin-bottom: 32px !important;
+  }
+
+  div.home-cover .hero-cta,
+  button.hero-cta {
+    padding: 12px 32px !important;
+    font-size: 14px !important;
+  }
+}

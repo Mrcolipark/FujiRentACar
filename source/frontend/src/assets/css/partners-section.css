@@ -1,0 +1,173 @@
+/**
+ * LUZURIO Partners Section Styles
+ * 合作伙伴Logo展示区：网格布局的品牌Logo
+ */
+
+.partners-section {
+  width: 100%;
+  background-color: var(--lz-bg-secondary);
+  padding: var(--lz-spacing-xxl) var(--lz-container-padding);
+  border-bottom: 1px solid var(--lz-border);
+}
+
+.partners-container {
+  max-width: var(--lz-container-max-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--lz-spacing-xl);
+}
+
+/* ==================== 标题 ==================== */
+
+.partners-title {
+  font-size: var(--lz-font-size-h3);
+  font-weight: var(--lz-font-weight-bold);
+  color: var(--lz-text-primary);
+  text-align: center;
+  line-height: var(--lz-line-height-snug);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: var(--lz-letter-spacing-wide);
+}
+
+/* ==================== Logo网格 ==================== */
+
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--lz-spacing-lg);
+  width: 100%;
+}
+
+.partner-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--lz-spacing-lg);
+  background: var(--lz-bg-primary);
+  border: 1px solid var(--lz-border);
+  border-radius: var(--lz-radius-lg);
+  min-height: 120px;
+  transition: var(--lz-transition-transform), var(--lz-transition-color);
+  cursor: pointer;
+}
+
+.partner-item:hover {
+  transform: translateY(-4px);
+  border-color: var(--lz-accent-primary);
+  box-shadow: var(--lz-shadow-accent);
+}
+
+.partner-logo {
+  max-width: 100%;
+  max-height: 60px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(100%) brightness(2);
+  opacity: 0.6;
+  transition: var(--lz-transition-all);
+}
+
+.partner-item:hover .partner-logo {
+  filter: grayscale(0%) brightness(1);
+  opacity: 1;
+}
+
+/* Logo加载失败时的后备方案 */
+.partner-fallback {
+  font-size: var(--lz-font-size-h5);
+  font-weight: var(--lz-font-weight-bold);
+  color: var(--lz-text-secondary);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: var(--lz-letter-spacing-wide);
+}
+
+.partner-item:hover .partner-fallback {
+  color: var(--lz-accent-primary);
+}
+
+/* ==================== 响应式 ==================== */
+
+/* 大平板 */
+@media only screen and (max-width: 1200px) {
+  .partners-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--lz-spacing-md);
+  }
+
+  .partner-item {
+    min-height: 100px;
+  }
+
+  .partner-logo {
+    max-height: 50px;
+  }
+}
+
+/* 平板 */
+@media only screen and (max-width: 992px) {
+  .partners-section {
+    padding: var(--lz-spacing-xl) var(--lz-spacing-lg);
+  }
+
+  .partners-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .partners-title {
+    font-size: var(--lz-font-size-h4);
+  }
+}
+
+/* 小平板 */
+@media only screen and (max-width: 768px) {
+  .partners-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--lz-spacing-sm);
+  }
+
+  .partner-item {
+    min-height: 90px;
+    padding: var(--lz-spacing-md);
+  }
+
+  .partner-logo {
+    max-height: 40px;
+  }
+}
+
+/* 手机 */
+@media only screen and (max-width: 576px) {
+  .partners-section {
+    padding: var(--lz-spacing-xl) var(--lz-spacing-md);
+  }
+
+  .partners-container {
+    gap: var(--lz-spacing-lg);
+  }
+
+  .partners-title {
+    font-size: var(--lz-font-size-h5);
+  }
+
+  .partners-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--lz-spacing-xs);
+  }
+
+  .partner-item {
+    min-height: 80px;
+    padding: var(--lz-spacing-sm);
+  }
+
+  .partner-logo {
+    max-height: 35px;
+  }
+
+  .partner-fallback {
+    font-size: var(--lz-font-size-small);
+  }
+}

@@ -1,0 +1,205 @@
+/**
+ * LUZURIO Reviews Section Styles
+ * 3列布局的客户评价卡片
+ */
+
+.reviews-section {
+  width: 100%;
+  background-color: var(--lz-bg-secondary);
+  padding: var(--lz-spacing-xxl) var(--lz-container-padding);
+  border-bottom: 1px solid var(--lz-border);
+}
+
+.reviews-container {
+  max-width: var(--lz-container-max-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--lz-spacing-xl);
+}
+
+/* ==================== 标题区域 ==================== */
+
+.reviews-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lz-spacing-sm);
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.reviews-title {
+  font-size: var(--lz-font-size-h2);
+  font-weight: var(--lz-font-weight-bold);
+  color: var(--lz-text-primary);
+  line-height: var(--lz-line-height-snug);
+  margin: 0;
+}
+
+.reviews-subtitle {
+  font-size: var(--lz-font-size-body);
+  font-weight: var(--lz-font-weight-regular);
+  color: var(--lz-text-secondary);
+  line-height: var(--lz-line-height-relaxed);
+  margin: 0;
+}
+
+/* ==================== 评价网格 ==================== */
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--lz-spacing-xl);
+}
+
+.review-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lz-spacing-lg);
+  padding: var(--lz-spacing-xl);
+  background: var(--lz-bg-primary);
+  border: 1px solid var(--lz-border);
+  border-radius: var(--lz-radius-xl);
+  transition: var(--lz-transition-transform), var(--lz-transition-color);
+  cursor: pointer;
+}
+
+.review-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--lz-accent-primary);
+  box-shadow: var(--lz-shadow-accent-hover);
+}
+
+/* ==================== 评分星星 ==================== */
+
+.review-rating {
+  display: flex;
+  gap: 4px;
+}
+
+.star-icon {
+  color: var(--lz-accent-primary);
+  font-size: 20px;
+}
+
+/* ==================== 评价内容 ==================== */
+
+.review-text {
+  font-size: var(--lz-font-size-body);
+  font-weight: var(--lz-font-weight-regular);
+  color: var(--lz-text-primary);
+  line-height: var(--lz-line-height-relaxed);
+  margin: 0;
+  flex: 1;
+}
+
+/* ==================== 客户信息 ==================== */
+
+.review-author {
+  display: flex;
+  align-items: center;
+  gap: var(--lz-spacing-md);
+  padding-top: var(--lz-spacing-md);
+  border-top: 1px solid var(--lz-border);
+}
+
+.author-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid var(--lz-accent-primary);
+  object-fit: cover;
+}
+
+.author-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.author-name {
+  font-size: var(--lz-font-size-body);
+  font-weight: var(--lz-font-weight-semibold);
+  color: var(--lz-text-primary);
+  line-height: 1;
+}
+
+.author-role {
+  font-size: var(--lz-font-size-small);
+  font-weight: var(--lz-font-weight-regular);
+  color: var(--lz-text-secondary);
+  line-height: 1;
+}
+
+/* ==================== 响应式 ==================== */
+
+/* 平板 */
+@media only screen and (max-width: 992px) {
+  .reviews-section {
+    padding: var(--lz-spacing-xl) var(--lz-spacing-lg);
+  }
+
+  .reviews-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--lz-spacing-lg);
+  }
+
+  .reviews-title {
+    font-size: var(--lz-font-size-h3);
+  }
+
+  .review-card {
+    padding: var(--lz-spacing-lg);
+  }
+}
+
+/* 手机 */
+@media only screen and (max-width: 576px) {
+  .reviews-section {
+    padding: var(--lz-spacing-xl) var(--lz-spacing-md);
+  }
+
+  .reviews-container {
+    gap: var(--lz-spacing-lg);
+  }
+
+  .reviews-title {
+    font-size: var(--lz-font-size-h4);
+  }
+
+  .reviews-subtitle {
+    font-size: var(--lz-font-size-small);
+  }
+
+  .reviews-grid {
+    grid-template-columns: 1fr;
+    gap: var(--lz-spacing-md);
+  }
+
+  .review-card {
+    padding: var(--lz-spacing-md);
+    gap: var(--lz-spacing-md);
+  }
+
+  .review-text {
+    font-size: var(--lz-font-size-small);
+  }
+
+  .author-avatar {
+    width: 40px;
+    height: 40px;
+  }
+
+  .author-name {
+    font-size: var(--lz-font-size-small);
+  }
+
+  .author-role {
+    font-size: var(--lz-font-size-caption);
+  }
+
+  .star-icon {
+    font-size: 18px;
+  }
+}

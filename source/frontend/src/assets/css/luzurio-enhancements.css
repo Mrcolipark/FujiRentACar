@@ -1,0 +1,321 @@
+/**
+ * LUZURIO UI增强效果
+ * 全局动画、悬停效果和微交互
+ */
+
+/* ==================== 平滑滚动 ==================== */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ==================== 通用悬停增强 ==================== */
+
+/* 所有按钮的统一悬停效果 */
+button,
+.MuiButton-root {
+  transition: var(--lz-transition-all) !important;
+}
+
+button:hover:not(:disabled),
+.MuiButton-root:hover:not(:disabled) {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+button:active:not(:disabled),
+.MuiButton-root:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+/* 所有链接的统一悬停效果 */
+a {
+  transition: var(--lz-transition-color);
+}
+
+/* ==================== 卡片悬停增强 ==================== */
+
+/* 为所有卡片组件添加光标指示 */
+.review-card,
+.vehicle-card,
+.service-card,
+.stat-item,
+.reputation-stat,
+.partner-logo,
+.quality-card {
+  cursor: pointer;
+}
+
+/* 卡片悬停时的阴影增强 */
+.review-card:hover,
+.vehicle-card:hover {
+  box-shadow:
+    0 20px 40px rgba(255, 71, 87, 0.15),
+    0 0 0 1px var(--lz-accent-primary);
+}
+
+/* ==================== 图片悬停效果 ==================== */
+
+/* 所有图片容器的悬停效果 */
+.image-wrapper,
+.vehicle-image-wrapper,
+.service-image,
+.quality-image,
+.cta-car,
+.partner-logo {
+  overflow: hidden;
+  position: relative;
+}
+
+.image-wrapper img,
+.vehicle-image-wrapper img,
+.service-image img,
+.quality-image img {
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.image-wrapper:hover img,
+.vehicle-image-wrapper:hover img,
+.service-image:hover img,
+.quality-image:hover img {
+  transform: scale(1.08);
+}
+
+/* ==================== 文字悬停效果 ==================== */
+
+/* 标题链接悬停效果 */
+h1 a:hover,
+h2 a:hover,
+h3 a:hover {
+  color: var(--lz-accent-primary);
+}
+
+/* ==================== Loading状态增强 ==================== */
+
+/* 按钮加载状态 */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+button:disabled,
+.MuiButton-root:disabled {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* ==================== 入场动画 ==================== */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* 为section添加渐入动画 */
+section {
+  animation: fadeIn 0.8s ease-out;
+}
+
+/* ==================== 悬停时的图标动画 ==================== */
+
+.MuiButton-endIcon,
+.MuiButton-startIcon {
+  transition: transform 0.3s ease;
+}
+
+button:hover .MuiButton-endIcon {
+  transform: translateX(4px);
+}
+
+button:hover .MuiButton-startIcon {
+  transform: translateX(-4px);
+}
+
+/* ==================== 悬停时的下划线动画 ==================== */
+
+.hover-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.hover-underline::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--lz-accent-primary);
+  transition: width 0.3s ease;
+}
+
+.hover-underline:hover::after {
+  width: 100%;
+}
+
+/* ==================== 数字滚动效果 ==================== */
+
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stat-value {
+  animation: countUp 0.6s ease-out;
+}
+
+/* ==================== 脉冲效果（用于强调元素）==================== */
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 71, 87, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(255, 71, 87, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 71, 87, 0);
+  }
+}
+
+.pulse-on-hover:hover {
+  animation: pulseGlow 1.5s infinite;
+}
+
+/* ==================== Badge悬停效果 ==================== */
+
+.superior-badge,
+.image-badge,
+.quality-badge {
+  transition: var(--lz-transition-all);
+}
+
+.superior-badge:hover,
+.image-badge:hover,
+.quality-badge:hover {
+  transform: scale(1.05);
+  box-shadow: var(--lz-shadow-accent-hover);
+}
+
+/* ==================== Overlay淡入效果 ==================== */
+
+.vehicle-overlay,
+.image-overlay {
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+/* ==================== 焦点状态增强 ==================== */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--lz-accent-primary);
+  outline-offset: 2px;
+}
+
+/* ==================== 滚动进度指示器（可选）==================== */
+
+@keyframes scroll-progress {
+  to {
+    width: 100%;
+  }
+}
+
+/* ==================== 减少动画（可访问性）==================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ==================== 性能优化 ==================== */
+
+/* 强制GPU加速 */
+.review-card,
+.vehicle-card,
+.cta-button,
+button,
+.image-wrapper img {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* ==================== 自定义滚动条 ==================== */
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--lz-bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--lz-border);
+  border-radius: var(--lz-radius-full);
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--lz-accent-primary);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--lz-border) var(--lz-bg-primary);
+}

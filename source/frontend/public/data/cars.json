@@ -1,0 +1,180 @@
+{
+  "cars": [
+    {
+      "id": "car-001",
+      "name": "Toyota Alphard",
+      "type": "hybrid",
+      "gearbox": "automatic",
+      "seats": 7,
+      "doors": 4,
+      "aircon": true,
+      "image": "/images/cars/alphard.jpg",
+      "images": [
+        "/images/cars/alphard-1.jpg",
+        "/images/cars/alphard-2.jpg",
+        "/images/cars/alphard-3.jpg"
+      ],
+      "price": {
+        "daily": 15000,
+        "weekly": 90000,
+        "monthly": 300000
+      },
+      "deposit": 50000,
+      "mileage": 200,
+      "fuelPolicy": "fullToFull",
+      "minimumAge": 25,
+      "range": "maxi",
+      "multimedia": ["bluetooth", "appleCarPlay", "androidAuto"],
+      "rating": 4.8,
+      "trips": 250,
+      "co2": 120,
+      "insurance": {
+        "collisionDamageWaiver": 1500,
+        "theftProtection": 1000,
+        "fullInsurance": 2000
+      },
+      "locations": ["location-001", "location-002"],
+      "description": {
+        "ja": "高級ミニバン、広々とした室内空間",
+        "en": "Luxury minivan with spacious interior",
+        "zh": "豪华MPV，宽敞舒适"
+      },
+      "features": {
+        "ja": ["電動スライドドア", "後部座席モニター", "クルーズコントロール"],
+        "en": ["Power sliding doors", "Rear seat monitors", "Cruise control"],
+        "zh": ["电动侧滑门", "后排显示屏", "定速巡航"]
+      }
+    },
+    {
+      "id": "car-002",
+      "name": "Nissan Serena",
+      "type": "gasoline",
+      "gearbox": "automatic",
+      "seats": 8,
+      "doors": 5,
+      "aircon": true,
+      "image": "/images/cars/serena.jpg",
+      "images": [
+        "/images/cars/serena-1.jpg",
+        "/images/cars/serena-2.jpg"
+      ],
+      "price": {
+        "daily": 12000,
+        "weekly": 72000,
+        "monthly": 240000
+      },
+      "deposit": 40000,
+      "mileage": 200,
+      "fuelPolicy": "fullToFull",
+      "minimumAge": 21,
+      "range": "midi",
+      "multimedia": ["bluetooth"],
+      "rating": 4.6,
+      "trips": 180,
+      "co2": 150,
+      "insurance": {
+        "collisionDamageWaiver": 1200,
+        "theftProtection": 800,
+        "fullInsurance": 1800
+      },
+      "locations": ["location-001", "location-002", "location-003"],
+      "description": {
+        "ja": "ファミリー向けミニバン、燃費が良い",
+        "en": "Family-friendly minivan with good fuel economy",
+        "zh": "家庭友好型MPV，油耗经济"
+      },
+      "features": {
+        "ja": ["広い荷室", "両側スライドドア", "USB充電ポート"],
+        "en": ["Spacious cargo area", "Dual sliding doors", "USB charging ports"],
+        "zh": ["宽敞后备箱", "双侧滑门", "USB充电口"]
+      }
+    },
+    {
+      "id": "car-003",
+      "name": "Honda N-Box",
+      "type": "gasoline",
+      "gearbox": "automatic",
+      "seats": 4,
+      "doors": 5,
+      "aircon": true,
+      "image": "/images/cars/nbox.jpg",
+      "images": [
+        "/images/cars/nbox-1.jpg"
+      ],
+      "price": {
+        "daily": 8000,
+        "weekly": 48000,
+        "monthly": 160000
+      },
+      "deposit": 30000,
+      "mileage": -1,
+      "fuelPolicy": "fullToFull",
+      "minimumAge": 21,
+      "range": "mini",
+      "multimedia": ["bluetooth"],
+      "rating": 4.5,
+      "trips": 120,
+      "co2": 110,
+      "insurance": {
+        "collisionDamageWaiver": 800,
+        "theftProtection": 500,
+        "fullInsurance": 1200
+      },
+      "locations": ["location-001", "location-002"],
+      "description": {
+        "ja": "コンパクトで運転しやすい軽自動車",
+        "en": "Compact and easy-to-drive kei car",
+        "zh": "小巧易驾驶的轻型车"
+      },
+      "features": {
+        "ja": ["小回りが利く", "駐車しやすい", "燃費抜群"],
+        "en": ["Easy to maneuver", "Easy parking", "Excellent fuel economy"],
+        "zh": ["灵活转弯", "停车方便", "超省油"]
+      }
+    },
+    {
+      "id": "car-004",
+      "name": "Toyota Crown",
+      "type": "hybrid",
+      "gearbox": "automatic",
+      "seats": 5,
+      "doors": 4,
+      "aircon": true,
+      "image": "/images/cars/crown.jpg",
+      "images": [
+        "/images/cars/crown-1.jpg",
+        "/images/cars/crown-2.jpg"
+      ],
+      "price": {
+        "daily": 18000,
+        "weekly": 108000,
+        "monthly": 360000
+      },
+      "deposit": 60000,
+      "mileage": 300,
+      "fuelPolicy": "fullToFull",
+      "minimumAge": 25,
+      "range": "maxi",
+      "multimedia": ["bluetooth", "appleCarPlay", "androidAuto", "touchscreen"],
+      "rating": 4.9,
+      "trips": 95,
+      "co2": 100,
+      "insurance": {
+        "collisionDamageWaiver": 2000,
+        "theftProtection": 1500,
+        "fullInsurance": 2500
+      },
+      "locations": ["location-002"],
+      "description": {
+        "ja": "高級セダン、ビジネス利用に最適",
+        "en": "Luxury sedan, perfect for business use",
+        "zh": "豪华轿车，商务首选"
+      },
+      "features": {
+        "ja": ["レザーシート", "先進安全装備", "静粛性抜群"],
+        "en": ["Leather seats", "Advanced safety features", "Excellent quietness"],
+        "zh": ["真皮座椅", "先进安全配置", "静音出色"]
+      }
+    }
+  ]
+}

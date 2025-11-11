@@ -1,0 +1,199 @@
+/**
+ * LUZURIO Quality Assurance Section Styles
+ * 左侧车内照 + 右侧文案
+ */
+
+.quality-section {
+  width: 100%;
+  background-color: var(--lz-bg-primary);
+  padding: var(--lz-spacing-xxl) var(--lz-container-padding);
+  border-bottom: 1px solid var(--lz-border);
+}
+
+.quality-container {
+  max-width: var(--lz-container-max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 45% 55%;
+  gap: var(--lz-spacing-xxl);
+  align-items: center;
+}
+
+/* ==================== 左侧：车内照片 ==================== */
+
+.quality-image {
+  position: relative;
+  height: 100%;
+  min-height: 600px;
+}
+
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--lz-radius-xl);
+  overflow: hidden;
+  box-shadow: var(--lz-shadow-xl);
+}
+
+.interior-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--lz-transition-transform);
+}
+
+.image-wrapper:hover .interior-image {
+  transform: scale(1.05);
+}
+
+.image-badge {
+  position: absolute;
+  top: var(--lz-spacing-lg);
+  left: var(--lz-spacing-lg);
+  padding: var(--lz-spacing-sm) var(--lz-spacing-lg);
+  background: var(--lz-accent-primary);
+  color: var(--lz-text-primary);
+  font-size: var(--lz-font-size-small);
+  font-weight: var(--lz-font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--lz-letter-spacing-wider);
+  border-radius: var(--lz-radius-full);
+  box-shadow: var(--lz-shadow-accent);
+}
+
+/* ==================== 右侧：文案内容 ==================== */
+
+.quality-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lz-spacing-lg);
+}
+
+.quality-title {
+  font-size: var(--lz-font-size-h2);
+  font-weight: var(--lz-font-weight-bold);
+  color: var(--lz-text-primary);
+  line-height: var(--lz-line-height-snug);
+  margin: 0;
+}
+
+.quality-subtitle {
+  font-size: var(--lz-font-size-h5);
+  font-weight: var(--lz-font-weight-medium);
+  color: var(--lz-accent-primary);
+  line-height: var(--lz-line-height-normal);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: var(--lz-letter-spacing-wide);
+}
+
+.quality-features {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lz-spacing-md);
+  margin-top: var(--lz-spacing-md);
+}
+
+.quality-feature-item {
+  display: flex;
+  align-items: center;
+  gap: var(--lz-spacing-md);
+}
+
+.feature-icon {
+  color: var(--lz-accent-primary);
+  font-size: 28px;
+  flex-shrink: 0;
+}
+
+.feature-text {
+  font-size: var(--lz-font-size-body);
+  font-weight: var(--lz-font-weight-medium);
+  color: var(--lz-text-primary);
+  line-height: var(--lz-line-height-relaxed);
+}
+
+.quality-description {
+  font-size: var(--lz-font-size-body);
+  font-weight: var(--lz-font-weight-regular);
+  color: var(--lz-text-secondary);
+  line-height: var(--lz-line-height-relaxed);
+  margin: var(--lz-spacing-md) 0 0 0;
+  max-width: 600px;
+}
+
+/* ==================== 响应式 ==================== */
+
+/* 平板 */
+@media only screen and (max-width: 992px) {
+  .quality-section {
+    padding: var(--lz-spacing-xl) var(--lz-spacing-lg);
+  }
+
+  .quality-container {
+    grid-template-columns: 1fr;
+    gap: var(--lz-spacing-xl);
+  }
+
+  .quality-image {
+    min-height: 400px;
+    order: 2;
+  }
+
+  .quality-content {
+    order: 1;
+  }
+
+  .quality-title {
+    font-size: var(--lz-font-size-h3);
+  }
+
+  .quality-subtitle {
+    font-size: var(--lz-font-size-body);
+  }
+}
+
+/* 手机 */
+@media only screen and (max-width: 576px) {
+  .quality-section {
+    padding: var(--lz-spacing-xl) var(--lz-spacing-md);
+  }
+
+  .quality-container {
+    gap: var(--lz-spacing-lg);
+  }
+
+  .quality-title {
+    font-size: var(--lz-font-size-h4);
+  }
+
+  .quality-subtitle {
+    font-size: var(--lz-font-size-small);
+  }
+
+  .quality-image {
+    min-height: 300px;
+  }
+
+  .quality-features {
+    gap: var(--lz-spacing-sm);
+  }
+
+  .feature-icon {
+    font-size: 24px;
+  }
+
+  .feature-text {
+    font-size: var(--lz-font-size-small);
+  }
+
+  .quality-description {
+    font-size: var(--lz-font-size-small);
+  }
+
+  .image-badge {
+    padding: var(--lz-spacing-xs) var(--lz-spacing-md);
+    font-size: var(--lz-font-size-caption);
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "website": {
+    "name": "FUJI RENT A CAR",
+    "company": "東京国際株式会社",
+    "tagline": {
+      "ja": "信頼できるレンタカーサービス",
+      "en": "Reliable Car Rental Service",
+      "zh": "值得信赖的租车服务"
+    },
+    "description": {
+      "ja": "東京・成田空港を中心に展開するレンタカーサービス。多言語対応で海外のお客様も安心してご利用いただけます。",
+      "en": "Car rental service based in Tokyo and Narita Airport. Multilingual support for international customers.",
+      "zh": "以东京和成田机场为中心的租车服务。提供多语言支持，国际客户放心使用。"
+    },
+    "logo": "/images/logo.png",
+    "favicon": "/favicon.ico"
+  },
+  "contact": {
+    "email": "rentacarfuji@gmail.com",
+    "phone": "04-7676-9965",
+    "fax": "04-7633-4020",
+    "whatsapp": "",
+    "line": "",
+    "address": {
+      "ja": "〒130-0014 東京都墨田区亀沢4丁目-23-6",
+      "en": "4-23-6 Kamezawa, Sumida-ku, Tokyo 130-0014, Japan",
+      "zh": "〒130-0014 东京都墨田区龟泽4丁目-23-6"
+    }
+  },
+  "social": {
+    "facebook": "",
+    "instagram": "",
+    "twitter": ""
+  },
+  "business": {
+    "minimumAge": 21,
+    "currency": "JPY",
+    "timezone": "Asia/Tokyo",
+    "languages": ["ja", "en", "zh"],
+    "operatingHours": {
+      "weekday": "09:00-18:00",
+      "weekend": "09:00-18:00",
+      "naritaAirport": "24h"
+    }
+  },
+  "seo": {
+    "keywords": {
+      "ja": "レンタカー, 東京, 成田空港, 格安, ファミリーカー, 墨田区",
+      "en": "car rental, Tokyo, Narita Airport, affordable, family car, Sumida",
+      "zh": "租车, 东京, 成田机场, 实惠, 家庭用车, 墨田区"
+    },
+    "author": "FUJI RENT A CAR - 東京国際株式会社"
+  }
+}

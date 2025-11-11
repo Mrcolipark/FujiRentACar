@@ -1,0 +1,204 @@
+/**
+ * LUZURIO Reputation Section Styles
+ * 品牌声誉区：左侧5星评价，右侧3个数据指标
+ */
+
+.reputation-section {
+  width: 100%;
+  background-color: var(--lz-bg-secondary);
+  padding: var(--lz-spacing-xxl) var(--lz-container-padding);
+  border-bottom: 1px solid var(--lz-border);
+}
+
+.reputation-container {
+  max-width: var(--lz-container-max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--lz-spacing-xxl);
+  align-items: center;
+}
+
+/* ==================== 左侧：评分展示 ==================== */
+
+.reputation-rating {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lz-spacing-lg);
+}
+
+.rating-badge {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--lz-spacing-sm);
+  padding: var(--lz-spacing-lg);
+  background: var(--lz-bg-primary);
+  border: 1px solid var(--lz-border);
+  border-radius: var(--lz-radius-lg);
+  max-width: 280px;
+}
+
+.rating-stars {
+  display: flex;
+  gap: 4px;
+}
+
+.star-icon {
+  color: var(--lz-accent-primary);
+  font-size: 28px;
+}
+
+.rating-score {
+  font-size: var(--lz-font-size-h2);
+  font-weight: var(--lz-font-weight-black);
+  color: var(--lz-text-primary);
+  line-height: 1;
+  margin-top: var(--lz-spacing-xs);
+}
+
+.rating-source {
+  font-size: var(--lz-font-size-small);
+  font-weight: var(--lz-font-weight-medium);
+  color: var(--lz-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: var(--lz-letter-spacing-wide);
+}
+
+.rating-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lz-spacing-sm);
+}
+
+.rating-title {
+  font-size: var(--lz-font-size-h3);
+  font-weight: var(--lz-font-weight-bold);
+  color: var(--lz-text-primary);
+  line-height: var(--lz-line-height-snug);
+}
+
+.rating-subtitle {
+  font-size: var(--lz-font-size-body);
+  font-weight: var(--lz-font-weight-regular);
+  color: var(--lz-text-secondary);
+  line-height: var(--lz-line-height-relaxed);
+  max-width: 480px;
+}
+
+/* ==================== 右侧：数据展示 ==================== */
+
+.reputation-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--lz-spacing-lg);
+}
+
+.reputation-stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--lz-spacing-lg);
+  background: var(--lz-bg-primary);
+  border: 1px solid var(--lz-border);
+  border-radius: var(--lz-radius-lg);
+  transition: var(--lz-transition-transform), var(--lz-transition-color);
+}
+
+.reputation-stat-item:hover {
+  transform: translateY(-4px);
+  border-color: var(--lz-accent-primary);
+}
+
+.stat-number {
+  font-size: var(--lz-font-size-h2);
+  font-weight: var(--lz-font-weight-black);
+  color: var(--lz-accent-primary);
+  line-height: 1;
+  margin-bottom: var(--lz-spacing-sm);
+}
+
+.stat-label {
+  font-size: var(--lz-font-size-small);
+  font-weight: var(--lz-font-weight-medium);
+  color: var(--lz-text-secondary);
+  line-height: var(--lz-line-height-normal);
+  text-transform: uppercase;
+  letter-spacing: var(--lz-letter-spacing-wide);
+}
+
+/* ==================== 响应式 ==================== */
+
+/* 平板 */
+@media only screen and (max-width: 992px) {
+  .reputation-section {
+    padding: var(--lz-spacing-xl) var(--lz-spacing-lg);
+  }
+
+  .reputation-container {
+    grid-template-columns: 1fr;
+    gap: var(--lz-spacing-xl);
+  }
+
+  .rating-badge {
+    max-width: 100%;
+  }
+
+  .rating-title {
+    font-size: var(--lz-font-size-h4);
+  }
+
+  .reputation-stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--lz-spacing-md);
+  }
+}
+
+/* 手机 */
+@media only screen and (max-width: 576px) {
+  .reputation-section {
+    padding: var(--lz-spacing-xl) var(--lz-spacing-md);
+  }
+
+  .reputation-container {
+    gap: var(--lz-spacing-lg);
+  }
+
+  .reputation-rating {
+    gap: var(--lz-spacing-md);
+  }
+
+  .rating-badge {
+    padding: var(--lz-spacing-md);
+  }
+
+  .star-icon {
+    font-size: 24px;
+  }
+
+  .rating-score {
+    font-size: var(--lz-font-size-h3);
+  }
+
+  .rating-title {
+    font-size: var(--lz-font-size-h5);
+  }
+
+  .rating-subtitle {
+    font-size: var(--lz-font-size-small);
+  }
+
+  .reputation-stats {
+    grid-template-columns: 1fr;
+    gap: var(--lz-spacing-sm);
+  }
+
+  .stat-number {
+    font-size: var(--lz-font-size-h3);
+  }
+
+  .stat-label {
+    font-size: var(--lz-font-size-caption);
+  }
+}

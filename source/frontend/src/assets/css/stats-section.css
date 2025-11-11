@@ -1,0 +1,109 @@
+/**
+ * LUZURIO Stats Section Styles
+ * 4个大数字统计指标展示
+ */
+
+.stats-section {
+  width: 100%;
+  background-color: var(--lz-bg-primary);
+  padding: var(--lz-spacing-xxl) var(--lz-container-padding);
+  border-bottom: 1px solid var(--lz-border);
+}
+
+.stats-container {
+  max-width: var(--lz-container-max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--lz-spacing-xl);
+}
+
+.stat-item {
+  text-align: center;
+  padding: var(--lz-spacing-lg) var(--lz-spacing-md);
+  position: relative;
+}
+
+/* 分隔线 */
+.stat-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 60px;
+  width: 1px;
+  background: var(--lz-border);
+}
+
+/* 统计数字 */
+.stat-value {
+  font-size: var(--lz-font-size-h1);
+  font-weight: var(--lz-font-weight-black);
+  line-height: 1;
+  color: var(--lz-text-primary);
+  margin-bottom: var(--lz-spacing-sm);
+  letter-spacing: -0.02em;
+}
+
+/* 高亮数字（红色） */
+.stat-value.highlight {
+  color: var(--lz-accent-primary);
+}
+
+/* 统计标签 */
+.stat-label {
+  font-size: var(--lz-font-size-small);
+  font-weight: var(--lz-font-weight-regular);
+  color: var(--lz-text-secondary);
+  line-height: var(--lz-line-height-normal);
+  text-transform: capitalize;
+}
+
+/* ==================== 响应式 ==================== */
+
+/* 平板 */
+@media only screen and (max-width: 992px) {
+  .stats-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--lz-spacing-lg);
+  }
+
+  .stat-item:nth-child(2n)::after {
+    display: none;
+  }
+
+  .stat-item:not(:nth-last-child(-n+2)) {
+    border-bottom: 1px solid var(--lz-border);
+    padding-bottom: var(--lz-spacing-lg);
+  }
+}
+
+/* 手机 */
+@media only screen and (max-width: 576px) {
+  .stats-section {
+    padding: var(--lz-spacing-xl) var(--lz-spacing-md);
+  }
+
+  .stats-container {
+    grid-template-columns: 1fr;
+    gap: var(--lz-spacing-md);
+  }
+
+  .stat-item::after {
+    display: none !important;
+  }
+
+  .stat-item:not(:last-child) {
+    border-bottom: 1px solid var(--lz-border);
+    padding-bottom: var(--lz-spacing-md);
+  }
+
+  .stat-value {
+    font-size: var(--lz-font-size-h2);
+  }
+
+  .stat-label {
+    font-size: var(--lz-font-size-caption);
+  }
+}

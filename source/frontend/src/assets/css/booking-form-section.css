@@ -1,0 +1,234 @@
+/**
+ * LUZURIO Booking Form Section Styles
+ * 横向预订表单：一行5个字段
+ */
+
+.booking-form-section {
+  width: 100%;
+  background: var(--lz-bg-secondary);
+  padding: var(--lz-spacing-xxl) var(--lz-container-padding);
+  border-bottom: 1px solid var(--lz-border);
+}
+
+.booking-form-container {
+  max-width: var(--lz-container-max-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--lz-spacing-xl);
+}
+
+/* ==================== 标题区域 ==================== */
+
+.booking-form-header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lz-spacing-sm);
+  text-align: center;
+}
+
+.booking-form-title {
+  font-size: var(--lz-font-size-h2);
+  font-weight: var(--lz-font-weight-bold);
+  color: var(--lz-text-primary);
+  line-height: var(--lz-line-height-snug);
+  margin: 0;
+}
+
+.booking-form-subtitle {
+  font-size: var(--lz-font-size-body);
+  font-weight: var(--lz-font-weight-regular);
+  color: var(--lz-text-secondary);
+  line-height: var(--lz-line-height-relaxed);
+  margin: 0;
+}
+
+/* ==================== 表单区域 ==================== */
+
+.booking-form {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--lz-spacing-lg);
+  padding: var(--lz-spacing-xl);
+  background: var(--lz-bg-primary);
+  border: 1px solid var(--lz-border);
+  border-radius: var(--lz-radius-xl);
+  box-shadow: var(--lz-shadow-lg);
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lz-spacing-sm);
+}
+
+.field-label {
+  display: flex;
+  align-items: center;
+  gap: var(--lz-spacing-xs);
+  font-size: var(--lz-font-size-small);
+  font-weight: var(--lz-font-weight-semibold);
+  color: var(--lz-text-primary);
+  text-transform: uppercase;
+  letter-spacing: var(--lz-letter-spacing-wide);
+}
+
+.field-icon {
+  color: var(--lz-accent-primary);
+  font-size: 18px;
+}
+
+/* ==================== 输入框样式 ==================== */
+
+.booking-input {
+  background: var(--lz-bg-secondary) !important;
+}
+
+.booking-input .MuiOutlinedInput-root {
+  color: var(--lz-text-primary) !important;
+  background: var(--lz-bg-secondary) !important;
+  border-radius: var(--lz-radius-md) !important;
+}
+
+.booking-input .MuiOutlinedInput-notchedOutline {
+  border-color: var(--lz-border) !important;
+}
+
+.booking-input .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border-color: var(--lz-accent-primary) !important;
+}
+
+.booking-input .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: var(--lz-accent-primary) !important;
+  border-width: 2px !important;
+}
+
+.booking-input .MuiSelect-icon {
+  color: var(--lz-text-secondary) !important;
+}
+
+.booking-input input {
+  color: var(--lz-text-primary) !important;
+}
+
+/* ==================== 按钮 ==================== */
+
+.form-action {
+  justify-content: flex-end;
+}
+
+.booking-submit-btn {
+  background: var(--lz-accent-primary) !important;
+  color: var(--lz-text-primary) !important;
+  padding: 14px var(--lz-spacing-xl) !important;
+  font-size: var(--lz-font-size-body) !important;
+  font-weight: var(--lz-font-weight-bold) !important;
+  text-transform: uppercase !important;
+  letter-spacing: var(--lz-letter-spacing-wide) !important;
+  border-radius: var(--lz-radius-full) !important;
+  box-shadow: var(--lz-shadow-accent) !important;
+  transition: var(--lz-transition-all) !important;
+  white-space: nowrap !important;
+  height: 56px;
+}
+
+.booking-submit-btn:hover {
+  background: var(--lz-accent-hover) !important;
+  box-shadow: var(--lz-shadow-accent-hover) !important;
+  transform: translateY(-2px);
+}
+
+/* ==================== 下拉菜单样式 ==================== */
+
+.MuiMenu-paper {
+  background: var(--lz-bg-secondary) !important;
+  border: 1px solid var(--lz-border) !important;
+  box-shadow: var(--lz-shadow-lg) !important;
+}
+
+.MuiMenuItem-root {
+  color: var(--lz-text-primary) !important;
+  font-size: var(--lz-font-size-body) !important;
+}
+
+.MuiMenuItem-root:hover {
+  background: rgba(255, 255, 255, 0.05) !important;
+}
+
+.MuiMenuItem-root.Mui-selected {
+  background: rgba(255, 71, 87, 0.1) !important;
+  color: var(--lz-accent-primary) !important;
+}
+
+.MuiMenuItem-root.Mui-selected:hover {
+  background: rgba(255, 71, 87, 0.15) !important;
+}
+
+/* ==================== 响应式 ==================== */
+
+/* 大平板 */
+@media only screen and (max-width: 1200px) {
+  .booking-form {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--lz-spacing-md);
+  }
+
+  .form-field.form-action {
+    grid-column: 1 / -1;
+  }
+
+  .booking-submit-btn {
+    width: 100%;
+  }
+}
+
+/* 平板 */
+@media only screen and (max-width: 992px) {
+  .booking-form-section {
+    padding: var(--lz-spacing-xl) var(--lz-spacing-lg);
+  }
+
+  .booking-form {
+    grid-template-columns: repeat(2, 1fr);
+    padding: var(--lz-spacing-lg);
+  }
+
+  .booking-form-title {
+    font-size: var(--lz-font-size-h3);
+  }
+}
+
+/* 手机 */
+@media only screen and (max-width: 576px) {
+  .booking-form-section {
+    padding: var(--lz-spacing-xl) var(--lz-spacing-md);
+  }
+
+  .booking-form-container {
+    gap: var(--lz-spacing-lg);
+  }
+
+  .booking-form-title {
+    font-size: var(--lz-font-size-h4);
+  }
+
+  .booking-form-subtitle {
+    font-size: var(--lz-font-size-small);
+  }
+
+  .booking-form {
+    grid-template-columns: 1fr;
+    gap: var(--lz-spacing-md);
+    padding: var(--lz-spacing-md);
+  }
+
+  .field-label {
+    font-size: var(--lz-font-size-caption);
+  }
+
+  .booking-submit-btn {
+    padding: 12px var(--lz-spacing-lg) !important;
+    font-size: var(--lz-font-size-small) !important;
+    height: 48px;
+  }
+}

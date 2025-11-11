@@ -1,0 +1,241 @@
+/**
+ * LUZURIO Services Section Styles
+ * 左侧4个服务特色 + 右侧豪车大图
+ */
+
+.services-section {
+  width: 100%;
+  background-color: var(--lz-bg-primary);
+  padding: var(--lz-spacing-xxl) var(--lz-container-padding);
+  border-bottom: 1px solid var(--lz-border);
+}
+
+.services-container {
+  max-width: var(--lz-container-max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--lz-spacing-xxl);
+  align-items: center;
+}
+
+/* ==================== 左侧：服务特色列表 ==================== */
+
+.services-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lz-spacing-lg);
+}
+
+.services-title {
+  font-size: var(--lz-font-size-h2);
+  font-weight: var(--lz-font-weight-bold);
+  color: var(--lz-text-primary);
+  line-height: var(--lz-line-height-snug);
+  margin: 0;
+}
+
+.services-subtitle {
+  font-size: var(--lz-font-size-body);
+  font-weight: var(--lz-font-weight-regular);
+  color: var(--lz-text-secondary);
+  line-height: var(--lz-line-height-relaxed);
+  margin: 0;
+  max-width: 540px;
+}
+
+.services-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--lz-spacing-lg);
+  margin-top: var(--lz-spacing-md);
+}
+
+.service-item {
+  display: flex;
+  gap: var(--lz-spacing-md);
+  align-items: flex-start;
+  padding: var(--lz-spacing-md);
+  background: var(--lz-bg-secondary);
+  border: 1px solid var(--lz-border);
+  border-radius: var(--lz-radius-lg);
+  transition: var(--lz-transition-transform), var(--lz-transition-color);
+}
+
+.service-item:hover {
+  transform: translateX(8px);
+  border-color: var(--lz-accent-primary);
+  background: var(--lz-bg-tertiary);
+}
+
+.service-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--lz-bg-primary);
+  border: 2px solid var(--lz-accent-primary);
+  border-radius: 50%;
+}
+
+.service-icon svg {
+  color: var(--lz-accent-primary);
+  font-size: 24px;
+}
+
+.service-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--lz-spacing-xs);
+}
+
+.service-title {
+  font-size: var(--lz-font-size-h5);
+  font-weight: var(--lz-font-weight-semibold);
+  color: var(--lz-text-primary);
+  line-height: var(--lz-line-height-snug);
+  margin: 0;
+}
+
+.service-description {
+  font-size: var(--lz-font-size-small);
+  font-weight: var(--lz-font-weight-regular);
+  color: var(--lz-text-secondary);
+  line-height: var(--lz-line-height-relaxed);
+  margin: 0;
+}
+
+/* ==================== 右侧：豪车大图 ==================== */
+
+.services-image {
+  position: relative;
+  height: 100%;
+  min-height: 600px;
+}
+
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--lz-radius-xl);
+  overflow: hidden;
+  box-shadow: var(--lz-shadow-xl);
+}
+
+.luxury-car-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--lz-transition-transform);
+}
+
+.image-wrapper:hover .luxury-car-image {
+  transform: scale(1.05);
+}
+
+.image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--lz-spacing-xl);
+  background: var(--lz-gradient-overlay);
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+.image-badge {
+  display: inline-flex;
+  padding: var(--lz-spacing-sm) var(--lz-spacing-lg);
+  background: var(--lz-accent-primary);
+  color: var(--lz-text-primary);
+  font-size: var(--lz-font-size-small);
+  font-weight: var(--lz-font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--lz-letter-spacing-wider);
+  border-radius: var(--lz-radius-full);
+}
+
+/* ==================== 响应式 ==================== */
+
+/* 平板 */
+@media only screen and (max-width: 992px) {
+  .services-section {
+    padding: var(--lz-spacing-xl) var(--lz-spacing-lg);
+  }
+
+  .services-container {
+    grid-template-columns: 1fr;
+    gap: var(--lz-spacing-xl);
+  }
+
+  .services-image {
+    min-height: 400px;
+  }
+
+  .services-title {
+    font-size: var(--lz-font-size-h3);
+  }
+}
+
+/* 手机 */
+@media only screen and (max-width: 576px) {
+  .services-section {
+    padding: var(--lz-spacing-xl) var(--lz-spacing-md);
+  }
+
+  .services-container {
+    gap: var(--lz-spacing-lg);
+  }
+
+  .services-title {
+    font-size: var(--lz-font-size-h4);
+  }
+
+  .services-subtitle {
+    font-size: var(--lz-font-size-small);
+  }
+
+  .services-list {
+    gap: var(--lz-spacing-md);
+  }
+
+  .service-item {
+    padding: var(--lz-spacing-sm);
+    gap: var(--lz-spacing-sm);
+  }
+
+  .service-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .service-icon svg {
+    font-size: 20px;
+  }
+
+  .service-title {
+    font-size: var(--lz-font-size-body);
+  }
+
+  .service-description {
+    font-size: var(--lz-font-size-caption);
+  }
+
+  .services-image {
+    min-height: 300px;
+  }
+
+  .image-overlay {
+    padding: var(--lz-spacing-md);
+  }
+
+  .image-badge {
+    padding: var(--lz-spacing-xs) var(--lz-spacing-md);
+    font-size: var(--lz-font-size-caption);
+  }
+}

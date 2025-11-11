@@ -1,0 +1,223 @@
+{
+  "categories": [
+    {
+      "id": "rental-process",
+      "name": {
+        "ja": "レンタルプロセス",
+        "en": "Rental Process",
+        "zh": "租车流程"
+      },
+      "questions": [
+        {
+          "id": "faq-001",
+          "question": {
+            "ja": "予約は必要ですか？",
+            "en": "Do I need a reservation?",
+            "zh": "需要预约吗？"
+          },
+          "answer": {
+            "ja": "はい、事前予約をお願いします。LINEまたはWhatsAppでお問い合わせください。在庫状況により当日予約も可能です。",
+            "en": "Yes, advance reservation is recommended. Please contact us via LINE or WhatsApp. Same-day reservations may be available depending on inventory.",
+            "zh": "是的，建议提前预约。请通过LINE或WhatsApp联系我们。根据库存情况，当天预约也可能。"
+          }
+        },
+        {
+          "id": "faq-002",
+          "question": {
+            "ja": "運転免許証は何が必要ですか？",
+            "en": "What driver's license do I need?",
+            "zh": "需要什么驾照？"
+          },
+          "answer": {
+            "ja": "日本の運転免許証、または国際運転免許証と母国の免許証が必要です。国際免許証はジュネーブ条約加盟国で発行されたものに限ります。",
+            "en": "You need a Japanese driver's license or an international driver's license (issued by Geneva Convention countries) with your home country license.",
+            "zh": "需要日本驾照，或国际驾照（日内瓦公约成员国签发）加原籍国驾照。"
+          }
+        },
+        {
+          "id": "faq-003",
+          "question": {
+            "ja": "最低年齢は何歳ですか？",
+            "en": "What is the minimum age requirement?",
+            "zh": "最低年龄要求是多少？"
+          },
+          "answer": {
+            "ja": "車種により異なります。軽自動車・コンパクトカーは21歳以上、高級車・ミニバンは25歳以上となります。",
+            "en": "It varies by vehicle type. Kei cars and compact cars require 21+, luxury and minivans require 25+.",
+            "zh": "因车型而异。轻型车和紧凑型车需21岁以上，豪华车和MPV需25岁以上。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "payment",
+      "name": {
+        "ja": "支払い",
+        "en": "Payment",
+        "zh": "支付"
+      },
+      "questions": [
+        {
+          "id": "faq-101",
+          "question": {
+            "ja": "支払い方法は？",
+            "en": "What payment methods are accepted?",
+            "zh": "接受什么支付方式？"
+          },
+          "answer": {
+            "ja": "現金、クレジットカード（Visa、MasterCard、JCB、American Express）を受け付けています。デビットカードも利用可能です。",
+            "en": "We accept cash and credit cards (Visa, MasterCard, JCB, American Express). Debit cards are also accepted.",
+            "zh": "接受现金和信用卡（Visa、MasterCard、JCB、American Express）。也接受借记卡。"
+          }
+        },
+        {
+          "id": "faq-102",
+          "question": {
+            "ja": "デポジット（保証金）は必要ですか？",
+            "en": "Is a deposit required?",
+            "zh": "需要押金吗？"
+          },
+          "answer": {
+            "ja": "はい、車種により¥30,000〜¥60,000の保証金が必要です。クレジットカードの場合は予約確保のみ、返却時に精算します。現金の場合は事前にお預かりします。",
+            "en": "Yes, a deposit of ¥30,000-¥60,000 is required depending on the vehicle. For credit cards, we only hold the reservation and settle upon return. Cash deposits are held in advance.",
+            "zh": "是的，根据车型需要¥30,000-¥60,000押金。信用卡仅预授权，还车时结算。现金押金需提前支付。"
+          }
+        },
+        {
+          "id": "faq-103",
+          "question": {
+            "ja": "料金に含まれるものは？",
+            "en": "What is included in the rental fee?",
+            "zh": "租金包含什么？"
+          },
+          "answer": {
+            "ja": "基本保険、消費税、カーナビ、ETCカードが含まれます。燃料費、有料道路料金、駐車場代は別途お客様負担となります。",
+            "en": "Basic insurance, consumption tax, car navigation, and ETC card are included. Fuel, tolls, and parking fees are the renter's responsibility.",
+            "zh": "包含基本保险、消费税、导航和ETC卡。燃油费、过路费和停车费由租车人承担。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "insurance",
+      "name": {
+        "ja": "保険",
+        "en": "Insurance",
+        "zh": "保险"
+      },
+      "questions": [
+        {
+          "id": "faq-201",
+          "question": {
+            "ja": "基本保険の補償内容は？",
+            "en": "What does the basic insurance cover?",
+            "zh": "基本保险涵盖什么？"
+          },
+          "answer": {
+            "ja": "対人・対物賠償は無制限、車両補償は時価額まで、自己負担額は¥50,000です。さらに安心のフルカバー保険もご用意しています。",
+            "en": "Liability coverage is unlimited, vehicle damage up to market value, with a ¥50,000 deductible. Full coverage insurance with zero deductible is also available.",
+            "zh": "责任险无限额，车损险至市值，免赔额¥50,000。也提供零免赔的全险方案。"
+          }
+        },
+        {
+          "id": "faq-202",
+          "question": {
+            "ja": "フル保険に加入すべきですか？",
+            "en": "Should I purchase full insurance?",
+            "zh": "应该购买全险吗？"
+          },
+          "answer": {
+            "ja": "初めて日本で運転される方、または安心して運転したい方にはフル保険をお勧めします。自己負担額が¥0になります。",
+            "en": "We recommend full insurance for first-time drivers in Japan or those who want complete peace of mind. It reduces the deductible to ¥0.",
+            "zh": "推荐首次在日本驾驶或希望完全安心的客户购买全险。免赔额降至¥0。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "usage",
+      "name": {
+        "ja": "利用規則",
+        "en": "Usage Rules",
+        "zh": "使用规则"
+      },
+      "questions": [
+        {
+          "id": "faq-301",
+          "question": {
+            "ja": "走行距離に制限はありますか？",
+            "en": "Is there a mileage limit?",
+            "zh": "有里程限制吗？"
+          },
+          "answer": {
+            "ja": "車種により異なります。軽自動車は無制限、ミニバンは1日200km、高級車は1日300kmです。超過料金は1kmあたり¥20です。",
+            "en": "It varies by vehicle. Kei cars have unlimited mileage, minivans allow 200km/day, luxury cars 300km/day. Excess is ¥20/km.",
+            "zh": "因车型而异。轻型车无限制，MPV每天200公里，豪华车每天300公里。超出部分¥20/公里。"
+          }
+        },
+        {
+          "id": "faq-302",
+          "question": {
+            "ja": "燃料はどうすればいいですか？",
+            "en": "What about fuel?",
+            "zh": "燃油怎么办？"
+          },
+          "answer": {
+            "ja": "「満タン返し」が基本です。返却前に最寄りのガソリンスタンドで満タンにしてください。満タンでない場合、実費＋手数料¥3,000をいただきます。",
+            "en": "Full-to-full is our policy. Please refuel at the nearest gas station before return. If not full, actual cost + ¥3,000 fee applies.",
+            "zh": "满油还车是基本政策。请在还车前到最近的加油站加满油。如未加满，收取实际油费+¥3,000手续费。"
+          }
+        },
+        {
+          "id": "faq-303",
+          "question": {
+            "ja": "喫煙は可能ですか？",
+            "en": "Is smoking allowed?",
+            "zh": "可以吸烟吗？"
+          },
+          "answer": {
+            "ja": "全車禁煙です。車内で喫煙された場合、クリーニング代として¥30,000をご請求させていただきます。",
+            "en": "All vehicles are non-smoking. A ¥30,000 cleaning fee will be charged if smoking is detected.",
+            "zh": "所有车辆禁止吸烟。如发现车内吸烟，将收取¥30,000清洁费。"
+          }
+        }
+      ]
+    },
+    {
+      "id": "changes",
+      "name": {
+        "ja": "変更・キャンセル",
+        "en": "Changes & Cancellation",
+        "zh": "变更与取消"
+      },
+      "questions": [
+        {
+          "id": "faq-401",
+          "question": {
+            "ja": "予約の変更はできますか？",
+            "en": "Can I modify my reservation?",
+            "zh": "可以修改预约吗？"
+          },
+          "answer": {
+            "ja": "はい、レンタル開始の24時間前まで無料で変更できます。それ以降は変更手数料として料金の30%をいただきます。",
+            "en": "Yes, modifications are free up to 24 hours before rental start. After that, a 30% change fee applies.",
+            "zh": "可以，租车开始前24小时内可免费修改。之后修改收取30%手续费。"
+          }
+        },
+        {
+          "id": "faq-402",
+          "question": {
+            "ja": "キャンセル料は？",
+            "en": "What is the cancellation fee?",
+            "zh": "取消费用是多少？"
+          },
+          "answer": {
+            "ja": "7日前まで無料、3-6日前30%、1-2日前50%、当日100%です。天候や交通機関の遅延による場合は個別対応いたします。",
+            "en": "Free until 7 days before, 30% for 3-6 days, 50% for 1-2 days, 100% same day. Weather or transportation delays are handled case-by-case.",
+            "zh": "7天前免费，3-6天前30%，1-2天前50%，当天100%。因天气或交通延误将个案处理。"
+          }
+        }
+      ]
+    }
+  ]
+}
