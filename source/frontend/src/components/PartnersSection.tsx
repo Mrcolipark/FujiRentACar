@@ -13,19 +13,20 @@ interface Partner {
 }
 
 const PartnersSection: React.FC = () => {
-  // 使用占位符Logo（您后期可以替换成真实的合作伙伴Logo）
+  // 基于实际车辆清单的合作伙伴品牌（前8个）
+  // 使用Clearbit Logo API获取品牌Logo
   const partners: Partner[] = [
     {
       name: 'Mercedes-Benz',
       logo: 'https://logo.clearbit.com/mercedes-benz.com',
     },
     {
-      name: 'BMW',
-      logo: 'https://logo.clearbit.com/bmw.com',
+      name: 'Maserati',
+      logo: 'https://logo.clearbit.com/maserati.com',
     },
     {
-      name: 'Audi',
-      logo: 'https://logo.clearbit.com/audi.com',
+      name: 'Toyota',
+      logo: 'https://logo.clearbit.com/toyota.com',
     },
     {
       name: 'Porsche',
@@ -36,16 +37,16 @@ const PartnersSection: React.FC = () => {
       logo: 'https://logo.clearbit.com/lexus.com',
     },
     {
-      name: 'Tesla',
-      logo: 'https://logo.clearbit.com/tesla.com',
+      name: 'BMW',
+      logo: 'https://logo.clearbit.com/bmw.com',
     },
     {
-      name: 'Range Rover',
-      logo: 'https://logo.clearbit.com/landrover.com',
+      name: 'Mazda',
+      logo: 'https://logo.clearbit.com/mazda.com',
     },
     {
-      name: 'Bentley',
-      logo: 'https://logo.clearbit.com/bentleymotors.com',
+      name: 'Honda',
+      logo: 'https://logo.clearbit.com/honda.com',
     },
   ]
 
