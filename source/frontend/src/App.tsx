@@ -26,7 +26,6 @@ const Contact = lazy(() => import('@/pages/Contact'))
 const NoMatch = lazy(() => import('@/pages/NoMatch'))
 const Locations = lazy(() => import('@/pages/Locations'))
 const Suppliers = lazy(() => import('@/pages/Suppliers'))
-const Faq = lazy(() => import('@/pages/Faq'))
 const CookiePolicy = lazy(() => import('@/pages/CookiePolicy'))
 // FUJI: 已删除用户/预订相关页面
 // SignIn, SignUp, Activate, ForgotPassword, ResetPassword,
@@ -67,7 +66,6 @@ const router = createBrowserRouter([
       { path: 'privacy', element: <Privacy /> },
       { path: 'contact', element: <Contact /> },
       { path: 'locations', element: <Locations /> },
-      { path: 'faq', element: <Faq /> },
       { path: 'cookie-policy', element: <CookiePolicy /> },
       ...(env.HIDE_SUPPLIERS ? [] : [{ path: 'suppliers', element: <Suppliers /> }]),
       { path: '*', element: <NoMatch /> }

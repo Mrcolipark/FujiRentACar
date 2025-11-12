@@ -31,7 +31,6 @@ import {
   DirectionsCar as VehiclesIcon,
   LocationOn as LocationIcon,
   PrivacyTip as PrivacyIcon,
-  QuestionAnswer as FaqIcon,
   PersonOutline as SignUpIcon,
   Cookie as CookiePolicyIcon,
   AccountCircle as AccountCircleIcon,
@@ -394,15 +393,6 @@ const Header = ({
                 )}
                 <ListItem
                   onClick={() => {
-                    navigate('/locations')
-                    handleSideMenuClose()
-                  }}
-                >
-                  <ListItemIcon><LocationIcon /></ListItemIcon>
-                  <ListItemText primary={strings.LOCATIONS} />
-                </ListItem>
-                <ListItem
-                  onClick={() => {
                     navigate('/about')
                     handleSideMenuClose()
                   }}
@@ -439,15 +429,6 @@ const Header = ({
                 </ListItem>
                 <ListItem
                   onClick={() => {
-                    navigate('/faq')
-                    handleSideMenuClose()
-                  }}
-                >
-                  <ListItemIcon><FaqIcon /></ListItemIcon>
-                  <ListItemText primary={strings.FAQ} />
-                </ListItem>
-                <ListItem
-                  onClick={() => {
                     navigate('/contact')
                     handleSideMenuClose()
                   }}
@@ -470,9 +451,6 @@ const Header = ({
               <Button onClick={() => navigate('/about')} className="nav-link">
                 {strings.ABOUT}
               </Button>
-              <Button onClick={() => navigate('/faq')} className="nav-link">
-                {strings.FAQ}
-              </Button>
               <Button onClick={() => navigate('/contact')} className="nav-link">
                 {strings.CONTACT}
               </Button>
@@ -483,7 +461,8 @@ const Header = ({
               {/* 语言切换按钮 */}
               {isLoaded && (
                 <Button variant="contained" onClick={handleLangMenuOpen} disableElevation className="btn-language">
-                  <span className="language-text">{lang?.label}</span>
+                  <span className="language-text-full">{lang?.label}</span>
+                  <span className="language-text-short">{lang?.code.toUpperCase()}</span>
                 </Button>
               )}
 

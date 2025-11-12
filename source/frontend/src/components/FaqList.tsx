@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Accordion, AccordionDetails, AccordionSummary, Button, Typography } from '@mui/material'
+import { Accordion, AccordionDetails, AccordionSummary, Button, Typography, Box, Container } from '@mui/material'
 import { ExpandMore } from '@mui/icons-material'
 import { strings } from '@/lang/faq-list'
 

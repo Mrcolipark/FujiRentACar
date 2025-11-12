@@ -21,7 +21,12 @@
     "seats": 5,
     "transmission": "Automatic",
     "isSuperior": true,
-    "image": "https://images.unsplash.com/photo-1618843479313?w=800&h=600&fit=crop"
+    "image": "https://images.unsplash.com/photo-1618843479313?w=800&h=600&fit=crop",
+    "images": [
+      "https://images.unsplash.com/photo-1618843479313?w=1200&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?w=1200&h=800&fit=crop",
+      "https://images.unsplash.com/photo-1617814058146-ca4138b0fc40?w=1200&h=800&fit=crop"
+    ]
   },
   {
     "id": "mercedesbenz-c-class",

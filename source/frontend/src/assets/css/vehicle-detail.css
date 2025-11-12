@@ -103,6 +103,60 @@
   z-index: 2;
 }
 
+/* 图片导航按钮 */
+.image-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.9) !important;
+  box-shadow: var(--lz-shadow-md) !important;
+  z-index: 2;
+  transition: all 0.3s var(--lz-easing-standard) !important;
+}
+
+.image-nav-btn:hover {
+  background: rgba(255, 255, 255, 1) !important;
+  box-shadow: var(--lz-shadow-lg) !important;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.image-nav-prev {
+  left: var(--lz-spacing-md);
+}
+
+.image-nav-next {
+  right: var(--lz-spacing-md);
+}
+
+/* 图片指示器 */
+.image-indicators {
+  display: flex;
+  justify-content: center;
+  gap: var(--lz-spacing-sm);
+  margin-top: var(--lz-spacing-md);
+}
+
+.indicator-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid var(--lz-color-border);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s var(--lz-easing-standard);
+  padding: 0;
+}
+
+.indicator-dot:hover {
+  border-color: var(--lz-color-accent-primary);
+  transform: scale(1.2);
+}
+
+.indicator-dot.active {
+  background: var(--lz-color-accent-primary);
+  border-color: var(--lz-color-accent-primary);
+}
+
 /* ============================================
    Info Section
    ============================================ */
@@ -255,6 +309,19 @@
 
 .line-btn:hover {
   background: #009E00 !important;
+}
+
+.wechat-btn {
+  background: #07C160 !important;
+  color: white !important;
+  padding: var(--lz-spacing-md) !important;
+  font-weight: var(--lz-font-weight-bold) !important;
+  text-transform: none !important;
+  border-radius: var(--lz-border-radius-md) !important;
+}
+
+.wechat-btn:hover {
+  background: #06AD56 !important;
 }
 
 .email-btn {
