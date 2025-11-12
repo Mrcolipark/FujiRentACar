@@ -29,8 +29,8 @@ import {
   Card,
   CardContent,
   CardActionArea,
-  Grid,
   Autocomplete,
+  Stack,
 } from '@mui/material'
 import {
   Send as SendIcon,
@@ -88,6 +88,11 @@ const AdvancedContactForm: React.FC<AdvancedContactFormProps> = ({
   const [selectedVehicle, setSelectedVehicle] = useState<Vehicle | null>(null)
   const [homeDeliveryPickup, setHomeDeliveryPickup] = useState(false)
   const [homeDeliveryReturn, setHomeDeliveryReturn] = useState(false)
+
+  // 类型安全的错误访问辅助函数
+  const getFieldError = (field: string): any => {
+    return (errors as any)[field]
+  }
 
   // Load vehicles and locations data
   useEffect(() => {
@@ -301,8 +306,8 @@ const AdvancedContactForm: React.FC<AdvancedContactFormProps> = ({
               </Select>
             )}
           />
-          {errors.generalInquiry?.category && (
-            <FormHelperText error>{errors.generalInquiry.category.message}</FormHelperText>
+          {getFieldError('generalInquiry')?.category && (
+            <FormHelperText error>{getFieldError('generalInquiry').category.message}</FormHelperText>
           )}
         </FormControl>
 
@@ -310,8 +315,8 @@ const AdvancedContactForm: React.FC<AdvancedContactFormProps> = ({
           fullWidth
           label={`${strings.INQUIRY_SUBJECT} *`}
           {...register('generalInquiry.subject')}
-          error={!!errors.generalInquiry?.subject}
-          helperText={errors.generalInquiry?.subject?.message}
+          error={!!getFieldError('generalInquiry')?.subject}
+          helperText={getFieldError('generalInquiry')?.subject?.message}
           margin="normal"
           placeholder={strings.INQUIRY_SUBJECT_PLACEHOLDER}
         />
@@ -322,8 +327,8 @@ const AdvancedContactForm: React.FC<AdvancedContactFormProps> = ({
           rows={6}
           label={`${strings.INQUIRY_MESSAGE} *`}
           {...register('generalInquiry.message')}
-          error={!!errors.generalInquiry?.message}
-          helperText={errors.generalInquiry?.message?.message || strings.INQUIRY_MESSAGE_HELPER}
+          error={!!getFieldError('generalInquiry')?.message}
+          helperText={getFieldError('generalInquiry')?.message?.message || strings.INQUIRY_MESSAGE_HELPER}
           margin="normal"
           placeholder={strings.INQUIRY_MESSAGE_PLACEHOLDER}
         />
@@ -355,8 +360,8 @@ const AdvancedContactForm: React.FC<AdvancedContactFormProps> = ({
               </Select>
             )}
           />
-          {errors.technicalSupport?.issueType && (
-            <FormHelperText error>{errors.technicalSupport.issueType.message}</FormHelperText>
+          {getFieldError('technicalSupport')?.issueType && (
+            <FormHelperText error>{getFieldError('technicalSupport').issueType.message}</FormHelperText>
           )}
         </FormControl>
 
@@ -364,8 +369,8 @@ const AdvancedContactForm: React.FC<AdvancedContactFormProps> = ({
           fullWidth
           label={strings.ORDER_NUMBER}
           {...register('technicalSupport.orderNumber')}
-          error={!!errors.technicalSupport?.orderNumber}
-          helperText={errors.technicalSupport?.orderNumber?.message}
+          error={!!getFieldError('technicalSupport')?.orderNumber}
+          helperText={getFieldError('technicalSupport')?.orderNumber?.message}
           margin="normal"
           placeholder={strings.ORDER_NUMBER_PLACEHOLDER}
         />
@@ -392,8 +397,8 @@ const AdvancedContactForm: React.FC<AdvancedContactFormProps> = ({
           rows={6}
           label={`${strings.ISSUE_DESCRIPTION} *`}
           {...register('technicalSupport.description')}
-          error={!!errors.technicalSupport?.description}
-          helperText={errors.technicalSupport?.description?.message || strings.ISSUE_DESCRIPTION_HELPER}
+          error={!!getFieldError('technicalSupport')?.description}
+          helperText={getFieldError('technicalSupport')?.description?.message || strings.ISSUE_DESCRIPTION_HELPER}
           margin="normal"
           placeholder={strings.ISSUE_DESCRIPTION_PLACEHOLDER}
         />
@@ -413,8 +418,8 @@ const AdvancedContactForm: React.FC<AdvancedContactFormProps> = ({
           fullWidth
           label={`${strings.COMPANY_NAME} *`}
           {...register('businessPartnership.companyName')}
-          error={!!errors.businessPartnership?.companyName}
-          helperText={errors.businessPartnership?.companyName?.message}
+          error={!!getFieldError('businessPartnership')?.companyName}
+          helperText={getFieldError('businessPartnership')?.companyName?.message}
           margin="normal"
         />
 
@@ -422,8 +427,8 @@ const AdvancedContactForm: React.FC<AdvancedContactFormProps> = ({
           fullWidth
           label={`${strings.CONTACT_PERSON} *`}
           {...register('businessPartnership.contactPerson')}
-          error={!!errors.businessPartnership?.contactPerson}
-          helperText={errors.businessPartnership?.contactPerson?.message}
+          error={!!getFieldError('businessPartnership')?.contactPerson}
+          helperText={getFieldError('businessPartnership')?.contactPerson?.message}
           margin="normal"
         />
 
@@ -431,8 +436,8 @@ const AdvancedContactForm: React.FC<AdvancedContactFormProps> = ({
           fullWidth
           label={`${strings.POSITION} *`}
           {...register('businessPartnership.position')}
-          error={!!errors.businessPartnership?.position}
-          helperText={errors.businessPartnership?.position?.message}
+          error={!!getFieldError('businessPartnership')?.position}
+          helperText={getFieldError('businessPartnership')?.position?.message}
           margin="normal"
           placeholder={strings.POSITION_PLACEHOLDER}
         />
@@ -441,8 +446,8 @@ const AdvancedContactForm: React.FC<AdvancedContactFormProps> = ({
           fullWidth
           label={`${strings.PARTNERSHIP_TYPE} *`}
           {...register('businessPartnership.partnershipType')}
-          error={!!errors.businessPartnership?.partnershipType}
-          helperText={errors.businessPartnership?.partnershipType?.message}
+          error={!!getFieldError('businessPartnership')?.partnershipType}
+          helperText={getFieldError('businessPartnership')?.partnershipType?.message}
           margin="normal"
           placeholder={strings.PARTNERSHIP_TYPE_PLACEHOLDER}
         />
@@ -451,8 +456,8 @@ const AdvancedContactForm: React.FC<AdvancedContactFormProps> = ({
           fullWidth
           label={strings.COMPANY_WEBSITE}
           {...register('businessPartnership.website')}
-          error={!!errors.businessPartnership?.website}
-          helperText={errors.businessPartnership?.website?.message}
+          error={!!getFieldError('businessPartnership')?.website}
+          helperText={getFieldError('businessPartnership')?.website?.message}
           margin="normal"
           placeholder={strings.WEBSITE_PLACEHOLDER}
         />
@@ -463,8 +468,8 @@ const AdvancedContactForm: React.FC<AdvancedContactFormProps> = ({
           rows={6}
           label={`${strings.PARTNERSHIP_DESCRIPTION} *`}
           {...register('businessPartnership.description')}
-          error={!!errors.businessPartnership?.description}
-          helperText={errors.businessPartnership?.description?.message || strings.PARTNERSHIP_DESCRIPTION_HELPER}
+          error={!!getFieldError('businessPartnership')?.description}
+          helperText={getFieldError('businessPartnership')?.description?.message || strings.PARTNERSHIP_DESCRIPTION_HELPER}
           margin="normal"
           placeholder={strings.PARTNERSHIP_DESCRIPTION_PLACEHOLDER}
         />
@@ -474,7 +479,7 @@ const AdvancedContactForm: React.FC<AdvancedContactFormProps> = ({
 
   // 渲染车辆预订表单
   const renderVehicleBookingForm = () => {
-    const currentLang = langHelper.getLanguage()
+    const currentLang = langHelper.getLanguage() as 'ja' | 'en' | 'zh'
 
     return (
       <Collapse in={contactType === ContactType.VEHICLE_BOOKING}>
@@ -507,8 +512,8 @@ const AdvancedContactForm: React.FC<AdvancedContactFormProps> = ({
                     {...params}
                     label={strings.SELECT_VEHICLE}
                     placeholder={strings.SELECT_VEHICLE_PLACEHOLDER}
-                    error={!!errors.vehicleBooking?.vehicleId}
-                    helperText={errors.vehicleBooking?.vehicleId?.message}
+                    error={!!getFieldError('vehicleBooking')?.vehicleId}
+                    helperText={getFieldError('vehicleBooking')?.vehicleId?.message}
                     margin="normal"
                   />
                 )}
@@ -527,30 +532,30 @@ const AdvancedContactForm: React.FC<AdvancedContactFormProps> = ({
           />
 
           {/* Pickup Details */}
-          <Grid container spacing={2} sx={{ mt: 1 }}>
-            <Grid item xs={12} sm={6}>
+          <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2, mt: 1 }}>
+            <Box sx={{ flex: '1 1 calc(50% - 8px)', minWidth: { xs: '100%', sm: 'calc(50% - 8px)' } }}>
               <TextField
                 fullWidth
                 type="date"
                 label={strings.PICKUP_DATE}
                 {...register('vehicleBooking.pickupDate')}
-                error={!!errors.vehicleBooking?.pickupDate}
-                helperText={errors.vehicleBooking?.pickupDate?.message}
+                error={!!getFieldError('vehicleBooking')?.pickupDate}
+                helperText={getFieldError('vehicleBooking')?.pickupDate?.message}
                 InputLabelProps={{ shrink: true }}
               />
-            </Grid>
-            <Grid item xs={12} sm={6}>
+            </Box>
+            <Box sx={{ flex: '1 1 calc(50% - 8px)', minWidth: { xs: '100%', sm: 'calc(50% - 8px)' } }}>
               <TextField
                 fullWidth
                 type="time"
                 label={strings.PICKUP_TIME}
                 {...register('vehicleBooking.pickupTime')}
-                error={!!errors.vehicleBooking?.pickupTime}
-                helperText={errors.vehicleBooking?.pickupTime?.message}
+                error={!!getFieldError('vehicleBooking')?.pickupTime}
+                helperText={getFieldError('vehicleBooking')?.pickupTime?.message}
                 InputLabelProps={{ shrink: true }}
               />
-            </Grid>
-          </Grid>
+            </Box>
+          </Box>
 
           <Box sx={{ mt: 2 }}>
             <Controller
@@ -592,8 +597,8 @@ const AdvancedContactForm: React.FC<AdvancedContactFormProps> = ({
                       {...params}
                       label={strings.PICKUP_LOCATION}
                       placeholder={strings.PICKUP_LOCATION_PLACEHOLDER}
-                      error={!!errors.vehicleBooking?.pickupLocation}
-                      helperText={errors.vehicleBooking?.pickupLocation?.message}
+                      error={!!getFieldError('vehicleBooking')?.pickupLocation}
+                      helperText={getFieldError('vehicleBooking')?.pickupLocation?.message}
                       margin="normal"
                     />
                   )}
@@ -605,38 +610,38 @@ const AdvancedContactForm: React.FC<AdvancedContactFormProps> = ({
               fullWidth
               label={strings.PICKUP_ADDRESS}
               {...register('vehicleBooking.pickupAddress')}
-              error={!!errors.vehicleBooking?.pickupAddress}
-              helperText={errors.vehicleBooking?.pickupAddress?.message}
+              error={!!getFieldError('vehicleBooking')?.pickupAddress}
+              helperText={getFieldError('vehicleBooking')?.pickupAddress?.message}
               margin="normal"
               placeholder={strings.PICKUP_ADDRESS_PLACEHOLDER}
             />
           )}
 
           {/* Return Details */}
-          <Grid container spacing={2} sx={{ mt: 1 }}>
-            <Grid item xs={12} sm={6}>
+          <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2, mt: 1 }}>
+            <Box sx={{ flex: '1 1 calc(50% - 8px)', minWidth: { xs: '100%', sm: 'calc(50% - 8px)' } }}>
               <TextField
                 fullWidth
                 type="date"
                 label={strings.RETURN_DATE}
                 {...register('vehicleBooking.returnDate')}
-                error={!!errors.vehicleBooking?.returnDate}
-                helperText={errors.vehicleBooking?.returnDate?.message}
+                error={!!getFieldError('vehicleBooking')?.returnDate}
+                helperText={getFieldError('vehicleBooking')?.returnDate?.message}
                 InputLabelProps={{ shrink: true }}
               />
-            </Grid>
-            <Grid item xs={12} sm={6}>
+            </Box>
+            <Box sx={{ flex: '1 1 calc(50% - 8px)', minWidth: { xs: '100%', sm: 'calc(50% - 8px)' } }}>
               <TextField
                 fullWidth
                 type="time"
                 label={strings.RETURN_TIME}
                 {...register('vehicleBooking.returnTime')}
-                error={!!errors.vehicleBooking?.returnTime}
-                helperText={errors.vehicleBooking?.returnTime?.message}
+                error={!!getFieldError('vehicleBooking')?.returnTime}
+                helperText={getFieldError('vehicleBooking')?.returnTime?.message}
                 InputLabelProps={{ shrink: true }}
               />
-            </Grid>
-          </Grid>
+            </Box>
+          </Box>
 
           <Box sx={{ mt: 2 }}>
             <Controller
@@ -678,8 +683,8 @@ const AdvancedContactForm: React.FC<AdvancedContactFormProps> = ({
                       {...params}
                       label={strings.RETURN_LOCATION}
                       placeholder={strings.RETURN_LOCATION_PLACEHOLDER}
-                      error={!!errors.vehicleBooking?.returnLocation}
-                      helperText={errors.vehicleBooking?.returnLocation?.message}
+                      error={!!getFieldError('vehicleBooking')?.returnLocation}
+                      helperText={getFieldError('vehicleBooking')?.returnLocation?.message}
                       margin="normal"
                     />
                   )}
@@ -691,39 +696,39 @@ const AdvancedContactForm: React.FC<AdvancedContactFormProps> = ({
               fullWidth
               label={strings.RETURN_ADDRESS}
               {...register('vehicleBooking.returnAddress')}
-              error={!!errors.vehicleBooking?.returnAddress}
-              helperText={errors.vehicleBooking?.returnAddress?.message}
+              error={!!getFieldError('vehicleBooking')?.returnAddress}
+              helperText={getFieldError('vehicleBooking')?.returnAddress?.message}
               margin="normal"
               placeholder={strings.RETURN_ADDRESS_PLACEHOLDER}
             />
           )}
 
           {/* Passengers and Drivers */}
-          <Grid container spacing={2} sx={{ mt: 1 }}>
-            <Grid item xs={12} sm={6}>
+          <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2, mt: 1 }}>
+            <Box sx={{ flex: '1 1 calc(50% - 8px)', minWidth: { xs: '100%', sm: 'calc(50% - 8px)' } }}>
               <TextField
                 fullWidth
                 type="number"
                 label={strings.PASSENGERS}
                 {...register('vehicleBooking.passengers', { valueAsNumber: true })}
-                error={!!errors.vehicleBooking?.passengers}
-                helperText={errors.vehicleBooking?.passengers?.message}
+                error={!!getFieldError('vehicleBooking')?.passengers}
+                helperText={getFieldError('vehicleBooking')?.passengers?.message}
                 placeholder={strings.PASSENGERS_PLACEHOLDER}
                 inputProps={{ min: 1 }}
               />
-            </Grid>
-            <Grid item xs={12} sm={6}>
+            </Box>
+            <Box sx={{ flex: '1 1 calc(50% - 8px)', minWidth: { xs: '100%', sm: 'calc(50% - 8px)' } }}>
               <TextField
                 fullWidth
                 type="number"
                 label={strings.ADDITIONAL_DRIVERS}
                 {...register('vehicleBooking.additionalDrivers', { valueAsNumber: true })}
-                error={!!errors.vehicleBooking?.additionalDrivers}
+                error={!!getFieldError('vehicleBooking')?.additionalDrivers}
                 helperText={strings.ADDITIONAL_DRIVERS_HELPER}
                 inputProps={{ min: 0 }}
               />
-            </Grid>
-          </Grid>
+            </Box>
+          </Box>
 
           {/* Insurance Option */}
           <Box sx={{ mt: 2, mb: 2 }}>
@@ -748,19 +753,19 @@ const AdvancedContactForm: React.FC<AdvancedContactFormProps> = ({
             {strings.ADDITIONAL_OPTIONS}
           </Typography>
 
-          <Grid container spacing={2} alignItems="stretch">
-            <Grid item xs={12} sm={6}>
+          <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2, alignItems: 'stretch' }}>
+            <Box sx={{ flex: '1 1 calc(50% - 8px)', minWidth: { xs: '100%', sm: 'calc(50% - 8px)' } }}>
               <TextField
                 fullWidth
                 type="number"
                 label={strings.BABY_SEATS}
                 {...register('vehicleBooking.babySeats', { valueAsNumber: true })}
-                error={!!errors.vehicleBooking?.babySeats}
+                error={!!getFieldError('vehicleBooking')?.babySeats}
                 helperText={strings.BABY_SEATS_HELPER}
                 inputProps={{ min: 0 }}
               />
-            </Grid>
-            <Grid item xs={12} sm={6}>
+            </Box>
+            <Box sx={{ flex: '1 1 calc(50% - 8px)', minWidth: { xs: '100%', sm: 'calc(50% - 8px)' } }}>
               <Box sx={{
                 display: 'flex',
                 flexDirection: 'column',
@@ -791,8 +796,8 @@ const AdvancedContactForm: React.FC<AdvancedContactFormProps> = ({
                   )}
                 />
               </Box>
-            </Grid>
-          </Grid>
+            </Box>
+          </Box>
 
           {/* Special Requests */}
           <TextField
@@ -801,8 +806,8 @@ const AdvancedContactForm: React.FC<AdvancedContactFormProps> = ({
             rows={4}
             label={strings.SPECIAL_REQUESTS}
             {...register('vehicleBooking.specialRequests')}
-            error={!!errors.vehicleBooking?.specialRequests}
-            helperText={errors.vehicleBooking?.specialRequests?.message}
+            error={!!getFieldError('vehicleBooking')?.specialRequests}
+            helperText={getFieldError('vehicleBooking')?.specialRequests?.message}
             margin="normal"
             placeholder={strings.SPECIAL_REQUESTS_PLACEHOLDER}
           />

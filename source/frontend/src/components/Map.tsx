@@ -64,11 +64,20 @@ const ZoomControlledLayer = ({ zoom, minZoom, children }: ZoomControlledLayerPro
   return null
 }
 
+interface LocationData {
+  id: string
+  name: { ja: string; en: string; zh: string }
+  address: { ja: string; en: string; zh: string }
+  phone: string
+  hours: string
+}
+
 interface MapProps {
   title?: string
   position?: LatLngExpression
   initialZoom?: number
   locations?: bookcarsTypes.Location[]
+  locationsData?: LocationData[]
   parkingSpots?: bookcarsTypes.ParkingSpot[]
   className?: string
   children?: ReactNode
@@ -81,6 +90,7 @@ const Map = ({
   position = new L.LatLng(31.792305849269, -7.080168000000015),
   initialZoom,
   locations,
+  locationsData,
   parkingSpots,
   className,
   children,
@@ -124,61 +134,63 @@ const Map = ({
   )
 
   const getMarkers = (__markers: Marker[]) =>
-    __markers.map((marker) => (
-      <Marker key={marker.name} position={marker.position}>
-        <Popup className="marker">
-          <div className="name">{marker.name}</div>
-          <div className="action">
-            {!!onSelelectPickUpLocation && (
-              <button
-                type="button"
-                className="action-btn"
-                onClick={async () => {
-                  try {
-                    if (onSelelectPickUpLocation) {
-                      const { status, data } = await LocationService.getLocationId(marker.name, 'en')
+    __markers.map((marker) => {
+      // 查找对应的详细门店信息
+      const locationDetail = locationsData?.find((loc) =>
+        loc.name.ja === marker.name ||
+        loc.name.en === marker.name ||
+        loc.name.zh === marker.name
+      )
 
-                      if (status === 200) {
-                        onSelelectPickUpLocation(data)
-                      } else {
-                        helper.error()
-                      }
-                    }
-                  } catch (err) {
-                    helper.error(err)
-                  }
-                }}
-              >
-                {strings.SELECT_PICK_UP_LOCATION}
-              </button>
+      return (
+        <Marker key={marker.name} position={marker.position}>
+          <Popup className="marker">
+            <div className="name">{marker.name}</div>
+
+            {/* 显示详细信息 */}
+            {locationDetail && (
+              <div className="location-details">
+                <div className="detail-item">
+                  <strong>📍</strong> {locationDetail.address.ja}
+                </div>
+                <div className="detail-item">
+                  <strong>📞</strong> <a href={`tel:${locationDetail.phone}`}>{locationDetail.phone}</a>
+                </div>
+                <div className="detail-item">
+                  <strong>🕒</strong> {locationDetail.hours}
+                </div>
+              </div>
             )}
-            {/* {!!onSelelectDropOffLocation && (
-              <button
-                type="button"
-                className="action-btn"
-                onClick={async () => {
-                  try {
-                    if (onSelelectDropOffLocation) {
-                      const { status, data } = await LocationService.getLocationId(marker.name, 'en')
 
-                      if (status === 200) {
-                        onSelelectDropOffLocation(data)
-                      } else {
-                        helper.error()
+            <div className="action">
+              {!!onSelelectPickUpLocation && (
+                <button
+                  type="button"
+                  className="action-btn"
+                  onClick={async () => {
+                    try {
+                      if (onSelelectPickUpLocation) {
+                        const { status, data } = await LocationService.getLocationId(marker.name, 'en')
+
+                        if (status === 200) {
+                          onSelelectPickUpLocation(data)
+                        } else {
+                          helper.error()
+                        }
                       }
+                    } catch (err) {
+                      helper.error(err)
                     }
-                  } catch (err) {
-                    helper.error(err)
-                  }
-                }}
-              >
-                {strings.SELECT_DROP_OFF_LOCATION}
-              </button>
-            )} */}
-          </div>
-        </Popup>
-      </Marker>
-    ))
+                  }}
+                >
+                  {strings.SELECT_PICK_UP_LOCATION}
+                </button>
+              )}
+            </div>
+          </Popup>
+        </Marker>
+      )
+    })
 
   const getParkingSpots = () =>
     parkingSpots && parkingSpots.map((parkingSpot) => (
@@ -195,6 +207,7 @@ const Map = ({
       <MapContainer
         center={position}
         zoom={_initialZoom}
+        scrollWheelZoom={false}
         className={`${className ? `${className} ` : ''}map`}
         ref={map}
       >

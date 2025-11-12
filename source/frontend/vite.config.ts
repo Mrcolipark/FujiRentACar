@@ -38,13 +38,13 @@ export default ({ mode }: { mode: string }) => {
         ':bookcars-helper': path.resolve(__dirname, '../packages/bookcars-helper'),
         ':disable-react-devtools': path.resolve(__dirname, '../packages/disable-react-devtools'),
         ':currency-converter': path.resolve(__dirname, '../packages/currency-converter'),
-        ':reactjs-social-login': path.resolve(__dirname, '../packages/reactjs-social-login'),
       },
     },
 
     server: {
       host: '0.0.0.0',
       port: Number.parseInt(process.env.VITE_PORT || '3002', 10),
+      allowedHosts: ['.ngrok-free.app', '.ngrok.io'],
       watch: {
         usePolling: true,
         interval: 500,

@@ -5,14 +5,24 @@ div.privacy {
   align-items: center;
   transform: translate3d(0, 0, 0);
   white-space: pre-wrap;
-  padding: 50px 20%;
+  padding: 130px 20% 50px 20%;
   font-size: 15px;
-  color: #121212;
+  color: var(--lz-text-primary);
   min-height: 100vh;
+}
+
+div.privacy h1 {
+  color: var(--lz-text-primary);
+  margin-bottom: 30px;
+}
+
+div.privacy p {
+  color: var(--lz-text-secondary);
+  line-height: 1.8;
 }
 
 @media only screen and (width <=960px) {
   div.privacy {
-    padding: 30px 20px;
+    padding: 110px 20px 30px 20px;
   }
 }

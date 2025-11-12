@@ -111,6 +111,8 @@ export interface ContactFormData {
 
 // EmailJS模板参数
 export interface EmailTemplateParams {
+  [key: string]: string | number | undefined
+
   // 通用字段
   to_email: string
   contact_type: string
@@ -124,9 +126,13 @@ export interface EmailTemplateParams {
   pickup_date?: string
   pickup_time?: string
   pickup_location?: string
+  pickup_address?: string
+  home_delivery_pickup?: string
   return_date?: string
   return_time?: string
   return_location?: string
+  return_address?: string
+  home_delivery_return?: string
   passengers?: number
   additional_drivers?: number
   insurance_type?: string

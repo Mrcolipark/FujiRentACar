@@ -9,20 +9,16 @@ import {
 } from '@mui/material'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import * as bookcarsTypes from ':bookcars-types'
 import env from '@/config/env.config'
 import { strings as commonStrings } from '@/lang/common'
 import { strings } from '@/lang/newsletter-form'
 import * as helper from '@/utils/helper'
-import * as UserService from '@/services/UserService'
-import { useRecaptchaContext, RecaptchaContextType } from '@/context/RecaptchaContext'
+import { sendNewsletterSubscription } from '@/services/EmailService'
 import { schema, FormFields } from '@/models/NewsletterForm'
 
 import '@/assets/css/newsletter-form.css'
 
 const NewsletterForm = () => {
-  const { reCaptchaLoaded, generateReCaptchaToken } = useRecaptchaContext() as RecaptchaContextType
-
   const { register, handleSubmit, reset, formState: { errors, isSubmitting }, clearErrors } = useForm<FormFields>({
     resolver: zodResolver(schema),
     mode: 'onSubmit'
@@ -30,35 +26,21 @@ const NewsletterForm = () => {
 
   const onSubmit = async ({ email }: FormFields) => {
     try {
-      let recaptchaToken = ''
-      if (reCaptchaLoaded) {
-        recaptchaToken = await generateReCaptchaToken()
-        if (!(await helper.verifyReCaptcha(recaptchaToken))) {
-          recaptchaToken = ''
-        }
-      }
+      console.log('📧 提交Newsletter订阅:', email)
 
-      if (env.RECAPTCHA_ENABLED && !recaptchaToken) {
-        helper.error('reCAPTCHA error')
-        return
-      }
+      // 使用 EmailJS 发送订阅邮件
+      const result = await sendNewsletterSubscription(email)
 
-      const payload: bookcarsTypes.SendEmailPayload = {
-        from: email,
-        to: env.CONTACT_EMAIL,
-        subject: 'New Newsletter Subscription',
-        message: '',
-        isContactForm: false,
-      }
-      const status = await UserService.sendEmail(payload)
-
-      if (status === 200) {
+      if (result.success) {
         reset()
         helper.info(strings.SUCCESS)
+        console.log('✅ Newsletter订阅成功')
       } else {
-        helper.error()
+        helper.error(result.message || strings.ERROR)
+        console.error('❌ Newsletter订阅失败:', result.message)
       }
     } catch (err) {
+      console.error('❌ Newsletter订阅异常:', err)
       helper.error(err)
     }
   }

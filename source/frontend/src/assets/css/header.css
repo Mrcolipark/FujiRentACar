@@ -150,9 +150,19 @@
   box-shadow: 0 0 20px rgba(220, 38, 38, 0.5) !important;
 }
 
-.header .btn-language .language-text {
+.header .btn-language .language-text-full,
+.header .btn-language .language-text-short {
   color: #FFFFFF;
   white-space: nowrap;
+}
+
+/* 桌面端：显示完整语言名称，隐藏代码 */
+.header .btn-language .language-text-full {
+  display: inline;
+}
+
+.header .btn-language .language-text-short {
+  display: none;
 }
 
 /* 隐藏货币按钮 */
@@ -325,6 +335,7 @@
   .header .toolbar {
     min-height: 70px !important;
     padding: 0 24px !important;
+    gap: 8px;
   }
 
   /* 移动端隐藏桌面导航 */
@@ -347,17 +358,32 @@
   .header-actions {
     display: flex;
     gap: 6px;
+    flex-shrink: 0;
   }
 
   .header .btn-language {
-    padding: 8px 16px !important;
-    margin-right: 8px;
-    font-size: 14px !important;
+    padding: 7px 14px !important;
+    margin-right: 0;
+    font-size: 13px !important;
+    min-width: 48px !important;
+    border-radius: 20px !important;
+  }
+
+  /* 平板端：隐藏完整语言名称，显示代码 */
+  .header .btn-language .language-text-full {
+    display: none;
+  }
+
+  .header .btn-language .language-text-short {
+    display: inline;
+    font-size: 13px !important;
+    font-weight: 600 !important;
   }
 
   .header .btn-book-now {
-    padding: 8px 24px !important;
-    font-size: 14px !important;
+    padding: 7px 18px !important;
+    font-size: 13px !important;
+    border-radius: 20px !important;
   }
 
   .header-mobile {
@@ -377,11 +403,58 @@
 
   .header .toolbar {
     min-height: 64px !important;
-    padding: 0 16px !important;
+    padding: 0 10px !important;
+    gap: 6px;
   }
 
   .header .logo {
-    font-size: 16px !important;
+    font-size: 15px !important;
+    letter-spacing: 0.05em !important;
+  }
+
+  .header-actions {
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  .header .btn-language {
+    padding: 8px 12px !important;
+    margin-right: 0;
+    font-size: 13px !important;
+    min-width: 50px !important;
+    border-radius: 20px !important;
+  }
+
+  /* 小屏幕只显示语言代码（如 JA, EN, ZH） */
+  .header .btn-language .language-text-full {
+    display: none;
+  }
+
+  .header .btn-language .language-text-short {
+    display: inline;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.05em;
+  }
+
+  .header .btn-book-now {
+    padding: 8px 20px !important;
+    font-size: 13px !important;
+    border-radius: 20px !important;
+    white-space: nowrap;
+  }
+}
+
+/* Extra Small Mobile (<= 400px) - 超小屏幕进一步优化 */
+@media only screen and (max-width: 400px) {
+  .header .toolbar {
+    padding: 0 8px !important;
+    gap: 6px;
+  }
+
+  .header .logo {
+    font-size: 14px !important;
+    letter-spacing: 0.03em !important;
   }
 
   .header-actions {
@@ -390,13 +463,29 @@
 
   .header .btn-language {
     padding: 6px 12px !important;
-    margin-right: 6px;
-    font-size: 13px !important;
+    font-size: 12px !important;
+    min-width: 44px !important;
+  }
+
+  /* 超小屏幕：只显示语言代码 */
+  .header .btn-language .language-text-full {
+    display: none;
+  }
+
+  .header .btn-language .language-text-short {
+    display: inline;
+    font-size: 11px !important;
+    font-weight: 700 !important;
   }
 
   .header .btn-book-now {
-    padding: 6px 16px !important;
-    font-size: 13px !important;
+    padding: 6px 14px !important;
+    font-size: 12px !important;
+  }
+
+  /* 汉堡菜单按钮也缩小一点 */
+  .header .toolbar .MuiIconButton-root:first-child {
+    padding: 8px !important;
   }
 }
 

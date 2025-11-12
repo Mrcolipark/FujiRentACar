@@ -237,7 +237,64 @@ export const calculateEstimatedCost = (
   return total
 }
 
+// 发送Newsletter订阅邮件
+export const sendNewsletterSubscription = async (
+  email: string
+): Promise<{ success: boolean; message?: string }> => {
+  // 检查EmailJS配置
+  if (!isEmailJSConfigured()) {
+    console.warn('EmailJS未配置，Newsletter订阅功能不可用')
+    // 开发环境下返回成功，方便测试
+    if (process.env.NODE_ENV === 'development') {
+      console.log('📧 [DEV MODE] Newsletter订阅:', email)
+      return { success: true, message: '开发模式：订阅已模拟发送' }
+    }
+    return { success: false, message: 'Email service is not configured' }
+  }
+
+  try {
+    // Newsletter订阅模板参数
+    const templateParams = {
+      to_email: env.CONTACT_EMAIL || 'rentacarfuji@gmail.com',
+      subscriber_email: email,
+      subscribe_date: new Date().toLocaleDateString('ja-JP'),
+      subscribe_time: new Date().toLocaleTimeString('ja-JP'),
+    }
+
+    // 使用Newsletter专用模板ID，如果没有配置则使用通用模板
+    const newsletterTemplateId = env.EMAILJS_NEWSLETTER_TEMPLATE_ID || env.EMAILJS_TEMPLATE_ID
+
+    console.log('📧 发送Newsletter订阅邮件:', {
+      serviceId: env.EMAILJS_SERVICE_ID,
+      templateId: newsletterTemplateId,
+      params: templateParams,
+    })
+
+    // 发送邮件
+    const response = await emailjs.send(
+      env.EMAILJS_SERVICE_ID!,
+      newsletterTemplateId!,
+      templateParams,
+      env.EMAILJS_PUBLIC_KEY
+    )
+
+    console.log('✅ Newsletter订阅邮件发送成功:', response)
+
+    return {
+      success: true,
+      message: 'Newsletter subscription email sent successfully',
+    }
+  } catch (error: any) {
+    console.error('❌ Newsletter订阅邮件发送失败:', error)
+    return {
+      success: false,
+      message: error.text || error.message || 'Failed to send newsletter subscription email',
+    }
+  }
+}
+
 export default {
   sendContactForm,
+  sendNewsletterSubscription,
   calculateEstimatedCost,
 }

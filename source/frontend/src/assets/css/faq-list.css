@@ -1,13 +1,17 @@
 div.faq-list {
   width: 100%;
-  padding: 50px 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 50px 30px;
 }
 
 div.faq-list h2 {
   width: fit-content;
+  font-size: var(--lz-font-size-h2);
+  font-weight: var(--lz-font-weight-bold);
+  color: var(--lz-text-primary);
+  margin-bottom: var(--lz-spacing-lg);
 }
 
 div.faq-list div.questions {

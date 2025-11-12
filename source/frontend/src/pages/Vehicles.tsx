@@ -18,6 +18,7 @@ import { ArrowForward } from '@mui/icons-material'
 import { strings } from '@/lang/vehicles'
 import * as UserService from '@/services/UserService'
 import Layout from '@/components/Layout'
+import Footer from '@/components/Footer'
 import '@/assets/css/vehicles.css'
 
 interface MultiLangText {
@@ -272,6 +273,7 @@ const Vehicles: React.FC = () => {
 
         </Container>
       </div>
+      <Footer />
     </Layout>
   )
 }

@@ -6,8 +6,7 @@
   "type": "module",
   "scripts": {
     "install:currency-converter": "cd ../packages/currency-converter && npm i && cd ../bookcars-helper && npm i",
-    "install:reactjs-social-login": "cd ../packages/reactjs-social-login && npm i",
-    "install:dependencies": "npm run install:currency-converter && npm run install:reactjs-social-login",
+    "install:dependencies": "npm run install:currency-converter",
     "ts:build": "npm run install:dependencies && tsc --build --verbose",
     "build": "npm run ts:build && cross-env NODE_OPTIONS=--max-old-space-size=1024 vite build",
     "dev": "npm run ts:build && vite",

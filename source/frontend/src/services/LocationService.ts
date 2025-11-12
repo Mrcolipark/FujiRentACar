@@ -22,12 +22,30 @@ export const getLocations = (keyword: string, page: number, size: number): Promi
  *
  * @returns {Promise<bookcarsTypes.Result<bookcarsTypes.Location>>}
  */
-export const getLocationsWithPosition = (): Promise<bookcarsTypes.Location[]> =>
-  axiosInstance
-    .get(
-      `/api/locations-with-position/${UserService.getLanguage()}`
-    )
-    .then((res) => res.data)
+export const getLocationsWithPosition = async (): Promise<bookcarsTypes.Location[]> => {
+  try {
+    // 读取本地 JSON 文件
+    const response = await fetch('/data/locations.json')
+    const data = await response.json()
+
+    const language = UserService.getLanguage()
+
+    // 转换数据格式以匹配 bookcarsTypes.Location
+    const locations: bookcarsTypes.Location[] = data.locations.map((loc: any) => ({
+      _id: loc.id,
+      name: loc.name[language] || loc.name.ja,
+      latitude: loc.latitude,
+      longitude: loc.longitude,
+      // 添加其他必要字段
+    }))
+
+    console.log('📍 加载门店位置:', locations)
+    return locations
+  } catch (error) {
+    console.error('❌ 加载门店位置失败:', error)
+    return []
+  }
+}
 
 /**
  * Get a Location by ID.
@@ -49,9 +67,26 @@ export const getLocation = (id: string): Promise<bookcarsTypes.Location> =>
  * @param {string} language
  * @returns {Promise<{ status: number, data: string }>}
  */
-export const getLocationId = (name: string, language: string): Promise<{ status: number, data: string }> =>
-  axiosInstance
-    .get(
-      `/api/location-id/${encodeURIComponent(name)}/${language}`
+export const getLocationId = async (name: string, language: string): Promise<{ status: number, data: string }> => {
+  try {
+    // 读取本地 JSON 文件
+    const response = await fetch('/data/locations.json')
+    const data = await response.json()
+
+    // 根据名称查找对应的 location
+    const location = data.locations.find((loc: any) =>
+      loc.name.ja === name ||
+      loc.name.en === name ||
+      loc.name.zh === name
     )
-    .then((res) => ({ status: res.status, data: res.data }))
+
+    if (location) {
+      return { status: 200, data: location.id }
+    } else {
+      return { status: 404, data: '' }
+    }
+  } catch (error) {
+    console.error('❌ 获取门店ID失败:', error)
+    return { status: 500, data: '' }
+  }
+}

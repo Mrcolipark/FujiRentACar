@@ -728,3 +728,28 @@ export const getCarRange = (range: bookcarsTypes.CarRange) => {
       return ''
   }
 }
+
+/**
+ * Capitalize the first letter of a string
+ * @param {string} str - The string to capitalize
+ * @returns {string} - The capitalized string
+ */
+export const capitalizeFirstLetter = (str: string): string => {
+  if (!str) return ''
+  return str.charAt(0).toUpperCase() + str.slice(1)
+}
+
+/**
+ * Format date to readable string
+ * @param {string} date - The date string to format
+ * @returns {string} - The formatted date string
+ */
+export const formatDate = (date: string): string => {
+  if (!date) return ''
+  const d = new Date(date)
+  return d.toLocaleDateString('ja-JP', {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit'
+  })
+}
