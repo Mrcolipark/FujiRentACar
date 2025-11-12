@@ -3,7 +3,7 @@
  * 商用级别的智能表单，支持多种联系类型
  */
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { useForm, Controller } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import {
@@ -89,9 +89,27 @@ const AdvancedContactForm: React.FC<AdvancedContactFormProps> = ({
   const [homeDeliveryPickup, setHomeDeliveryPickup] = useState(false)
   const [homeDeliveryReturn, setHomeDeliveryReturn] = useState(false)
 
+  // Ref for form section to scroll to
+  const formSectionRef = useRef<HTMLDivElement>(null)
+
   // 类型安全的错误访问辅助函数
   const getFieldError = (field: string): any => {
     return (errors as any)[field]
+  }
+
+  // Handle contact type selection with auto-scroll
+  const handleContactTypeSelect = (type: ContactType) => {
+    setContactType(type)
+
+    // Scroll to form section after a short delay to ensure DOM has updated
+    setTimeout(() => {
+      if (formSectionRef.current) {
+        formSectionRef.current.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        })
+      }
+    }, 100)
   }
 
   // Load vehicles and locations data
@@ -209,7 +227,7 @@ const AdvancedContactForm: React.FC<AdvancedContactFormProps> = ({
             className={`contact-type-card ${contactType === option.type ? 'selected' : ''}`}
             elevation={contactType === option.type ? 8 : 2}
           >
-            <CardActionArea onClick={() => setContactType(option.type)}>
+            <CardActionArea onClick={() => handleContactTypeSelect(option.type)}>
               <CardContent className="contact-type-content">
                 <Box className="contact-type-icon">{option.icon}</Box>
                 <Typography variant="h6" gutterBottom>
@@ -229,7 +247,7 @@ const AdvancedContactForm: React.FC<AdvancedContactFormProps> = ({
   // 渲染基础联系信息
   const renderBasicInfo = () => (
     <Collapse in={contactType !== null}>
-      <Paper elevation={2} className="form-section">
+      <Paper elevation={2} className="form-section" ref={formSectionRef}>
         <Typography variant="h6" gutterBottom>
           {strings.CONTACT_INFO_TITLE}
         </Typography>
