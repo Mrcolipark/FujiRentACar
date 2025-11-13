@@ -125,7 +125,7 @@ FUJI RENT A CAR（東京国際株式会社）をご利用いただきありが�
 東京国際株式会社
 FUJI RENT A CAR
 TEL：04-7676-9965
-E-MAIL：rentacarfuji@gmail.com
+E-MAIL：fujirentacar68@gmail.com
 
 営業時間：
 本店（墨田区）：9:00-18:00
@@ -256,7 +256,7 @@ Your personal information will be handled appropriately according to our Privacy
 Tokyo International Co., Ltd.
 FUJI RENT A CAR
 TEL: 04-7676-9965
-E-MAIL: rentacarfuji@gmail.com
+E-MAIL: fujirentacar68@gmail.com
 
 Business Hours:
 Main Office (Sumida): 9:00-18:00
@@ -387,7 +387,7 @@ These terms are governed by the laws of Japan.
 東京國際株式會社
 FUJI RENT A CAR
 電話：04-7676-9965
-信箱：rentacarfuji@gmail.com
+信箱：fujirentacar68@gmail.com
 
 营业时间：
 总店（墨田区）：9:00-18:00

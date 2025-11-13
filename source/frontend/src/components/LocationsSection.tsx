@@ -55,7 +55,7 @@ const LocationsSection: React.FC = () => {
     brand: strings.BRAND_NAME,
     phone: '04-7676-9965',
     fax: '04-7633-4020',
-    email: 'rentacarfuji@gmail.com'
+    email: 'fujirentacar68@gmail.com'
   }
 
   const currentLocation = locations[activeLocation]

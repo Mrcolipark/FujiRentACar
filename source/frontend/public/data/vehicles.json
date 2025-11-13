@@ -13,9 +13,9 @@
       "en": "G-Class 400D"
     },
     "category": {
-      "ja": "高級SUV",
-      "zh": "豪華休旅車",
-      "en": "Luxury SUV"
+      "zh": "SUV",
+      "ja": "SUV",
+      "en": "SUV"
     },
     "price": 86000,
     "seats": 5,
@@ -42,9 +42,9 @@
       "en": "C-Class"
     },
     "category": {
-      "ja": "セダン",
-      "zh": "轎車",
-      "en": "Sedan"
+      "zh": "豪華轎車",
+      "ja": "高級セダン",
+      "en": "Luxury Sedan"
     },
     "price": 13000,
     "seats": 5,
@@ -66,9 +66,9 @@
       "en": "E-Class"
     },
     "category": {
-      "ja": "セダン",
-      "zh": "轎車",
-      "en": "Sedan"
+      "zh": "豪華轎車",
+      "ja": "高級セダン",
+      "en": "Luxury Sedan"
     },
     "price": 26000,
     "seats": 5,
@@ -90,8 +90,8 @@
       "en": "S-Class"
     },
     "category": {
-      "ja": "高級セダン",
       "zh": "豪華轎車",
+      "ja": "高級セダン",
       "en": "Luxury Sedan"
     },
     "price": 27000,
@@ -114,8 +114,8 @@
       "en": "V-Class 220d"
     },
     "category": {
-      "ja": "高級ミニバン",
-      "zh": "豪華多功能車",
+      "zh": "豪華休旅車",
+      "ja": "高級MPV",
       "en": "Luxury MPV"
     },
     "price": 23000,
@@ -138,9 +138,9 @@
       "en": "Levante"
     },
     "category": {
-      "ja": "高級SUV",
-      "zh": "豪華休旅車",
-      "en": "Luxury SUV"
+      "zh": "SUV",
+      "ja": "SUV",
+      "en": "SUV"
     },
     "price": 37000,
     "seats": 5,
@@ -162,9 +162,9 @@
       "en": "Land Cruiser 250"
     },
     "category": {
-      "ja": "高級SUV",
-      "zh": "豪華休旅車",
-      "en": "Luxury SUV"
+      "zh": "SUV",
+      "ja": "SUV",
+      "en": "SUV"
     },
     "price": 30000,
     "seats": 7,
@@ -186,8 +186,8 @@
       "en": "Alphard 40"
     },
     "category": {
-      "ja": "高級ミニバン",
-      "zh": "豪華多功能車",
+      "zh": "豪華休旅車",
+      "ja": "高級MPV",
       "en": "Luxury MPV"
     },
     "price": 27000,
@@ -210,8 +210,8 @@
       "en": "Alphard 30"
     },
     "category": {
-      "ja": "高級ミニバン",
-      "zh": "豪華多功能車",
+      "zh": "豪華休旅車",
+      "ja": "高級MPV",
       "en": "Luxury MPV"
     },
     "price": 16000,
@@ -234,9 +234,9 @@
       "en": "Alphard 20"
     },
     "category": {
-      "ja": "高級ミニバン",
-      "zh": "豪華多功能車",
-      "en": "Luxury MPV"
+      "zh": "商旅車",
+      "ja": "ミニバン",
+      "en": "Minivan"
     },
     "price": 11000,
     "seats": 8,
@@ -258,9 +258,9 @@
       "en": "86"
     },
     "category": {
-      "ja": "スポーツクーペ",
       "zh": "跑車",
-      "en": "Sports Coupe"
+      "ja": "スポーツカー",
+      "en": "Sports Car"
     },
     "price": 16000,
     "seats": 2,
@@ -282,9 +282,9 @@
       "en": "Hiace"
     },
     "category": {
-      "ja": "高級ミニバン",
-      "zh": "豪華多功能車",
-      "en": "Luxury MPV"
+      "zh": "商旅車",
+      "ja": "ミニバン",
+      "en": "Minivan"
     },
     "price": 16000,
     "seats": 10,
@@ -306,9 +306,9 @@
       "en": "Supra"
     },
     "category": {
-      "ja": "スポーツクーペ",
       "zh": "跑車",
-      "en": "Sports Coupe"
+      "ja": "スポーツカー",
+      "en": "Sports Car"
     },
     "price": 25000,
     "seats": 2,
@@ -330,9 +330,9 @@
       "en": "Panamera"
     },
     "category": {
-      "ja": "スポーツクーペ",
-      "zh": "跑車",
-      "en": "Sports Coupe"
+      "zh": "豪華性能車",
+      "ja": "高級パフォーマンスカー",
+      "en": "Luxury Performance"
     },
     "price": 30000,
     "seats": 4,
@@ -354,9 +354,9 @@
       "en": "C-Class"
     },
     "category": {
-      "ja": "スポーツクーペ",
       "zh": "跑車",
-      "en": "Sports Coupe"
+      "ja": "スポーツカー",
+      "en": "Sports Car"
     },
     "price": 66000,
     "seats": 4,
@@ -378,8 +378,8 @@
       "en": "LM"
     },
     "category": {
-      "ja": "高級ミニバン",
-      "zh": "豪華多功能車",
+      "zh": "豪華休旅車",
+      "ja": "高級MPV",
       "en": "Luxury MPV"
     },
     "price": 150000,
@@ -402,9 +402,9 @@
       "en": "M4"
     },
     "category": {
-      "ja": "スポーツカー",
-      "zh": "跑車",
-      "en": "Sports Car"
+      "zh": "豪華性能車",
+      "ja": "高級パフォーマンスカー",
+      "en": "Luxury Performance"
     },
     "price": 27000,
     "seats": 5,
@@ -426,8 +426,8 @@
       "en": "Z4"
     },
     "category": {
-      "ja": "スポーツカー",
       "zh": "跑車",
+      "ja": "スポーツカー",
       "en": "Sports Car"
     },
     "price": 30000,
@@ -450,9 +450,9 @@
       "en": "X5"
     },
     "category": {
-      "ja": "高級SUV",
-      "zh": "豪華休旅車",
-      "en": "Luxury SUV"
+      "zh": "SUV",
+      "ja": "SUV",
+      "en": "SUV"
     },
     "price": 26000,
     "seats": 5,
@@ -474,8 +474,8 @@
       "en": "Atenza"
     },
     "category": {
-      "ja": "セダン",
       "zh": "轎車",
+      "ja": "セダン",
       "en": "Sedan"
     },
     "price": 7000,
@@ -498,9 +498,9 @@
       "en": "MX-5 Roadster"
     },
     "category": {
-      "ja": "スポーツクーペ",
       "zh": "跑車",
-      "en": "Sports Coupe"
+      "ja": "スポーツカー",
+      "en": "Sports Car"
     },
     "price": 13000,
     "seats": 2,
@@ -522,9 +522,9 @@
       "en": "Step WGN"
     },
     "category": {
-      "ja": "高級ミニバン",
-      "zh": "豪華多功能車",
-      "en": "Luxury MPV"
+      "zh": "商旅車",
+      "ja": "ミニバン",
+      "en": "Minivan"
     },
     "price": 11000,
     "seats": 7,
@@ -546,8 +546,8 @@
       "en": "Fit"
     },
     "category": {
-      "ja": "セダン",
       "zh": "轎車",
+      "ja": "セダン",
       "en": "Sedan"
     },
     "price": 7000,
@@ -570,9 +570,9 @@
       "en": "Serena"
     },
     "category": {
-      "ja": "高級ミニバン",
-      "zh": "豪華多功能車",
-      "en": "Luxury MPV"
+      "zh": "商旅車",
+      "ja": "ミニバン",
+      "en": "Minivan"
     },
     "price": 10000,
     "seats": 8,
@@ -594,8 +594,8 @@
       "en": "GT-R"
     },
     "category": {
-      "ja": "スポーツカー",
       "zh": "跑車",
+      "ja": "スポーツカー",
       "en": "Sports Car"
     },
     "price": 62000,
@@ -618,8 +618,8 @@
       "en": "XV"
     },
     "category": {
-      "ja": "セダン",
       "zh": "轎車",
+      "ja": "セダン",
       "en": "Sedan"
     },
     "price": 7000,
@@ -642,9 +642,9 @@
       "en": "Forester"
     },
     "category": {
-      "ja": "セダン",
-      "zh": "轎車",
-      "en": "Sedan"
+      "zh": "SUV",
+      "ja": "SUV",
+      "en": "SUV"
     },
     "price": 7000,
     "seats": 5,

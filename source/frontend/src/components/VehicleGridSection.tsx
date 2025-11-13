@@ -90,13 +90,6 @@ const VehicleGridSection: React.FC = () => {
                   className="vehicle-image"
                 />
 
-                {/* SUPERIOR标签 */}
-                {vehicle.isSuperior && (
-                  <div className="superior-badge">
-                    {strings.SUPERIOR_BADGE}
-                  </div>
-                )}
-
                 {/* 悬停遮罩 */}
                 <div className="vehicle-overlay">
                   <Button

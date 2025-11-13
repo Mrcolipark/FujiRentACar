@@ -229,13 +229,11 @@ button:hover .MuiButton-startIcon {
 
 /* ==================== Badge悬停效果 ==================== */
 
-.superior-badge,
 .image-badge,
 .quality-badge {
   transition: var(--lz-transition-all);
 }
 
-.superior-badge:hover,
 .image-badge:hover,
 .quality-badge:hover {
   transform: scale(1.05);

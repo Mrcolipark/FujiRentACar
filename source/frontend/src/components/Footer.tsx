@@ -223,7 +223,6 @@ const Footer = () => {
               {!env.HIDE_SUPPLIERS && <li onClick={() => navigate('/suppliers')}>{strings.SUPPLIERS}</li>}
               <li onClick={() => navigate('/locations')}>{strings.LOCATIONS}</li>
               <li onClick={() => navigate('/search')}>{strings.SEARCH_VEHICLES}</li>
-              <li onClick={() => navigate('/faq')}>{strings.FAQ}</li>
             </ul>
           </div>
 

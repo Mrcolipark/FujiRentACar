@@ -32,7 +32,7 @@ const getTemplateId = (contactType: ContactType): string => {
 // 格式化模板参数
 const formatTemplateParams = (data: ContactFormData): EmailTemplateParams => {
   const baseParams: EmailTemplateParams = {
-    to_email: env.CONTACT_EMAIL || 'rentacarfuji@gmail.com',
+    to_email: env.CONTACT_EMAIL || 'fujirentacar68@gmail.com',
     contact_type: helper.capitalizeFirstLetter(data.contactType.replace('_', ' ')),
     name: data.name,
     email: data.email,
@@ -232,7 +232,7 @@ export const sendNewsletterSubscription = async (
   try {
     // Newsletter订阅模板参数
     const templateParams = {
-      to_email: env.CONTACT_EMAIL || 'rentacarfuji@gmail.com',
+      to_email: env.CONTACT_EMAIL || 'fujirentacar68@gmail.com',
       subscriber_email: email,
       subscribe_date: new Date().toLocaleDateString('ja-JP'),
       subscribe_time: new Date().toLocaleTimeString('ja-JP'),

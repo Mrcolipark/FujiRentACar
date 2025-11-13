@@ -90,22 +90,6 @@
   transform: scale(1.1);
 }
 
-/* SUPERIOR标签 */
-.superior-badge {
-  position: absolute;
-  top: var(--lz-spacing-md);
-  right: var(--lz-spacing-md);
-  padding: var(--lz-spacing-xs) var(--lz-spacing-md);
-  background: var(--lz-accent-primary);
-  color: var(--lz-text-primary);
-  font-size: var(--lz-font-size-caption);
-  font-weight: var(--lz-font-weight-bold);
-  text-transform: uppercase;
-  letter-spacing: var(--lz-letter-spacing-wider);
-  border-radius: var(--lz-radius-full);
-  box-shadow: var(--lz-shadow-accent);
-}
-
 /* 悬停遮罩 */
 .vehicle-overlay {
   position: absolute;

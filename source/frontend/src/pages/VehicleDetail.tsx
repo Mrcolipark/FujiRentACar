@@ -296,9 +296,6 @@ const VehicleDetail: React.FC = () => {
                       alt={getText(vehicle.name)}
                       className="detail-image"
                     />
-                    {vehicle.isSuperior && (
-                      <div className="superior-badge">SUPERIOR</div>
-                    )}
 
                     {/* 左右翻页按钮（只在有多张图片时显示） */}
                     {getVehicleImages().length > 1 && (

@@ -88,44 +88,60 @@
   transform: scale(1.05);
 }
 
-.vehicle-main-image .superior-badge {
-  position: absolute;
-  top: var(--lz-spacing-lg);
-  right: var(--lz-spacing-lg);
-  background: var(--lz-color-accent-primary);
-  color: var(--lz-color-text-on-accent);
-  padding: var(--lz-spacing-sm) var(--lz-spacing-lg);
-  border-radius: var(--lz-border-radius-full);
-  font-size: var(--lz-font-size-sm);
-  font-weight: var(--lz-font-weight-bold);
-  letter-spacing: 0.05em;
-  box-shadow: var(--lz-shadow-md);
-  z-index: 2;
-}
-
-/* 图片导航按钮 */
+/* 图片导航按钮 - 极简设计 */
 .image-nav-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.9) !important;
-  box-shadow: var(--lz-shadow-md) !important;
-  z-index: 2;
-  transition: all 0.3s var(--lz-easing-standard) !important;
+  width: 40px !important;
+  height: 40px !important;
+  min-width: 40px !important;
+  background: rgba(0, 0, 0, 0.5) !important;
+  border: 2px solid rgba(255, 255, 255, 0.8) !important;
+  z-index: 10 !important;
+  transition: background 0.2s ease !important;
+  color: white !important;
+  padding: 0 !important;
 }
 
 .image-nav-btn:hover {
-  background: rgba(255, 255, 255, 1) !important;
-  box-shadow: var(--lz-shadow-lg) !important;
-  transform: translateY(-50%) scale(1.1);
+  background: rgba(0, 0, 0, 0.7) !important;
 }
 
+/* 按钮图标 */
+.image-nav-btn svg {
+  font-size: 28px;
+  display: block;
+}
+
+/* 左右按钮位置 */
 .image-nav-prev {
-  left: var(--lz-spacing-md);
+  left: 12px;
 }
 
 .image-nav-next {
-  right: var(--lz-spacing-md);
+  right: 12px;
+}
+
+/* 移动端优化 */
+@media (max-width: 768px) {
+  .image-nav-btn {
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
+  }
+
+  .image-nav-btn svg {
+    font-size: 24px;
+  }
+
+  .image-nav-prev {
+    left: 8px;
+  }
+
+  .image-nav-next {
+    right: 8px;
+  }
 }
 
 /* 图片指示器 */
@@ -519,13 +535,6 @@
 
 /* Small Mobile */
 @media (max-width: 480px) {
-  .vehicle-main-image .superior-badge {
-    top: var(--lz-spacing-sm);
-    right: var(--lz-spacing-sm);
-    padding: var(--lz-spacing-xs) var(--lz-spacing-sm);
-    font-size: var(--lz-font-size-xs);
-  }
-
   .price-amount {
     font-size: var(--lz-font-size-xl);
   }

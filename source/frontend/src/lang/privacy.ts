@@ -84,7 +84,7 @@ Cookieの使用を希望されない場合は、ブラウザの設定で無効�
 FUJI RENT A CAR
 〒130-0014 東京都墨田区亀沢4丁目-23-6
 TEL：04-7676-9965
-E-MAIL：rentacarfuji@gmail.com
+E-MAIL：fujirentacar68@gmail.com
 
 制定日：2025年1月1日
 最終更新日：2025年1月1日
@@ -171,7 +171,7 @@ Tokyo International Co., Ltd.
 FUJI RENT A CAR
 4-23-6 Kamezawa, Sumida-ku, Tokyo 130-0014, Japan
 TEL: 04-7676-9965
-E-MAIL: rentacarfuji@gmail.com
+E-MAIL: fujirentacar68@gmail.com
 
 Established: January 1, 2025
 Last Updated: January 1, 2025
@@ -258,7 +258,7 @@ FUJI RENT A CAR（東京國際株式會社）重视保护您的个人資訊。�
 FUJI RENT A CAR
 〒130-0014 東京都墨田区龟泽4丁目-23-6
 電話：04-7676-9965
-信箱：rentacarfuji@gmail.com
+信箱：fujirentacar68@gmail.com
 
 制定日期：2025年1月1日
 最后更新：2025年1月1日

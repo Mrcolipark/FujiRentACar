@@ -153,22 +153,6 @@
   transform: scale(1.05);
 }
 
-/* Superior Badge */
-.vehicle-card .superior-badge {
-  position: absolute;
-  top: var(--lz-spacing-md);
-  right: var(--lz-spacing-md);
-  background: var(--lz-color-accent-primary);
-  color: var(--lz-color-text-on-accent);
-  padding: var(--lz-spacing-xs) var(--lz-spacing-md);
-  border-radius: var(--lz-border-radius-full);
-  font-size: var(--lz-font-size-xs);
-  font-weight: var(--lz-font-weight-bold);
-  letter-spacing: 0.05em;
-  z-index: 2;
-  box-shadow: var(--lz-shadow-md);
-}
-
 /* Hover Overlay */
 .vehicle-overlay {
   position: absolute;

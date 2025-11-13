@@ -228,11 +228,6 @@ const Vehicles: React.FC = () => {
                       className="vehicle-image"
                     />
 
-                    {/* Superior Badge */}
-                    {vehicle.isSuperior && (
-                      <div className="superior-badge">SUPERIOR</div>
-                    )}
-
                     {/* Hover Overlay */}
                     <div className="vehicle-overlay">
                       <Button
