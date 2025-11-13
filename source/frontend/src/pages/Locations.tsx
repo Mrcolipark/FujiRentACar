@@ -99,7 +99,7 @@ const Locations = () => {
       <Container maxWidth="xl" sx={{ py: 6 }}>
         <Grid container spacing={3} sx={{ justifyContent: 'center' }}>
           {locationsData.map((location) => (
-            <Grid item xs={12} sm={6} md={6} lg={6} key={location.id}>
+            <Grid size={{ xs: 12, sm: 6, md: 6, lg: 6 }} key={location.id}>
               <Card
                 elevation={3}
                 sx={{
