@@ -139,6 +139,9 @@ export const sendContactForm = async (
       params: templateParams,
     })
 
+    console.log('📋 完整的模板参数（复制这些变量名到 EmailJS 模板）:')
+    console.log(JSON.stringify(templateParams, null, 2))
+
     // 发送邮件
     const response = await emailjs.send(
       env.EMAILJS_SERVICE_ID!,
@@ -166,40 +169,14 @@ export const sendContactForm = async (
   }
 }
 
-// 发送确认邮件给客户
+// 发送确认邮件给客户（已禁用）
 const sendConfirmationEmail = async (
   customerEmail: string,
   contactType: ContactType,
   customerName: string
 ): Promise<void> => {
-  try {
-    // TODO: 创建客户确认邮件模板
-    const confirmationParams = {
-      to_email: customerEmail,
-      customer_name: customerName,
-      company_name: 'FUJI RENT A CAR',
-      contact_type: helper.capitalizeFirstLetter(contactType.replace('_', ' ')),
-      response_time: '24小时内',
-      support_email: env.CONTACT_EMAIL,
-      whatsapp: env.WHATSAPP_NUMBER,
-      line_id: env.LINE_ID,
-    }
-
-    // 使用单独的确认邮件模板
-    // const confirmationTemplateId = `confirmation_${contactType}`
-
-    // await emailjs.send(
-    //   env.EMAILJS_SERVICE_ID!,
-    //   confirmationTemplateId,
-    //   confirmationParams,
-    //   env.EMAILJS_PUBLIC_KEY
-    // )
-
-    console.log('✅ 确认邮件已发送给客户:', customerEmail)
-  } catch (error) {
-    // 确认邮件失败不影响主流程
-    console.warn('⚠️ 确认邮件发送失败（不影响主流程）:', error)
-  }
+  // 自动回复功能已禁用
+  console.log('ℹ️ 自动回复功能已禁用')
 }
 
 // 计算价格估算（用于车辆预订邮件）

@@ -119,6 +119,7 @@ const env = {
   EMAILJS_SERVICE_ID: String(import.meta.env.VITE_BC_EMAILJS_SERVICE_ID || ''),
   EMAILJS_TEMPLATE_ID: String(import.meta.env.VITE_BC_EMAILJS_TEMPLATE_ID || ''),
   EMAILJS_NEWSLETTER_TEMPLATE_ID: String(import.meta.env.VITE_BC_EMAILJS_NEWSLETTER_TEMPLATE_ID || ''),
+  EMAILJS_CONFIRMATION_TEMPLATE_ID: String(import.meta.env.VITE_BC_EMAILJS_CONFIRMATION_TEMPLATE_ID || ''),
   EMAILJS_PUBLIC_KEY: String(import.meta.env.VITE_BC_EMAILJS_PUBLIC_KEY || ''),
   WHATSAPP_NUMBER: String(import.meta.env.VITE_BC_WHATSAPP_NUMBER || ''),
   LINE_ID: String(import.meta.env.VITE_BC_LINE_ID || 'Jpe28k3dZJ'),

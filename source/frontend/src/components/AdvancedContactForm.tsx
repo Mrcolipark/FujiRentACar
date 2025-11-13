@@ -147,7 +147,30 @@ const AdvancedContactForm: React.FC<AdvancedContactFormProps> = ({
     resolver: zodResolver(contactFormSchema),
     defaultValues: {
       preferredContactMethod: PreferredContactMethod.EMAIL,
+      vehicleBooking: {
+        vehicleId: '',
+        vehicleName: '',
+        pickupDate: '',
+        pickupTime: '',
+        returnDate: '',
+        returnTime: '',
+        pickupLocation: '',
+        pickupAddress: '',
+        returnLocation: '',
+        returnAddress: '',
+        homeDeliveryPickup: false,
+        homeDeliveryReturn: false,
+        sameLocation: false,
+        passengers: 1,
+        additionalDrivers: 0,
+        insurance: false,
+        babySeats: 0,
+        etc: false,
+        phoneHolder: false,
+        specialRequests: '',
+      },
     },
+    mode: 'onSubmit',
   })
 
   // 监听联系类型变化
@@ -200,6 +223,40 @@ const AdvancedContactForm: React.FC<AdvancedContactFormProps> = ({
       }
     } finally {
       setIsSubmitting(false)
+    }
+  }
+
+  // 验证错误处理
+  const onError = (errors: any) => {
+    console.error('❌ 表单验证失败:', errors)
+
+    // 深度遍历显示所有错误
+    const flattenErrors = (obj: any, prefix = ''): string[] => {
+      const messages: string[] = []
+      for (const key in obj) {
+        const fullKey = prefix ? `${prefix}.${key}` : key
+        if (obj[key].message) {
+          messages.push(`${fullKey}: ${obj[key].message}`)
+        } else if (typeof obj[key] === 'object') {
+          messages.push(...flattenErrors(obj[key], fullKey))
+        }
+      }
+      return messages
+    }
+
+    const errorMessages = flattenErrors(errors)
+    console.error('📋 详细错误列表:', errorMessages)
+
+    setSubmitError('请检查表单中的错误信息')
+
+    // 滚动到第一个错误字段
+    const firstErrorField = Object.keys(errors)[0]
+    if (firstErrorField) {
+      const element = document.querySelector(`[name="${firstErrorField}"]`) ||
+                     document.querySelector(`[name^="${firstErrorField}."]`)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'center' })
+      }
     }
   }
 
@@ -607,8 +664,13 @@ const AdvancedContactForm: React.FC<AdvancedContactFormProps> = ({
                       onChange={(e) => {
                         field.onChange(e)
                         setHomeDeliveryPickup(e.target.checked)
-                        if (!e.target.checked) {
+                        if (e.target.checked) {
+                          // 选择上门送车时，自动设置取车地点为"自宅"
+                          setValue('vehicleBooking.pickupLocation', '自宅')
+                        } else {
+                          // 取消选择时，清空地址和取车地点
                           setValue('vehicleBooking.pickupAddress', '')
+                          setValue('vehicleBooking.pickupLocation', '')
                         }
                       }}
                     />
@@ -693,8 +755,13 @@ const AdvancedContactForm: React.FC<AdvancedContactFormProps> = ({
                       onChange={(e) => {
                         field.onChange(e)
                         setHomeDeliveryReturn(e.target.checked)
-                        if (!e.target.checked) {
+                        if (e.target.checked) {
+                          // 选择上门取车时，自动设置还车地点为"自宅"
+                          setValue('vehicleBooking.returnLocation', '自宅')
+                        } else {
+                          // 取消选择时，清空地址和还车地点
                           setValue('vehicleBooking.returnAddress', '')
+                          setValue('vehicleBooking.returnLocation', '')
                         }
                       }}
                     />
@@ -758,7 +825,9 @@ const AdvancedContactForm: React.FC<AdvancedContactFormProps> = ({
                 fullWidth
                 type="number"
                 label={strings.ADDITIONAL_DRIVERS}
-                {...register('vehicleBooking.additionalDrivers', { valueAsNumber: true })}
+                {...register('vehicleBooking.additionalDrivers', {
+                  setValueAs: (v) => v === '' || isNaN(v) ? 0 : Number(v)
+                })}
                 error={!!getFieldError('vehicleBooking')?.additionalDrivers}
                 helperText={strings.ADDITIONAL_DRIVERS_HELPER}
                 inputProps={{ min: 0 }}
@@ -795,7 +864,9 @@ const AdvancedContactForm: React.FC<AdvancedContactFormProps> = ({
                 fullWidth
                 type="number"
                 label={strings.BABY_SEATS}
-                {...register('vehicleBooking.babySeats', { valueAsNumber: true })}
+                {...register('vehicleBooking.babySeats', {
+                  setValueAs: (v) => v === '' || isNaN(v) ? 0 : Number(v)
+                })}
                 error={!!getFieldError('vehicleBooking')?.babySeats}
                 helperText={strings.BABY_SEATS_HELPER}
                 inputProps={{ min: 0 }}
@@ -885,7 +956,7 @@ const AdvancedContactForm: React.FC<AdvancedContactFormProps> = ({
 
   return (
     <Box className={`advanced-contact-form ${className || ''}`}>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit, onError)}>
         {renderContactTypeSelector()}
         {renderBasicInfo()}
 

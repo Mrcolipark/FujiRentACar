@@ -6,41 +6,42 @@
 import { z } from 'zod'
 import { ContactType, InquiryCategory, IssueType, InsuranceType, PreferredContactMethod } from '@/types/ContactForm'
 import { strings as commonStrings } from '@/lang/common'
+import { strings } from '@/lang/advanced-contact'
 
-// 电话号码验证（国际格式）
-const phoneRegex = /^\+?[1-9]\d{1,14}$/
+// 电话号码验证（宽松格式，允许各种常见格式）
+const phoneRegex = /^[\d\s\-\+\(\)]{8,20}$/
 
 // 基础联系信息schema
 const baseContactSchema = z.object({
   contactType: z.nativeEnum(ContactType),
-  name: z.string().min(2, '姓名至少需要2个字符'),
+  name: z.string().min(2, { message: strings.VALIDATION_NAME_MIN }),
   email: z.string().email(commonStrings.EMAIL_NOT_VALID),
-  phone: z.string().regex(phoneRegex, '请输入有效的电话号码（包含国家代码）'),
+  phone: z.string().regex(phoneRegex, { message: strings.VALIDATION_PHONE_INVALID }),
   preferredContactMethod: z.nativeEnum(PreferredContactMethod),
 })
 
 // 车辆预订schema
 const vehicleBookingSchema = z.object({
-  vehicleId: z.string().min(1, '请选择车辆'),
-  vehicleName: z.string().min(1, '车辆名称不能为空'),
-  pickupDate: z.string().min(1, '请选择取车日期'),
-  pickupTime: z.string().min(1, '请选择取车时间'),
-  returnDate: z.string().min(1, '请选择还车日期'),
-  returnTime: z.string().min(1, '请选择还车时间'),
-  pickupLocation: z.string().min(1, '请选择取车地点'),
+  vehicleId: z.string().min(1, { message: strings.VALIDATION_VEHICLE_REQUIRED }),
+  vehicleName: z.string().min(1, { message: strings.VALIDATION_VEHICLE_NAME_REQUIRED }),
+  pickupDate: z.string().min(1, { message: strings.VALIDATION_PICKUP_DATE_REQUIRED }),
+  pickupTime: z.string().min(1, { message: strings.VALIDATION_PICKUP_TIME_REQUIRED }),
+  returnDate: z.string().min(1, { message: strings.VALIDATION_RETURN_DATE_REQUIRED }),
+  returnTime: z.string().min(1, { message: strings.VALIDATION_RETURN_TIME_REQUIRED }),
+  pickupLocation: z.string().min(1, { message: strings.VALIDATION_PICKUP_LOCATION_REQUIRED }),
   homeDeliveryPickup: z.boolean(),
   pickupAddress: z.string().optional(),
-  returnLocation: z.string().min(1, '请选择还车地点'),
+  returnLocation: z.string().min(1, { message: strings.VALIDATION_RETURN_LOCATION_REQUIRED }),
   homeDeliveryReturn: z.boolean(),
   returnAddress: z.string().optional(),
   sameLocation: z.boolean(),
-  passengers: z.number().min(1, '至少需要1位乘客').max(12, '乘客人数不能超过12人'),
-  additionalDrivers: z.number().min(0, '额外驾驶员不能为负数').max(5, '额外驾驶员不能超过5人'),
+  passengers: z.number().min(1, { message: strings.VALIDATION_PASSENGERS_MIN }).max(12, { message: strings.VALIDATION_PASSENGERS_MAX }),
+  additionalDrivers: z.number().min(0, { message: strings.VALIDATION_DRIVERS_MIN }).max(5, { message: strings.VALIDATION_DRIVERS_MAX }),
   insurance: z.boolean(),
-  babySeats: z.number().min(0, '婴儿座椅数量不能为负数').max(4, '婴儿座椅数量不能超过4个'),
+  babySeats: z.number().min(0, { message: strings.VALIDATION_BABY_SEATS_MIN }).max(4, { message: strings.VALIDATION_BABY_SEATS_MAX }),
   etc: z.boolean(),
   phoneHolder: z.boolean(),
-  specialRequests: z.string().max(500, '特殊要求不能超过500字符').optional(),
+  specialRequests: z.string().max(500, { message: strings.VALIDATION_SPECIAL_REQUESTS_MAX }).optional(),
 }).refine(
   (data) => {
     const pickup = new Date(data.pickupDate + 'T' + data.pickupTime)
@@ -48,46 +49,77 @@ const vehicleBookingSchema = z.object({
     return returnDate > pickup
   },
   {
-    message: '还车时间必须晚于取车时间',
+    message: strings.VALIDATION_RETURN_DATE_AFTER,
     path: ['returnDate'],
   }
 ).refine(
   (data) => !data.homeDeliveryPickup || (data.pickupAddress && data.pickupAddress.length > 0),
   {
-    message: '请输入取车地址',
+    message: strings.VALIDATION_PICKUP_ADDRESS_REQUIRED,
     path: ['pickupAddress'],
   }
 ).refine(
   (data) => !data.homeDeliveryReturn || (data.returnAddress && data.returnAddress.length > 0),
   {
-    message: '请输入还车地址',
+    message: strings.VALIDATION_RETURN_ADDRESS_REQUIRED,
     path: ['returnAddress'],
+  }
+).refine(
+  (data) => {
+    // 检查取车时间不能早于当前时间
+    const pickup = new Date(data.pickupDate + 'T' + data.pickupTime)
+    const now = new Date()
+    return pickup > now
+  },
+  {
+    message: strings.VALIDATION_PICKUP_TIME_PAST,
+    path: ['pickupDate'],
+  }
+).refine(
+  (data) => {
+    // 检查取车时间在营业时间内（8:00-20:00）
+    const [hours] = data.pickupTime.split(':').map(Number)
+    return hours >= 8 && hours < 20
+  },
+  {
+    message: strings.VALIDATION_PICKUP_TIME_BUSINESS_HOURS,
+    path: ['pickupTime'],
+  }
+).refine(
+  (data) => {
+    // 检查还车时间在营业时间内（8:00-20:00）
+    const [hours] = data.returnTime.split(':').map(Number)
+    return hours >= 8 && hours < 20
+  },
+  {
+    message: strings.VALIDATION_RETURN_TIME_BUSINESS_HOURS,
+    path: ['returnTime'],
   }
 )
 
 // 一般咨询schema
 const generalInquirySchema = z.object({
   category: z.nativeEnum(InquiryCategory),
-  subject: z.string().min(5, '主题至少需要5个字符').max(100, '主题不能超过100字符'),
-  message: z.string().min(20, '留言至少需要20个字符').max(2000, '留言不能超过2000字符'),
+  subject: z.string().min(5, { message: strings.VALIDATION_SUBJECT_MIN }).max(100, { message: strings.VALIDATION_SUBJECT_MAX }),
+  message: z.string().min(20, { message: strings.VALIDATION_MESSAGE_MIN }).max(2000, { message: strings.VALIDATION_MESSAGE_MAX }),
 })
 
 // 技术支持schema
 const technicalSupportSchema = z.object({
   issueType: z.nativeEnum(IssueType),
   orderNumber: z.string().optional(),
-  description: z.string().min(20, '问题描述至少需要20个字符').max(2000, '问题描述不能超过2000字符'),
+  description: z.string().min(20, { message: strings.VALIDATION_DESCRIPTION_MIN }).max(2000, { message: strings.VALIDATION_DESCRIPTION_MAX }),
   urgency: z.enum(['low', 'medium', 'high']),
 })
 
 // 企业合作schema
 const businessPartnershipSchema = z.object({
-  companyName: z.string().min(2, '公司名称至少需要2个字符').max(100, '公司名称不能超过100字符'),
-  partnershipType: z.string().min(2, '合作类型至少需要2个字符').max(100, '合作类型不能超过100字符'),
-  description: z.string().min(20, '合作说明至少需要20个字符').max(2000, '合作说明不能超过2000字符'),
-  website: z.string().url('请输入有效的网站地址').optional().or(z.literal('')),
-  contactPerson: z.string().min(2, '联系人姓名至少需要2个字符'),
-  position: z.string().min(2, '职位至少需要2个字符'),
+  companyName: z.string().min(2, { message: strings.VALIDATION_COMPANY_NAME_MIN }).max(100, { message: strings.VALIDATION_COMPANY_NAME_MAX }),
+  partnershipType: z.string().min(2, { message: strings.VALIDATION_PARTNERSHIP_TYPE_MIN }).max(100, { message: strings.VALIDATION_PARTNERSHIP_TYPE_MAX }),
+  description: z.string().min(20, { message: strings.VALIDATION_PARTNERSHIP_DESC_MIN }).max(2000, { message: strings.VALIDATION_PARTNERSHIP_DESC_MAX }),
+  website: z.string().url({ message: strings.VALIDATION_WEBSITE_INVALID }).optional().or(z.literal('')),
+  contactPerson: z.string().min(2, { message: strings.VALIDATION_CONTACT_PERSON_MIN }),
+  position: z.string().min(2, { message: strings.VALIDATION_POSITION_MIN }),
 })
 
 // 完整表单schema（discriminated union）
