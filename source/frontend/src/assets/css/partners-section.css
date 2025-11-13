@@ -61,10 +61,6 @@
   will-change: transform;
 }
 
-.partners-scroll-track:hover {
-  animation-play-state: paused;
-}
-
 @keyframes scroll-partners {
   from {
     transform: translateX(0);
@@ -85,14 +81,6 @@
   min-height: 100px;
   min-width: 160px;
   flex-shrink: 0;
-  transition: var(--lz-transition-transform), var(--lz-transition-color);
-  cursor: pointer;
-}
-
-.partner-item:hover {
-  transform: translateY(-4px);
-  border-color: var(--lz-accent-primary);
-  box-shadow: var(--lz-shadow-accent);
 }
 
 .partner-logo {
@@ -102,12 +90,6 @@
   height: auto;
   object-fit: contain;
   opacity: 0.9;
-  transition: var(--lz-transition-all);
-}
-
-.partner-item:hover .partner-logo {
-  transform: scale(1.05);
-  opacity: 1;
 }
 
 /* Logo加载失败时的后备方案 */
@@ -118,10 +100,6 @@
   text-align: center;
   text-transform: uppercase;
   letter-spacing: var(--lz-letter-spacing-wide);
-}
-
-.partner-item:hover .partner-fallback {
-  color: var(--lz-accent-primary);
 }
 
 /* ==================== 响应式 ==================== */

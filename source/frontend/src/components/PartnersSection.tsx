@@ -13,40 +13,48 @@ interface Partner {
 }
 
 const PartnersSection: React.FC = () => {
-  // 基于实际车辆清单的合作伙伴品牌（前8个）
-  // 使用Google Favicon API获取品牌Logo（128x128 高质量）
+  // 基于实际车辆清单的所有合作伙伴品牌（10个）
+  // 使用本地存储的品牌Logo（128x128 高质量）
   const partners: Partner[] = [
     {
       name: 'Mercedes-Benz',
-      logo: 'https://www.google.com/s2/favicons?domain=mercedes-benz.com&sz=128',
+      logo: '/images/brands/mercedes-benz.png',
     },
     {
       name: 'Maserati',
-      logo: 'https://www.google.com/s2/favicons?domain=maserati.com&sz=128',
+      logo: '/images/brands/maserati.png',
     },
     {
       name: 'Toyota',
-      logo: 'https://www.google.com/s2/favicons?domain=toyota.com&sz=128',
+      logo: '/images/brands/toyota.png',
     },
     {
       name: 'Porsche',
-      logo: 'https://www.google.com/s2/favicons?domain=porsche.com&sz=128',
+      logo: '/images/brands/porsche.png',
     },
     {
       name: 'Lexus',
-      logo: 'https://www.google.com/s2/favicons?domain=lexus.com&sz=128',
+      logo: '/images/brands/lexus.png',
     },
     {
       name: 'BMW',
-      logo: 'https://www.google.com/s2/favicons?domain=bmw.com&sz=128',
+      logo: '/images/brands/bmw.png',
     },
     {
       name: 'Mazda',
-      logo: 'https://www.google.com/s2/favicons?domain=mazda.com&sz=128',
+      logo: '/images/brands/mazda.png',
     },
     {
       name: 'Honda',
-      logo: 'https://www.google.com/s2/favicons?domain=honda.com&sz=128',
+      logo: '/images/brands/honda.png',
+    },
+    {
+      name: 'Nissan',
+      logo: '/images/brands/nissan.png',
+    },
+    {
+      name: 'Subaru',
+      logo: '/images/brands/subaru.png',
     },
   ]
 
