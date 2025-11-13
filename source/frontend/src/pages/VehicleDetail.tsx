@@ -27,6 +27,7 @@ import {
 import { SvgIcon } from '@mui/material'
 import { strings } from '@/lang/vehicle-detail'
 import * as UserService from '@/services/UserService'
+import { trackVehicleView, trackContactClick, trackImageCarousel } from '@/utils/ga4'
 import env from '@/config/env.config'
 import Layout from '@/components/Layout'
 import Footer from '@/components/Footer'
@@ -101,6 +102,15 @@ const VehicleDetail: React.FC = () => {
             )
             .slice(0, 3)
           setSimilarVehicles(similar)
+
+          // Track vehicle view in GA4
+          if (env.GOOGLE_ANALYTICS_ENABLED) {
+            trackVehicleView(
+              foundVehicle.id,
+              getText(foundVehicle.name),
+              foundVehicle.brand
+            )
+          }
         }
 
         setLoading(false)
@@ -127,6 +137,11 @@ const VehicleDetail: React.FC = () => {
   }
 
   const handleLINEInquiry = () => {
+    // Track LINE contact click
+    if (env.GOOGLE_ANALYTICS_ENABLED) {
+      trackContactClick('LINE', 'vehicle_detail')
+    }
+
     if (isMobile()) {
       // 移动端：先尝试打开 LINE App，如果失败则打开网页版
       const lineScheme = `line://ti/p/${env.LINE_ID}`
@@ -148,10 +163,20 @@ const VehicleDetail: React.FC = () => {
   }
 
   const handleEmailInquiry = () => {
+    // Track email contact click
+    if (env.GOOGLE_ANALYTICS_ENABLED) {
+      trackContactClick('Email', 'vehicle_detail')
+    }
+
     navigate('/contact')
   }
 
   const handleWeChatInquiry = () => {
+    // Track WeChat contact click
+    if (env.GOOGLE_ANALYTICS_ENABLED) {
+      trackContactClick('WeChat', 'vehicle_detail')
+    }
+
     // 微信：桌面端显示二维码，移动端也显示二维码（微信没有直接的网页深链接）
     setShowWeChatQR(true)
   }
@@ -173,17 +198,25 @@ const VehicleDetail: React.FC = () => {
   // 上一张图片
   const handlePreviousImage = () => {
     const images = getVehicleImages()
-    setCurrentImageIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
-    )
+    const newIndex = currentImageIndex === 0 ? images.length - 1 : currentImageIndex - 1
+    setCurrentImageIndex(newIndex)
+
+    // Track image carousel interaction
+    if (env.GOOGLE_ANALYTICS_ENABLED && vehicle) {
+      trackImageCarousel(vehicle.id, newIndex)
+    }
   }
 
   // 下一张图片
   const handleNextImage = () => {
     const images = getVehicleImages()
-    setCurrentImageIndex((prevIndex) =>
-      prevIndex === images.length - 1 ? 0 : prevIndex + 1
-    )
+    const newIndex = currentImageIndex === images.length - 1 ? 0 : currentImageIndex + 1
+    setCurrentImageIndex(newIndex)
+
+    // Track image carousel interaction
+    if (env.GOOGLE_ANALYTICS_ENABLED && vehicle) {
+      trackImageCarousel(vehicle.id, newIndex)
+    }
   }
 
   // 切换车辆时重置图片索引

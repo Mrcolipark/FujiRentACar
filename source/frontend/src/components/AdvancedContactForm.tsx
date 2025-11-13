@@ -44,6 +44,8 @@ import {
 import { contactFormSchema, ContactFormFields } from '@/models/AdvancedContactForm'
 import { ContactType, PreferredContactMethod, InquiryCategory, IssueType } from '@/types/ContactForm'
 import { sendContactForm } from '@/services/EmailService'
+import { trackFormSubmission } from '@/utils/ga4'
+import env from '@/config/env.config'
 import { strings } from '@/lang/advanced-contact'
 import { strings as commonStrings } from '@/lang/common'
 import * as langHelper from '@/utils/langHelper'
@@ -168,6 +170,12 @@ const AdvancedContactForm: React.FC<AdvancedContactFormProps> = ({
 
       if (result.success) {
         setSubmitSuccess(true)
+
+        // Track successful form submission in GA4
+        if (env.GOOGLE_ANALYTICS_ENABLED) {
+          trackFormSubmission(data.contactType, true)
+        }
+
         // 3秒后重置表单
         setTimeout(() => {
           reset()
@@ -176,10 +184,20 @@ const AdvancedContactForm: React.FC<AdvancedContactFormProps> = ({
         }, 3000)
       } else {
         setSubmitError(result.message || '发送失败，请稍后重试')
+
+        // Track failed form submission
+        if (env.GOOGLE_ANALYTICS_ENABLED) {
+          trackFormSubmission(data.contactType, false)
+        }
       }
     } catch (error: any) {
       console.error('提交错误:', error)
       setSubmitError(error.message || '发生未知错误')
+
+      // Track error in form submission
+      if (env.GOOGLE_ANALYTICS_ENABLED && data.contactType) {
+        trackFormSubmission(data.contactType, false)
+      }
     } finally {
       setIsSubmitting(false)
     }

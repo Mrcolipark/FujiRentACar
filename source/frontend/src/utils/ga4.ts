@@ -35,3 +35,57 @@ export const sendPageview = (path: string) => ga4.send({
   hitType: 'pageview',
   page: path
 })
+
+// Custom event tracking functions
+
+/**
+ * Track contact button clicks (LINE, WeChat, Email)
+ */
+export const trackContactClick = (contactMethod: 'LINE' | 'WeChat' | 'Email', location?: string) => {
+  ga4.event('contact_click', {
+    method: contactMethod,
+    location: location || 'unknown',
+  })
+}
+
+/**
+ * Track vehicle detail views
+ */
+export const trackVehicleView = (vehicleId: string, vehicleName: string, brand: string) => {
+  ga4.event('view_item', {
+    item_id: vehicleId,
+    item_name: vehicleName,
+    item_brand: brand,
+    item_category: 'vehicle',
+  })
+}
+
+/**
+ * Track contact form submissions
+ */
+export const trackFormSubmission = (formType: string, success: boolean) => {
+  ga4.event('form_submission', {
+    form_type: formType,
+    success: success,
+  })
+}
+
+/**
+ * Track search/filter usage
+ */
+export const trackSearch = (searchType: string, searchTerm?: string) => {
+  ga4.event('search', {
+    search_term: searchTerm || '',
+    search_type: searchType,
+  })
+}
+
+/**
+ * Track vehicle image carousel interactions
+ */
+export const trackImageCarousel = (vehicleId: string, imageIndex: number) => {
+  ga4.event('image_carousel', {
+    vehicle_id: vehicleId,
+    image_index: imageIndex,
+  })
+}
