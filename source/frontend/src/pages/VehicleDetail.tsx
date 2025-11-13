@@ -22,7 +22,8 @@ import {
   Email,
   Close as CloseIcon,
   ChevronLeft,
-  ChevronRight
+  ChevronRight,
+  Facebook
 } from '@mui/icons-material'
 import { SvgIcon } from '@mui/material'
 import { strings } from '@/lang/vehicle-detail'
@@ -179,6 +180,17 @@ const VehicleDetail: React.FC = () => {
 
     // 微信：桌面端显示二维码，移动端也显示二维码（微信没有直接的网页深链接）
     setShowWeChatQR(true)
+  }
+
+  const handleFacebookInquiry = () => {
+    // Track Facebook contact click
+    if (env.GOOGLE_ANALYTICS_ENABLED) {
+      trackContactClick('Facebook' as any, 'vehicle_detail')
+    }
+
+    // Facebook：直接打开 Messenger 链接
+    const facebookUrl = env.FACEBOOK_URL || 'https://m.me/61580388637537'
+    window.open(facebookUrl, '_blank', 'noopener,noreferrer')
   }
 
   const handleCloseQR = () => {
@@ -388,6 +400,15 @@ const VehicleDetail: React.FC = () => {
                         fullWidth
                       >
                         {strings.WECHAT_INQUIRY}
+                      </Button>
+                      <Button
+                        variant="contained"
+                        startIcon={<Facebook />}
+                        onClick={handleFacebookInquiry}
+                        className="facebook-btn"
+                        fullWidth
+                      >
+                        {strings.FACEBOOK_INQUIRY}
                       </Button>
                       <Button
                         variant="outlined"
