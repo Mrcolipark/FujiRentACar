@@ -27,7 +27,7 @@ export const init = () => {
 }
 
 export const sendEvent = (name: string) => ga4.event('screen_view', {
-  app_name: 'bookcars',
+  app_name: 'FUJI RENT A CAR',
   screen_name: name,
 })
 
