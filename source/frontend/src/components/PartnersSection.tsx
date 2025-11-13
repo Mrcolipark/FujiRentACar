@@ -14,39 +14,39 @@ interface Partner {
 
 const PartnersSection: React.FC = () => {
   // 基于实际车辆清单的合作伙伴品牌（前8个）
-  // 使用Clearbit Logo API获取品牌Logo
+  // 使用Google Favicon API获取品牌Logo（128x128 高质量）
   const partners: Partner[] = [
     {
       name: 'Mercedes-Benz',
-      logo: 'https://logo.clearbit.com/mercedes-benz.com',
+      logo: 'https://www.google.com/s2/favicons?domain=mercedes-benz.com&sz=128',
     },
     {
       name: 'Maserati',
-      logo: 'https://logo.clearbit.com/maserati.com',
+      logo: 'https://www.google.com/s2/favicons?domain=maserati.com&sz=128',
     },
     {
       name: 'Toyota',
-      logo: 'https://logo.clearbit.com/toyota.com',
+      logo: 'https://www.google.com/s2/favicons?domain=toyota.com&sz=128',
     },
     {
       name: 'Porsche',
-      logo: 'https://logo.clearbit.com/porsche.com',
+      logo: 'https://www.google.com/s2/favicons?domain=porsche.com&sz=128',
     },
     {
       name: 'Lexus',
-      logo: 'https://logo.clearbit.com/lexus.com',
+      logo: 'https://www.google.com/s2/favicons?domain=lexus.com&sz=128',
     },
     {
       name: 'BMW',
-      logo: 'https://logo.clearbit.com/bmw.com',
+      logo: 'https://www.google.com/s2/favicons?domain=bmw.com&sz=128',
     },
     {
       name: 'Mazda',
-      logo: 'https://logo.clearbit.com/mazda.com',
+      logo: 'https://www.google.com/s2/favicons?domain=mazda.com&sz=128',
     },
     {
       name: 'Honda',
-      logo: 'https://logo.clearbit.com/honda.com',
+      logo: 'https://www.google.com/s2/favicons?domain=honda.com&sz=128',
     },
   ]
 
